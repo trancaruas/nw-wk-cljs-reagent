@@ -1,0 +1,8 @@
+The physical processor has 2 cores and 16 virtual processors (0-15)
+  The core has 8 virtual processors (0-7)
+  The core has 8 virtual processors (8-15)
+    SPARC-T5 (chipid 2, clock 3600 MHz)
+The physical processor has 2 cores and 16 virtual processors (256-271)
+  The core has 8 virtual processors (256-263)
+  The core has 8 virtual processors (264-271)
+    SPARC-T5 (chipid 65538, clock 3600 MHz)

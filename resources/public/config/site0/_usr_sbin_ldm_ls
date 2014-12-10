@@ -1,0 +1,12 @@
+NAME             STATE      FLAGS   CONS    VCPU  MEMORY   UTIL  NORM  UPTIME
+primary          active     -n-cv-  UART    32    32G      1.7%  1.7%  4d 23h 19m
+secondary        active     -n--v-  5000    32    32G      0.6%  0.6%  1d 1h 34m
+t58-12023-ms1    active     -n----  5008    32    64G      0.0%  0.0%  23d 20h 44m
+t58-12023-ms2    active     -n----  5009    32    64G      0.0%  0.0%  41d 1h 49m
+t58-12023-o1     active     -n----  5001    192   128G     0.0%  0.0%  14d 14m
+t58-12023-o2     active     -n----  5002    192   128G     0.0%  0.0%  4d 23h 8m
+t58-12023-o3     active     -n----  5003    192   128G     0.9%  0.9%  20h 50m
+t58-12023-o6     bound      ------  5006    16    16G                  
+t58-12023-o7     bound      ------  5007    48    16G                  
+t58-12023-o4     inactive   ------          24    48G                  
+t58-12023-o5     inactive   ------          24    48G                  
