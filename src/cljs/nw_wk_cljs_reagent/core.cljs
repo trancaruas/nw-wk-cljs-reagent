@@ -368,6 +368,14 @@
      ^{:key item} [:div {:style {:background-color "Aquamarine"}}
                    item])])
 
+(defn lister-domains [items config]
+  [:div
+   (for [item items
+         :let [color ((:colors config) item)]]
+     ^{:key item} [:div {:style {:background-color color}}
+                   (name item)])])
+
+
 ;; TODO move to cond or case matching
 (defn clean-dev-alias [alias]
   (let [rio? (second (re-matches #"/SYS/(RIO.+)" alias))
@@ -449,11 +457,12 @@
     [:div.container
      [:div.row
       [:div.col-xs-12
-       [:h3 "Site: " "Gazprombank test" " System: " (:name t5-8-full)]]]
+       [:h3 "Site: " "Somebank test" " System: " (:name t5-8-full)]]]
      [:div.row
       [:div.col-xs-10
        (map #(vector :div.row %) (partition 4 (mapv #(chip-comp % config) chip-ids)))]
-      [:div.col-xs-2 "domain config here "]]]))
+      [:div.col-xs-2 [:h3 "Domains"]
+       (lister-domains (sort (keys ldom-config)) config)]]]))
 
 ;; * ROUTES
 (secretary/set-config! :prefix "#")
