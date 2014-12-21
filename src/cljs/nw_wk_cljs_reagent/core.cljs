@@ -5,6 +5,9 @@
               [goog.history.EventType :as EventType])
     (:import goog.History))
 
+;; * MISC UTIlS
+(def not-nil? (complement nil?))
+
 ;; * STATE
 (defonce app-state (atom {:text "Hello, this is: "}))
 
@@ -75,7 +78,7 @@
 ;;  3   7      3 14 /pci@680/pci@1/pci@0/pci@4
 ;;  3   7      4 16 /pci@6c0/pci@1/pci@0/pci@4
 
-;; ** FUNCS
+;; ** ARCH DEFS
 (def mach-defs
   {:t5-8-half
    {:chips {:chip0 {:id 0 :slot1 "pci@300" :slot3 "pci@340"}
@@ -139,10 +142,22 @@
           {:start "0x200000000000" :end "0x27FFFFFFFFFF"} {:chip 4}
           {:start "0x280000000000" :end "0x2FFFFFFFFFFF"} {:chip 5}
           {:start "0x300000000000" :end "0x37FFFFFFFFFF"} {:chip 6}
-          {:start "0x380000000000" :end "0x3FFFFFFFFFFF"} {:chip 7} }}})
+          {:start "0x380000000000" :end "0x3FFFFFFFFFFF"} {:chip 7} }
+    
+    :mem1 {:0 {:start            0x0 :end 0x7FFFFFFFFFF}
+           :1 {:start  0x80000000000 :end 0xFFFFFFFFFFF}
+           :2 {:start 0x100000000000 :end 0x17FFFFFFFFFF}
+           :3 {:start 0x180000000000 :end 0x1FFFFFFFFFFF}
+           :4 {:start 0x200000000000 :end 0x27FFFFFFFFFF}
+           :5 {:start 0x280000000000 :end 0x2FFFFFFFFFFF}
+           :6 {:start 0x300000000000 :end 0x37FFFFFFFFFF}
+           :7 {:start 0x380000000000 :end 0x3FFFFFFFFFFF} }
+
+    }})
 
 (def t5-8-full (:t5-8-full mach-defs))
 
+;; ** ARCH FUNCS
 ;; not used anymore
 #_(defn cid-to-domain [cid domain-set]
   (first (remove nil?
@@ -164,6 +179,17 @@
 ;; (true false false false false false false false)
 (defn mem-on-chip? [chip mem-struct])
 
+;;(filter #(mem-on-chip 1 %) domains)
+
+(defn mem->chip [pa]
+  (let [mem-ranges (:mem1 t5-8-full)]
+    (first (filter not-nil? (for [cid (keys mem-ranges)
+                                  :let [start (:start (cid mem-ranges))
+                                        end (:end (cid mem-ranges))]]
+                              (if (< start pa end) cid))))))
+;; (mem->chip 0x36e0000000)
+;; :0
+
 ;; TODO move to mac-defs as fn
 #_(defn cid->chip [cid] (int (/ cid 16)))
 
@@ -183,8 +209,11 @@
 (defn read-site-file-content [site file]
   (clojure.string/split-lines (str (.readFileSync fs (str site-location site "/" file)))))
 
-;; * MISC UTIlS
-(def not-nil? (complement nil?))
+(def nw-gui (js/require "nw.gui"))
+
+;; (def nw-win (.get (.-Window nw-gui)))
+;; (.-height nw-win)
+
 
 ;; * LDOM CONFIG PARSING
 (defn parse-entry [cid]
@@ -257,13 +286,22 @@
        (for [[cid-id cid-value] (:cids domain-config)]
          {cid-id (assoc cid-value :domain domain-name)})))))
 
+(defn pa->cid [pa]
+  (let [cid (filter #(<= (:start (val %)) pa (:end (val %))) (:mem1 t5-8-full))]
+    (if (not-empty cid)
+      (key (first cid))
+      nil)))
 
 (defn get-mem-config [config]
   (apply merge
     (flatten
      (for [[domain-name domain-config] config]
-       (for [[memseg-name memseg-value] (:mem domain-config)]
-         {(:pa memseg-value) {:size (:size memseg-value) :domain domain-name}})))))
+       (for [[memseg-name memseg-value] (:mem domain-config)
+             :let [pa (:pa memseg-value)]]
+         {pa {:pa pa :cid (pa->cid pa) :size (:size memseg-value) :domain domain-name}})))))
+;; (get-mem-config ldom-config)
+;; {"0xc30000000" {:pa "0xc30000000", :cid :0, :size "45902462976",:domain :t58-12023-o2},
+;;  "0x103300000000" {:pa "0x103300000000", :cid :2, :size "55834574848", :domain :unassigned},
 
 ;; ** TESTS
 ;; TODO CURRENT ALG FOR ASSIGNING GUARANTEED DIFFERENT COLORS DOES NOT WORK:
@@ -305,11 +343,27 @@
 ;; nw-wk-cljs-test2.server> (:dev record1)
 ;; "pci_5"
 
+;; (def m {:first "Bob"
+;;         :middle "J"
+;;         :last "Smith"})
+
+;; (let [{:keys [first last]} m]
+;;   (println first)
+;;   (println last))
+
+;; (extend-type js/RegExp
+;;   IFn
+;;   (-invoke
+;;    ([this s]
+;;      (re-matches this s))))
+
+;; (filter #"foo.*" ["foo" "bar" "foobar"])
+
 ;; * INTERFACE
 (defn lister [items]
   [:div
    (for [item items]
-     ^{:key item} [:p {:style {:background-color "Aquamarine"}}
+     ^{:key item} [:div {:style {:background-color "Aquamarine"}}
                    item])])
 
 ;; TODO move to cond or case matching
@@ -322,13 +376,12 @@
             (if external? (str external?)
                 alias)))))
 
-;; TODO device path in popup hint
-(defn lister-io [items config]
-  [:div 
+(defn lister-mem [items config]
+  [:div
    (for [item items
-         :let [color ((:colors config) (keyword (:domain ((:devs config) item))))]]
+         :let [color ((:colors config) (:domain (val item)))]]
      ^{:key item} [:div {:style {:background-color color}}
-                   (clean-dev-alias (:alias ((:devs config) item)))])])
+                   (/ (:size (val item)) 1073741824) " GB"])])
 
 (defn lister-cid [cids config]
   [:div {:class "somelist"}
@@ -337,15 +390,30 @@
      ^{:key cid} [:div {:style {:background-color color}}
                    "cid " cid])])
 
-(defn memory-comp []
-  [:div ;;{:style {:border "2px" :border-style "solid" :border-color "yellow"}}
-   [:p  "Memory"]
-   [lister
-    (map #(str "mem " %) (range 1))]])
+;; TODO device path in popup hint
+(defn lister-io [items config]
+  [:div 
+   (for [item items
+         :let [color ((:colors config) (keyword (:domain ((:devs config) item))))]]
+     ^{:key item} [:div {:style {:background-color color}}
+                   (clean-dev-alias (:alias ((:devs config) item)))])])
+
+(defn memory-comp [chip-num config]
+   [:div "Memory"
+    [lister-mem
+     (filter #(= (keyword (str chip-num)) (:cid (val %))) (:mem config))
+     config]])
+
+;; TODO get number of cids per chip
+(defn cid-comp [chip-num config]
+  (let [core-per-chip 16]
+    [:div "Cores:"
+     [lister-cid
+      (range (* chip-num core-per-chip) (* (inc chip-num) core-per-chip))
+      config]]))
 
 (defn io-comp [chip-num config]
-  [:div ;;{:style {:border "2px" :border-style "solid" :border-color "red"}}
-    "I/O:"
+  [:div "I/O:"
    [lister-io
     (sort
      (keys
@@ -353,26 +421,18 @@
         (filter #(dev-on-chip? chip-num %) (:devs config)))))
     config]])
 
-;; TODO get number of cids per chip
-(defn cid-comp [chip-num config]
-  (let [core-per-chip 16]
-    [:div ;;{:style {:border "2px" :border-style "solid" :border-color "blue"}}
-     "Cores:"
-     [lister-cid
-      (range (* chip-num core-per-chip) (* (inc chip-num) core-per-chip))
-      config]]))
-
 (defn chip-comp [chip-num config]
-  [:div {:class "col-md-1"
+  [:div {:class "col-md-2"
          ;;:style {:border "2px" :border-style "solid" :border-color "black"}
          }
    [:p "Chip " chip-num]
    ;; [:p.class1
    ;;  "this is " [:strong "bold"]
    ;;  [:span {:style {:color "red"}} " and red "] "text."]
-   [memory-comp]
    [cid-comp chip-num config]
+   [memory-comp chip-num config]
    [io-comp chip-num config]])
+
 
 ;; * MAIN
 ;;   [page (get-state :current-page)]
@@ -387,10 +447,23 @@
         cid-config (get-cid-config ldom-config)
         mem-config (get-mem-config ldom-config)
         colors (color-domain ldom-config color-table)
-        config {:domains ldom-config :cids cid-config :devs dev-config :mem mem-config :colors colors}]
-    [:div {:class "row"}
-     (map #(chip-comp % config)
-       (map #(:id %) (vals (:chips t5-8-full))))]))
+        config {:domains ldom-config :cids cid-config :devs dev-config :mem mem-config :colors colors}
+        chip-ids (map #(:id %) (vals (:chips t5-8-full)))]
+    [:div {:class "container"}
+      [:div {:class "row"}
+       [:div {:class "col-md-12"}
+;;              :style {:border "2px" :border-style "solid" :border-color "black"}}
+        [:p "header"]]]
+     [:div.row
+      (map #(chip-comp % config) chip-ids)]]
+
+;;     (mapv #(vector :div %) (partition 4 (mapv #(chip-comp % config) chip-ids)))]
+    
+    ))
+
+;; (take 10 (cycle ["a" "b"]))
+;; ("a" "b" "a" "b" "a" "b" "a" "b" "a" "b")
+
 
 ;; * ROUTES
 (secretary/set-config! :prefix "#")

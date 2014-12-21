@@ -8,11 +8,11 @@
 
   :source-paths ["src/clj" "src/cljs"]
 
-  :dependencies [[org.clojure/clojure "1.6.0"]
+  :dependencies [[org.clojure/clojure "1.7.0-alpha4"]
                  [reagent "0.4.3"]
                  [reagent-utils "0.1.0"]
                  [secretary "1.2.0"]
-                 [org.clojure/clojurescript "0.0-2371" :scope "provided"]
+                 [org.clojure/clojurescript "0.0-2411" :scope "provided"]
                  [com.cemerick/piggieback "0.1.3"]
                  [weasel "0.4.0-SNAPSHOT"]
                  [ring "1.3.2"]
@@ -24,7 +24,7 @@
                  [selmer "0.7.2"]
                  [environ "1.0.0"]
                  [leiningen "2.5.0"]
-                 [figwheel "0.1.5-SNAPSHOT"]
+                 [figwheel "0.2.0-SNAPSHOT"]
                  [prone "0.6.0"]]
 
   :plugins [[lein-cljsbuild "1.0.3"]
@@ -54,7 +54,7 @@
                                   [ring/ring-devel "1.3.2"]
                                   [pjstadig/humane-test-output "0.6.0"]]
 
-                   :plugins [[lein-figwheel "0.1.4-SNAPSHOT"]]
+                   :plugins [[lein-figwheel "0.2.0-SNAPSHOT"]]
 
                    :injections [(require 'pjstadig.humane-test-output)
                                 (pjstadig.humane-test-output/activate!)]
@@ -66,7 +66,7 @@
                    :env {:dev? true}
 
                    :cljsbuild {:builds {:app {:source-paths ["env/dev/cljs"]}}}}
-
+             
              :uberjar {:hooks [leiningen.cljsbuild minify-assets.plugin/hooks]
                        :env {:production true}
                        :aot :all
