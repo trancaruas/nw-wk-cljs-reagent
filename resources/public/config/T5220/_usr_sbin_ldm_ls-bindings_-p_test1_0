@@ -1,0 +1,11 @@
+VERSION 1.10
+DOMAIN|name=test1_0|state=inactive|flags=|cons=|ncpu=8|mem=34359738368|util=|uptime=|norm_util=
+UUID|uuid=4148a73c-0bff-cddf-965c-9a46ef2b19b8
+MAC|mac-addr=00:14:4f:fb:4b:06
+CONTROL|failure-policy=ignore|extended-mapin-space=off|cpu-arch=native|rc-add-policy=|shutdown-group=15
+DEPENDENCY|master= 
+CONSTRAINT|cpu=|max-cores=|threading=max-throughput|physical-bindings=
+VARIABLES
+|pm_boot_policy=disabled=1;ttfc=0;ttmr=0;
+VNET|name=vnet0|dev=|service=primary-vsw0|mac-addr=00:14:4f:fa:2e:48|mode=|pvid=1|vid=|mtu=|linkprop=|id=0|alt-mac-addrs=
+VDISK|name=vdisk0|vol=test1_0-vol0@ovmt-vds0|timeout=|dev=|server=|mpgroup=|id=0

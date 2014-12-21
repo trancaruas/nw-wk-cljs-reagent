@@ -1,0 +1,44 @@
+VERSION 1.6
+DOMAIN|name=primary|state=active|flags=normal,control,vio-service|cons=UART|ncpu=8|mem=8053063680|util=10.0|uptime=71968
+UUID|uuid=2b789a59-c456-c5dc-eef2-83c902612a41
+MAC|mac-addr=00:21:28:d2:a9:f2
+HOSTID|hostid=0x85d2a9f2
+CONTROL|failure-policy=ignore|extended-mapin-space=off|cpu-arch=native
+DEPENDENCY|master= 
+CORE
+|cid=0|cpuset=0,1,2,3,4,5,6,7
+VCPU
+|vid=0|pid=0|util=7.6%|strand=100|cid=0
+|vid=1|pid=1|util=7.2%|strand=100|cid=0
+|vid=2|pid=2|util= 12%|strand=100|cid=0
+|vid=3|pid=3|util=6.5%|strand=100|cid=0
+|vid=4|pid=4|util= 13%|strand=100|cid=0
+|vid=5|pid=5|util= 13%|strand=100|cid=0
+|vid=6|pid=6|util= 13%|strand=100|cid=0
+|vid=7|pid=7|util= 13%|strand=100|cid=0
+MEMORY
+|ra=0x20000000|pa=0x20000000|size=8053063680
+CONSTRAINT|cpu=whole-core|max-cores=1|threading=max-throughput|physical-bindings=core,memory
+VARIABLES
+|boot-device=/pci@400/pci@1/pci@0/pci@0/LSI,sas@0/disk@w5000c5003c102b45,0:a /pci@400/pci@1/pci@0/pci@0/LSI,sas@0/disk@w5000c5003bea04dd,0:a disk net
+IO
+|dev=pci@400|alias=pci_0
+|dev=niu@480|alias=niu_0
+|dev=pci@500|alias=pci_1
+|dev=niu@580|alias=niu_1
+|dev=niu@680|alias=niu_2
+|dev=niu@780|alias=niu_3
+|dev=pci@400/pci@2/pci@0/pci@1|alias=/SYS/PCI-EM0
+|dev=pci@400/pci@2/pci@0/pci@2|alias=/SYS/PCI-EM1
+|dev=pci@400/pci@1/pci@0/pci@4|alias=/SYS/PCI-EM2
+|dev=pci@400/pci@2/pci@0/pci@3|alias=/SYS/PCI-EM3
+|dev=pci@400/pci@1/pci@0/pci@0|alias=/SYS/MB/REM0
+|dev=pci@400/pci@1/pci@0/pci@2|alias=/SYS/RIO/NET0
+|dev=pci@500/pci@1/pci@0/pci@1|alias=/SYS/PCI-EM8
+|dev=pci@500/pci@2/pci@0/pci@2|alias=/SYS/PCI-EM9
+|dev=pci@500/pci@1/pci@0/pci@2|alias=/SYS/PCI-EM10
+|dev=pci@500/pci@2/pci@0/pci@3|alias=/SYS/PCI-EM11
+VCC|name=primary-vcc0|port-range=5000-5100
+|client=s10u10-EIS-18JUL12-1@primary-vcc0|port=5003
+VDS|name=primary-vds0
+VCONS|type=UART

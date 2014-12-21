@@ -1,0 +1,8 @@
+NAME             STATE      FLAGS   CONS    VCPU  MEMORY   UTIL  UPTIME
+primary          active     -n-cv-  UART    32    8704M    3.8%  1d 22h 58m
+11GR2DB          active     -n----  5001    16    8448M    6.3%  38d 4h 36m
+11GR2SE          bound      ------  5003    24    8G             
+OVM_S11.1        bound      ------  5006    4     2G             
+OVM_S11.1_MIN    active     -n----  5004    4     4G       0.2%  1d 21h 49m
+S12B24_1         active     -n----  5002    8     4G       0.1%  30d 2h 38m
+WLS_1212_0       active     -n----  5000    16    8G       0.1%  20d 22h 58m

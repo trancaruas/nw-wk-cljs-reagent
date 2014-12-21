@@ -1,0 +1,27 @@
+VERSION 1.9
+DOMAIN|name=OVM_S11.1|state=bound|flags=|cons=5006|ncpu=4|mem=2147483648|util=|uptime=|norm_util=
+UUID|uuid=78060c3d-bf90-ccbe-8314-9d934154bb46
+MAC|mac-addr=00:14:4f:f9:e6:94
+HOSTID|hostid=0x84f9e694
+CONTROL|failure-policy=ignore|extended-mapin-space=off|cpu-arch=native|rc-add-policy=|shutdown-group=15
+DEPENDENCY|master= 
+CORE
+|cid=13|cpuset=104,105,106,107
+VCPU
+|vid=0|pid=104|util=0|strand=100|cid=13|norm_util=
+|vid=1|pid=105|util=0|strand=100|cid=13|norm_util=
+|vid=2|pid=106|util=0|strand=100|cid=13|norm_util=
+|vid=3|pid=107|util=0|strand=100|cid=13|norm_util=
+MEMORY
+|ra=0x10000000|pa=0xb00000000|size=2147483648
+CONSTRAINT|cpu=|max-cores=|threading=max-throughput|physical-bindings=
+VARIABLES
+|pm_boot_policy=disabled=1;ttfc=0;ttmr=0;
+VNET|name=vnet0|dev=network@0|service=ovmt-vsw0@primary|mac-addr=00:14:4f:fb:9f:d7|mode=|pvid=1|vid=|mtu=1500|linkprop=|id=0
+|peer=ovmt-vsw0@primary|mac-addr=00:14:4f:fa:51:c2|mode=|pvid=1|vid=|mtu=1500
+|peer=vnet1@11GR2DB|mac-addr=00:14:4f:f9:26:b3|mode=|pvid=1|vid=|mtu=1500|linkprop=
+|peer=vnet0@WLS_1212_0|mac-addr=00:14:4f:f9:a1:58|mode=|pvid=1|vid=|mtu=1500|linkprop=
+|peer=vnet0@11GR2SE|mac-addr=00:14:4f:fb:e8:42|mode=|pvid=1|vid=|mtu=1500|linkprop=
+|peer=vnet0@OVM_S11.1_MIN|mac-addr=00:14:4f:fa:31:0d|mode=|pvid=1|vid=|mtu=1500|linkprop=
+VDISK|name=vdisk0|vol=s11.1_system@ovmt-vds0|timeout=|dev=disk@0|server=primary|mpgroup=|id=0
+VCONS|group=OVM_S11.1|service=ovmt-vcc0@primary|port=5006|log=on

@@ -1,0 +1,24 @@
+VERSION 1.9
+|dev=pci@340|alias=pci_1|status=|domain=primary|type=BUS|bus=pci_1
+|dev=pci@300|alias=pci_0|status=|domain=db2ldom|type=BUS|bus=pci_0
+|dev=pci@3c0|alias=pci_3|status=|domain=primary|type=BUS|bus=pci_3
+|dev=pci@380|alias=pci_2|status=|domain=db2ldom|type=BUS|bus=pci_2
+|dev=pci@340/pci@1/pci@0/pci@4|alias=/SYS/MB/PCIE5|status=EMP|domain=primary|type=PCIE|bus=pci_1
+|dev=pci@340/pci@1/pci@0/pci@c|alias=/SYS/MB/PCIE7|status=EMP|domain=primary|type=PCIE|bus=pci_1
+|dev=pci@340/pci@1/pci@0/pci@9|alias=/SYS/MB/SASHBA1|status=OCC|domain=primary|type=PCIE|bus=pci_1
+|dev=pci@300/pci@1/pci@0/pci@a|alias=/SYS/MB/PCIE1|status=EMP|domain=db2ldom|type=PCIE|bus=pci_0
+|dev=pci@300/pci@1/pci@0/pci@6|alias=/SYS/MB/PCIE3|status=OCC|domain=db2ldom|type=PCIE|bus=pci_0
+|dev=pci@300/pci@1/pci@0/pci@e|alias=/SYS/MB/NET0|status=OCC|domain=db2ldom|type=PCIE|bus=pci_0
+|dev=pci@3c0/pci@1/pci@0/pci@6|alias=/SYS/MB/PCIE6|status=OCC|domain=primary|type=PCIE|bus=pci_3
+|dev=pci@3c0/pci@1/pci@0/pci@e|alias=/SYS/MB/PCIE8|status=EMP|domain=primary|type=PCIE|bus=pci_3
+|dev=pci@3c0/pci@1/pci@0/pci@a|alias=/SYS/MB/NET2|status=OCC|domain=primary|type=PCIE|bus=pci_3
+|dev=pci@380/pci@1/pci@0/pci@4|alias=/SYS/MB/PCIE2|status=OCC|domain=db2ldom|type=PCIE|bus=pci_2
+|dev=pci@380/pci@1/pci@0/pci@c|alias=/SYS/MB/PCIE4|status=EMP|domain=db2ldom|type=PCIE|bus=pci_2
+|dev=pci@380/pci@1/pci@0/pci@9|alias=/SYS/MB/SASHBA0|status=OCC|domain=db2ldom|type=PCIE|bus=pci_2
+|dev=pci@300/pci@1/pci@0/pci@e/network@0|alias=/SYS/MB/NET0/IOVNET.PF0|status=|domain=db2ldom|type=PF|bus=pci_0
+|dev=pci@3c0/pci@1/pci@0/pci@6/network@0|alias=/SYS/MB/PCIE6/IOVNET.PF0|status=|domain=primary|type=PF|bus=pci_3
+|dev=pci@3c0/pci@1/pci@0/pci@6/network@0,1|alias=/SYS/MB/PCIE6/IOVNET.PF1|status=|domain=primary|type=PF|bus=pci_3
+|dev=pci@3c0/pci@1/pci@0/pci@a/network@0|alias=/SYS/MB/NET2/IOVNET.PF0|status=|domain=primary|type=PF|bus=pci_3
+|dev=pci@3c0/pci@1/pci@0/pci@a/network@0,1|alias=/SYS/MB/NET2/IOVNET.PF1|status=|domain=primary|type=PF|bus=pci_3
+|dev=pci@380/pci@1/pci@0/pci@4/network@0|alias=/SYS/MB/PCIE2/IOVNET.PF0|status=|domain=db2ldom|type=PF|bus=pci_2
+|dev=pci@380/pci@1/pci@0/pci@4/network@0,1|alias=/SYS/MB/PCIE2/IOVNET.PF1|status=|domain=db2ldom|type=PF|bus=pci_2

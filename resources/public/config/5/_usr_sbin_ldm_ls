@@ -1,0 +1,3 @@
+NAME             STATE      FLAGS   CONS    VCPU  MEMORY   UTIL  UPTIME
+primary          active     -n-cv-  UART    128   523776M  0.3%  57m
+s10u10-EIS2-1    active     -n----  5003    128   512G     0.0%  57m

@@ -1,0 +1,6 @@
+NAME             STATE      FLAGS   CONS    VCPU  MEMORY   UTIL  NORM  UPTIME
+primary          active     -n-cv-  UART    128   16G      0.0%  0.0%  2h 19m
+domain1          active     -n----  5000    256   256G     0.0%  0.0%  15m
+domain2          active     -n----  5001    256   256G     0.0%  0.0%  16m
+domain3          active     -n----  5002    192   128G     0.0%  0.0%  15m
+domain4          active     -n----  5003    192   128G     0.0%  0.0%  2m

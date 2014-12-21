@@ -1,0 +1,12 @@
+VERSION 1.10
+|dev=niu@80|alias=niu|status=|domain=primary|type=NIU|bus=niu
+|dev=pci@0|alias=pci|status=|domain=primary|type=BUS|bus=pci
+|dev=pci@0/pci@0/pci@8/pci@0/pci@9|alias=MB/RISER0/PCIE0|status=EMP|domain=primary|type=PCIE|bus=pci
+|dev=pci@0/pci@0/pci@8/pci@0/pci@1|alias=MB/RISER1/PCIE1|status=EMP|domain=primary|type=PCIE|bus=pci
+|dev=pci@0/pci@0/pci@9|alias=MB/RISER2/PCIE2|status=EMP|domain=primary|type=PCIE|bus=pci
+|dev=pci@0/pci@0/pci@8/pci@0/pci@a|alias=MB/RISER0/PCIE3|status=EMP|domain=primary|type=PCIE|bus=pci
+|dev=pci@0/pci@0/pci@8/pci@0/pci@2|alias=MB/RISER1/PCIE4|status=EMP|domain=primary|type=PCIE|bus=pci
+|dev=pci@0/pci@0/pci@8/pci@0/pci@8|alias=MB/RISER2/PCIE5|status=EMP|domain=primary|type=PCIE|bus=pci
+|dev=pci@0/pci@0/pci@1/pci@0/pci@2|alias=MB/NET0|status=OCC|domain=primary|type=PCIE|bus=pci
+|dev=pci@0/pci@0/pci@1/pci@0/pci@3|alias=MB/NET2|status=OCC|domain=primary|type=PCIE|bus=pci
+|dev=pci@0/pci@0/pci@2|alias=MB/SASHBA|status=OCC|domain=primary|type=PCIE|bus=pci

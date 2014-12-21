@@ -1,0 +1,318 @@
+NAME             STATE      FLAGS   CONS    VCPU  MEMORY   UTIL  NORM  UPTIME
+primary          active     -n-cv-  UART    16    16G       11%   11%  12d 18h 24m
+
+SOFTSTATE
+Solaris running
+
+UUID
+    b416e6c9-727f-c31c-ac0d-e562e546c0d1
+
+MAC
+    00:21:28:bd:2d:fc
+
+HOSTID
+    0x85bd2dfc
+
+CONTROL
+    failure-policy=ignore
+    extended-mapin-space=off
+    cpu-arch=native
+    rc-add-policy=iov
+    shutdown-group=0
+
+DEPENDENCY
+    master= 
+
+PPRIORITY    4000
+
+CORE
+    CID    CPUSET
+    0      (0, 1, 2, 3, 4, 5, 6, 7)
+    1      (8, 9, 10, 11, 12, 13, 14, 15)
+
+VCPU
+    VID    PID    CID    UTIL NORM STRAND
+    0      0      0      2.3% 2.3%   100%
+    1      1      0       16%  16%   100%
+    2      2      0      1.5% 1.5%   100%
+    3      3      0      1.9% 1.9%   100%
+    4      4      0       12%  12%   100%
+    5      5      0      2.5% 2.5%   100%
+    6      6      0       21%  21%   100%
+    7      7      0      2.7% 2.7%   100%
+    8      8      1      1.8% 1.8%   100%
+    9      9      1       17%  17%   100%
+    10     10     1      1.9% 1.9%   100%
+    11     11     1       41%  41%   100%
+    12     12     1      1.3% 1.3%   100%
+    13     13     1      1.6% 1.6%   100%
+    14     14     1      1.9% 1.9%   100%
+    15     15     1       12%  12%   100%
+
+MEMORY
+    RA               PA               SIZE            
+    0x20000000       0x20000000       256M
+    0x80000000       0x80000000       3G
+    0x480000000      0x180000000      2G
+    0x1000000000     0xc00000000      11008M
+
+CONSTRAINT
+    threading=max-throughput
+
+VARIABLES
+    boot-device=/pci@400/pci@2/pci@0/pci@e/scsi@0/disk@w5000c50033295ab1,0:a disk1
+    boot-file=-kv
+    pm_boot_policy=disabled=0;ttfc=2500000;ttmr=0;
+
+IO
+    DEVICE                           PSEUDONYM        OPTIONS
+    pci@400                          pci_0           
+    niu@480                          niu_0           
+    niu@580                          niu_1           
+    pci@400/pci@2/pci@0/pci@8        /SYS/MB/PCIE0   
+    pci@400/pci@2/pci@0/pci@4        /SYS/MB/PCIE2   
+    pci@400/pci@2/pci@0/pci@0        /SYS/MB/PCIE4   
+    pci@400/pci@1/pci@0/pci@8        /SYS/MB/PCIE6   
+    pci@400/pci@1/pci@0/pci@c        /SYS/MB/PCIE8   
+    pci@400/pci@2/pci@0/pci@e        /SYS/MB/SASHBA  
+    pci@400/pci@1/pci@0/pci@4        /SYS/MB/NET0    
+VCC
+    NAME             PORT-RANGE
+    primary-vcc0     5000-5200
+
+VSW
+    NAME             MAC               NET-DEV   ID   DEVICE     LINKPROP   DEFAULT-VLAN-ID PVID VID                  MTU   MODE   INTER-VNET-LINK
+    primary-vsw0     00:14:4f:f8:5f:f6 net0      0    switch@0              1               1                         1500         on         
+    vsw-on-igb3      00:14:4f:fa:13:52           2    switch@2              1               1                         1500         on         
+    vsw-on-igb2      00:14:4f:f9:40:c1           1    switch@1              1               1                         1500         on         
+
+VDS
+    NAME             VOLUME         OPTIONS          MPGROUP        DEVICE
+    primary-vds0     disk-ldg2                       foo            /net/dt241-150/rpool/test/11.1.haik1/ldg2/disk.img
+                     disk-ldg1                                      /net/dt241-150/rpool/test/11.1.haik1/ldg1/disk.img
+                     disk-secondary                                 /net/dt241-150/rpool/test/11.1.haik1/ldg3/disk.img
+                     rac1-root-from-csqa151-42                                 /tmp/foo1
+                     rac1-root-from-csqa151-53                                 /tmp/foo2
+                     rac1-root-from-csqa151-62                                 /tmp/foo3
+                     rac1-root-from-csqa151-71                                 /tmp/foo4
+                     database-disk-100g                                 /tmp/foo5
+                     database-disk-800g                                 /tmp/foo6
+                     vol0_terrys                                    /rpool/test/12.0/25d/terrys/disk.img
+
+VCONS
+    NAME             SERVICE                     PORT   LOGGING
+                     UART
+
+------------------------------------------------------------------------------
+NAME             STATE      FLAGS   CONS    VCPU  MEMORY   UTIL  NORM  UPTIME
+ldg1             active     -n----  5001    13    8G       0.1%  0.1%  4d 19h 36m
+
+SOFTSTATE
+Solaris running
+
+UUID
+    0446e7bb-11cb-4f0a-8334-faa1c753290d
+
+MAC
+    00:14:4f:fb:9b:df
+
+HOSTID
+    0x84fb9bdf
+
+CONTROL
+    failure-policy=ignore
+    extended-mapin-space=on
+    cpu-arch=migration-class1
+    rc-add-policy=iov
+    shutdown-group=15
+
+DEPENDENCY
+    master= 
+
+PPRIORITY    4000
+
+CORE
+    CID    CPUSET
+    4      (36, 37, 38, 39)
+    5      (40, 41, 42, 43, 44, 45, 46, 47)
+    6      (48)
+
+VCPU
+    VID    PID    CID    UTIL NORM STRAND
+    0      36     4      0.3% 0.3%   100%
+    1      37     4      0.0% 0.0%   100%
+    2      38     4      0.0% 0.0%   100%
+    3      39     4      0.0% 0.0%   100%
+    4      40     5      0.2% 0.2%   100%
+    5      41     5      0.1% 0.1%   100%
+    6      42     5      0.1% 0.1%   100%
+    7      43     5      0.1% 0.1%   100%
+    8      44     5      0.1% 0.1%   100%
+    9      45     5      0.1% 0.1%   100%
+    10     46     5      0.1% 0.1%   100%
+    11     47     5      0.1% 0.1%   100%
+    12     48     6      0.0% 0.0%   100%
+
+MEMORY
+    RA               PA               SIZE            
+    0x80000000       0x280000000      2G
+    0x400000000      0x300000000      6G
+
+CONSTRAINT
+    threading=max-throughput
+
+VARIABLES
+    auto-boot?=true
+    boot-file=-kv
+    pm_boot_policy=disabled=0;ttfc=2500000;ttmr=0;
+
+NETWORK
+    NAME             SERVICE                     ID   DEVICE     MAC               MODE   PVID VID                  MTU   LINKPROP  
+    vnet1            primary-vsw0@primary        0    network@0  00:14:4f:f8:b9:fa        1                         1500            
+
+DISK
+    NAME             VOLUME                      TOUT ID   DEVICE  SERVER         MPGROUP       
+    vdisk1           disk-ldg1@primary-vds0           0    disk@0  primary                      
+
+VCONS
+    NAME             SERVICE                     PORT   LOGGING
+    ldg1             primary-vcc0@primary        5001   on      
+
+------------------------------------------------------------------------------
+NAME             STATE      FLAGS   CONS    VCPU  MEMORY   UTIL  NORM  UPTIME
+ldg2             bound      ------  5000    4     2G                   
+
+UUID
+    b01392ae-ab1c-63ec-acac-b55a8ec61095
+
+MAC
+    00:14:4f:f8:ab:1a
+
+HOSTID
+    0x84f8ab1a
+
+CONTROL
+    failure-policy=ignore
+    extended-mapin-space=on
+    cpu-arch=native
+    rc-add-policy=
+    shutdown-group=15
+
+DEPENDENCY
+    master= 
+
+PPRIORITY    4000
+
+CORE
+    CID    CPUSET
+    4      (32, 33, 34, 35)
+
+VCPU
+    VID    PID    CID    UTIL NORM STRAND
+    0      32     4                  100%
+    1      33     4                  100%
+    2      34     4                  100%
+    3      35     4                  100%
+
+MEMORY
+    RA               PA               SIZE            
+    0x80000000       0x800000000      2G
+
+CONSTRAINT
+    threading=max-throughput
+
+VARIABLES
+    auto-boot?=true
+    boot-device=/virtual-devices@100/channel-devices@200/disk@0
+    boot-file=-kv
+    pm_boot_policy=disabled=0;ttfc=2500000;ttmr=0;
+
+NETWORK
+    NAME             SERVICE                     ID   DEVICE     MAC               MODE   PVID VID                  MTU   LINKPROP  
+    net              primary-vsw0@primary        0    network@0  00:14:4f:fa:10:8a        1                         1500            
+
+DISK
+    NAME             VOLUME                      TOUT ID   DEVICE  SERVER         MPGROUP       
+    vdisk-2a         disk-ldg2@primary-vds0           0    disk@0  primary        foo           
+
+VCONS
+    NAME             SERVICE                     PORT   LOGGING
+    ldg2             primary-vcc0@primary        5000   on      
+
+------------------------------------------------------------------------------
+NAME             STATE      FLAGS   CONS    VCPU  MEMORY   UTIL  NORM  UPTIME
+terrys           active     -n----  5002    16    8G       0.1%  0.1%  20h 53m
+
+SOFTSTATE
+Solaris running
+
+UUID
+    bd42fef0-5351-63b3-cd53-aa3fd1c7ff1a
+
+MAC
+    00:14:4f:f8:f0:bb
+
+HOSTID
+    0x84f8f0bb
+
+CONTROL
+    failure-policy=ignore
+    extended-mapin-space=on
+    cpu-arch=migration-class1
+    rc-add-policy=
+    shutdown-group=15
+
+DEPENDENCY
+    master= 
+
+PPRIORITY    4000
+
+CORE
+    CID    CPUSET
+    2      (16, 17, 18, 19, 20, 21, 22, 23)
+    3      (24, 25, 26, 27, 28, 29, 30, 31)
+
+VCPU
+    VID    PID    CID    UTIL NORM STRAND
+    0      16     2      0.4% 0.4%   100%
+    1      17     2      0.1% 0.1%   100%
+    2      18     2      0.0% 0.0%   100%
+    3      19     2      0.0% 0.0%   100%
+    4      20     2      0.1% 0.1%   100%
+    5      21     2      0.0% 0.0%   100%
+    6      22     2      0.0% 0.0%   100%
+    7      23     2      0.1% 0.1%   100%
+    8      24     3      0.1% 0.1%   100%
+    9      25     3      0.1% 0.1%   100%
+    10     26     3      0.1% 0.1%   100%
+    11     27     3      0.1% 0.1%   100%
+    12     28     3      0.0% 0.0%   100%
+    13     29     3      0.0% 0.0%   100%
+    14     30     3      0.0% 0.0%   100%
+    15     31     3      0.0% 0.0%   100%
+
+MEMORY
+    RA               PA               SIZE            
+    0x4000000        0x204000000      1984M
+    0x400000000      0x480000000      6208M
+
+CONSTRAINT
+    cpu=whole-core
+    max-cores=unlimited
+    threading=max-throughput
+
+VARIABLES
+    pm_boot_policy=disabled=0;ttfc=2500000;ttmr=0;
+
+NETWORK
+    NAME             SERVICE                     ID   DEVICE     MAC               MODE   PVID VID                  MTU   LINKPROP  
+    vnet0            primary-vsw0@primary        0    network@0  00:14:4f:f8:56:ee        1                         1500            
+
+DISK
+    NAME             VOLUME                      TOUT ID   DEVICE  SERVER         MPGROUP       
+    vdisk0           vol0_terrys@primary-vds0         0    disk@0  primary                      
+
+VCONS
+    NAME             SERVICE                     PORT   LOGGING
+    terrys           primary-vcc0@primary        5002   on      
+

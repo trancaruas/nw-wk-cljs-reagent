@@ -170,7 +170,7 @@
                        (hash-map ((keyword token) entry) entry))
                  (filter #(re-matches (re-pattern (str "\\|" token "=.+")) %) blob))))
 ;; (parse-token "cid" pri-binding)
-;; {"33" {:cid "33", :cpuset "264,265,266,267,268,269,270,271"}, "1" {:cid "1", :cpuset "8,9,10,11,12,13,14,15"}, "0" {:cid "0", :cpuset "0,1,2,3,4,5,6,7"}, "32" {:cid "32", :cpuset "256,257,258,259,260,261,262,263"}}
+;; {"33" {:cid "33", :cpuset "264,265,266,267,268,269,270,271"}, ...
 ;; (sort (keys (parse-token "cid" pri-binding)))
 ;; ("0" "1" "32" "33")
 
@@ -198,7 +198,7 @@
                                     (parse-token "pa" domain-content)
                                     (parse-token "ra" domain-content))}})))
 ;; (:cids (ldom-config "t58-12023-o6"))
-;; {"41" {:cid "41", :cpuset "328,329,330,331,332,333,334,335"}, "40" {:cid "40", :cpuset "320,321,322,323,324,325,326,327"}}
+;; {"41" {:cid "41", :cpuset "328,329,330,331,332,333,334,335"}, ...
 
 ;; TODO this is unbound resources. move to other readings
 (defn read-dev-config [site]

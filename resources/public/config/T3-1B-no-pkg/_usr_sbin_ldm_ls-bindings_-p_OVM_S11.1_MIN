@@ -1,0 +1,54 @@
+VERSION 1.9
+DOMAIN|name=OVM_S11.1_MIN|state=active|flags=normal|cons=5004|ncpu=4|mem=4294967296|util=0.2|uptime=164960|norm_util=
+UUID|uuid=0ec7726f-131b-c28a-b967-97cce55415bb
+MAC|mac-addr=00:14:4f:fa:5f:fb
+HOSTID|hostid=0x84fa5ffb
+CONTROL|failure-policy=ignore|extended-mapin-space=off|cpu-arch=native|rc-add-policy=|shutdown-group=0
+DEPENDENCY|master= 
+CORE
+|cid=12|cpuset=96,97,98,99
+VCPU
+|vid=0|pid=96|util=0.4%|strand=100|cid=12|norm_util=
+|vid=1|pid=97|util=0.0%|strand=100|cid=12|norm_util=
+|vid=2|pid=98|util=0.1%|strand=100|cid=12|norm_util=
+|vid=3|pid=99|util=0.3%|strand=100|cid=12|norm_util=
+MEMORY
+|ra=0x10000000|pa=0xa10000000|size=4026531840
+|ra=0x400000000|pa=0xbc0000000|size=268435456
+CONSTRAINT|cpu=|max-cores=|threading=max-throughput|physical-bindings=
+VARIABLES
+|OVMTPROP=OVMT KEY1=VALUE1
+|OVMTPROP_0=KEY1=VALUE1
+|OVMTVAR_0=ovmt.prop.key.HOSTNAME=fred
+|OVMTVAR_1=ovmt.prop.key.HOSTNAME=solaris
+|OVMTVAR_10=ovmt.prop.key.SEARCHLIST=oracle.com
+|OVMTVAR_11=ovmt.prop.key.TIMEZONE="US/Pacific"
+|OVMTVAR_2=ovmt.prop.key.ROOTPASSWD='$5$1ZkjJPm6$XDqhjFSfd5mTtUWq6flN4ZULCb4zwsEDiLn889xxQ48'
+|OVMTVAR_3=ovmt.prop.key.USERACC=admin
+|OVMTVAR_4=ovmt.prop.key.USERPASSWD='$5$1ZkjJPm6$XDqhjFSfd5mTtUWq6flN4ZULCb4zwsEDiLn889xxQ48'
+|OVMTVAR_5=ovmt.prop.key.LDGIFNAME=net0
+|OVMTVAR_6=ovmt.prop.key.NETMASK=255.255.255.0
+|OVMTVAR_7=ovmt.prop.key.DEFROUTER=10.0.0.1
+|OVMTVAR_8=ovmt.prop.key.DNSERVER_0=10.0.0.2
+|OVMTVAR_9=ovmt.prop.key.DNSERVER_1=10.0.0.3
+|auto-boot?=true
+|avar_0=var0
+|avar_1=var1
+|boot-device=/virtual-devices@100/channel-devices@200/disk@0:a disk net
+|instring_0=Hi John
+|myname=tony shoumack2
+|myname_1=tony shoumack1
+|nvramrc=setenv tony shoumack2
+|pm_boot_policy=disabled=1;ttfc=0;ttmr=0;
+|setenv=
+|shoumack=
+|tony=
+|use-nvramrc?=true
+VNET|name=vnet0|dev=network@0|service=ovmt-vsw0@primary|mac-addr=00:14:4f:fa:31:0d|mode=|pvid=1|vid=|mtu=1500|linkprop=|id=0
+|peer=ovmt-vsw0@primary|mac-addr=00:14:4f:fa:51:c2|mode=|pvid=1|vid=|mtu=1500
+|peer=vnet1@11GR2DB|mac-addr=00:14:4f:f9:26:b3|mode=|pvid=1|vid=|mtu=1500|linkprop=
+|peer=vnet0@OVM_S11.1|mac-addr=00:14:4f:fb:9f:d7|mode=|pvid=1|vid=|mtu=1500|linkprop=
+|peer=vnet0@WLS_1212_0|mac-addr=00:14:4f:f9:a1:58|mode=|pvid=1|vid=|mtu=1500|linkprop=
+|peer=vnet0@11GR2SE|mac-addr=00:14:4f:fb:e8:42|mode=|pvid=1|vid=|mtu=1500|linkprop=
+VDISK|name=vdisk0|vol=s11.1_min_system@ovmt-vds0|timeout=|dev=disk@0|server=primary|mpgroup=|id=0
+VCONS|group=OVM_S11.1_MIN|service=ovmt-vcc0@primary|port=5004|log=on

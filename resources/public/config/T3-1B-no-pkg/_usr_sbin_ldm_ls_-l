@@ -1,0 +1,563 @@
+NAME             STATE      FLAGS   CONS    VCPU  MEMORY   UTIL  UPTIME
+primary          active     -n-cv-  UART    32    8704M    3.8%  1d 22h 58m
+
+SOFTSTATE
+Solaris running
+
+UUID
+    478d3bda-8bbe-e012-95e6-9d49b3b83a1e
+
+MAC
+    00:21:28:7f:5d:44
+
+HOSTID
+    0x857f5d44
+
+CONTROL
+    failure-policy=ignore
+    extended-mapin-space=off
+    cpu-arch=native
+    rc-add-policy=
+    shutdown-group=0
+
+DEPENDENCY
+    master= 
+
+CORE
+    CID    CPUSET
+    0      (0, 1, 2, 3, 4, 5, 6, 7)
+    4      (32, 33, 34, 35, 36, 37, 38, 39)
+    5      (40, 41, 42, 43, 44, 45, 46, 47)
+    6      (48, 49, 50, 51, 52, 53, 54, 55)
+
+VCPU
+    VID    PID    CID    UTIL STRAND
+    0      0      0      1.3%   100%
+    1      1      0       12%   100%
+    2      2      0      4.5%   100%
+    3      3      0      3.0%   100%
+    4      4      0      0.6%   100%
+    5      5      0      7.3%   100%
+    6      6      0      2.7%   100%
+    7      7      0      1.4%   100%
+    8      32     4      0.7%   100%
+    9      33     4      1.4%   100%
+    10     34     4      7.8%   100%
+    11     35     4      7.2%   100%
+    12     36     4      1.6%   100%
+    13     37     4      1.0%   100%
+    14     38     4      7.4%   100%
+    15     39     4      3.1%   100%
+    16     40     5      3.9%   100%
+    17     41     5      0.2%   100%
+    18     42     5      2.0%   100%
+    19     43     5      7.7%   100%
+    20     44     5      2.0%   100%
+    21     45     5      0.5%   100%
+    22     46     5      1.4%   100%
+    23     47     5       14%   100%
+    24     48     6      9.1%   100%
+    25     49     6      3.9%   100%
+    26     50     6      0.2%   100%
+    27     51     6      1.1%   100%
+    28     52     6      6.6%   100%
+    29     53     6      1.1%   100%
+    30     54     6      2.5%   100%
+    31     55     6      2.5%   100%
+
+MEMORY
+    RA               PA               SIZE            
+    0xc00000000      0xc00000000      256M
+    0xdf0000000      0xdf0000000      8448M
+
+CONSTRAINT
+    threading=max-throughput
+
+VARIABLES
+    OVMTPROP=KEY1=VALUE1
+    OVMTVAR_1000=ovmt.prop.key.test=value
+    TEST=VALUE
+    boot-device=/pci@400/pci@1/pci@0/pci@2/LSI,sas@0/disk@w5000c5001b0669f5,0:a disk net
+    keyboard-layout=US-English
+    pm_boot_policy=disabled=1;ttfc=0;ttmr=0;
+
+IO
+    DEVICE                           PSEUDONYM        OPTIONS
+    pci@400                          pci             
+    niu@480                          niu             
+    pci@400/pci@2/pci@0/pci@4        /SYS/MB/PCI-EM0 
+    pci@400/pci@1/pci@0/pci@4        /SYS/MB/PCI-EM1 
+    pci@400/pci@1/pci@0/pci@c        /SYS/MB/FEM0    
+    pci@400/pci@2/pci@0/pci@c        /SYS/MB/FEM1    
+    pci@400/pci@2/pci@0/pci@2        /SYS/MB/NET0    
+    pci@400/pci@1/pci@0/pci@2        /SYS/MB/REM     
+VCC
+    NAME             PORT-RANGE
+    ovmt-vcc0        5000-5100
+    vcc0             6000-6999
+
+VSW
+    NAME             MAC               NET-DEV   ID   DEVICE     LINKPROP   DEFAULT-VLAN-ID PVID VID                  MTU   MODE   INTER-VNET-LINK
+    ovmt-vsw0        00:14:4f:fa:51:c2 net0      0    switch@0              1               1                         1500         on         
+    routed           00:14:4f:f8:33:77 net3      1    switch@1              1               1                         1500         on         
+    network-public   00:14:4f:f9:6b:ca           2    switch@2              1               1                         1500         on         
+    primary-vsw0     00:14:4f:fa:5b:e2           3    switch@3              1               1                         1500         on         
+
+VDS
+    NAME             VOLUME         OPTIONS          MPGROUP        DEVICE
+    ovmt-vds0        ovmt-11GR2DB-vol1                                 /dpool1//OVMT/11GR2DB/System.img
+                     ovmt-11GR2DB-vol2                                 /dpool1/OVMT/11GR2DB/Product.img
+                     s11.1_system                                   /dpool1/OVMT/OVM_S11.1_SPARC/System.img
+                     S12B24_1-vol0                                  /dpool1/OVMT/OVM_S12B24/S12B24_1/zdisk-ovm-template-s12_24
+                     WLS_1212_0-vol0                                 /dpool1/OVMT/OVM_WLS12.1.2/WLS_1212_0/System.img
+                     WLS_1212_0-vol1                                 /dpool1/OVMT/OVM_WLS12.1.2/WLS_1212_0/Product.img
+                     11gr2se_system                                 /dpool1/OVMT/11GR2SE/System.img
+                     11gr2se_app                                    /dpool1/OVMT/11GR2SE/Product.img
+                     s11.1_min_system                                 /dpool1/OVMT/OVM_S11.1_MIN/System.img
+                     S11.1                                          /dist/OVMT/OVM_S11.1_SPARC_B1/System.img
+                     S11.1CD        ro                              /dist/Solaris/sol-11_1-text-sparc.iso
+    vds0             S10U11-boot                                    /dpool1/OVMT/OVM_S10U11_SPARC/System.img
+                     S10U11-dvd                                     /dist/sol-10-u11-ga-sparc-dvd.iso
+    vds-other       
+
+VCONS
+    NAME             SERVICE                     PORT   LOGGING
+    UART
+
+------------------------------------------------------------------------------
+NAME             STATE      FLAGS   CONS    VCPU  MEMORY   UTIL  UPTIME
+11GR2DB          active     -n----  5001    16    8448M    6.3%  38d 4h 36m
+
+SOFTSTATE
+Solaris running
+
+UUID
+    180bb578-ee70-ca60-d511-915ea281a870
+
+MAC
+    00:14:4f:f9:85:5d
+
+HOSTID
+    0x84f9855d
+
+CONTROL
+    failure-policy=ignore
+    extended-mapin-space=off
+    cpu-arch=native
+    rc-add-policy=
+    shutdown-group=15
+
+DEPENDENCY
+    master= 
+
+CORE
+    CID    CPUSET
+    2      (16, 17, 18, 19, 20, 21, 22, 23)
+    3      (24, 25, 26, 27, 28, 29, 30, 31)
+
+VCPU
+    VID    PID    CID    UTIL STRAND
+    0      16     2      0.3%   100%
+    1      17     2      0.1%   100%
+    2      18     2      0.1%   100%
+    3      19     2      0.0%   100%
+    4      20     2      0.3%   100%
+    5      21     2      0.4%   100%
+    6      22     2      0.1%   100%
+    7      23     2      0.0%   100%
+    8      24     3      0.0%   100%
+    9      25     3      0.0%   100%
+    10     26     3      0.0%   100%
+    11     27     3      0.0%   100%
+    12     28     3      0.0%   100%
+    13     29     3      0.0%   100%
+    14     30     3      100%   100%
+    15     31     3      0.0%   100%
+
+MEMORY
+    RA               PA               SIZE            
+    0x10000000       0x200000000      256M
+    0x80000000       0x270000000      6400M
+    0x590000000      0x790000000      1792M
+
+CONSTRAINT
+    threading=max-throughput
+
+VARIABLES
+    keyboard-layout=US-English
+    pm_boot_policy=disabled=1;ttfc=0;ttmr=0;
+
+NETWORK
+    NAME             SERVICE                     ID   DEVICE     MAC               MODE   PVID VID                  MTU   LINKPROP  
+    vnet1            ovmt-vsw0@primary           0    network@0  00:14:4f:f9:26:b3        1                         1500            
+
+DISK
+    NAME             VOLUME                      TOUT ID   DEVICE  SERVER         MPGROUP       
+    vdisk1           ovmt-11GR2DB-vol1@ovmt-vds0      0    disk@0  primary                      
+    vdisk2           ovmt-11GR2DB-vol2@ovmt-vds0      1    disk@1  primary                      
+
+VCONS
+    NAME             SERVICE                     PORT   LOGGING
+    11GR2DB          ovmt-vcc0@primary           5001   on      
+
+------------------------------------------------------------------------------
+NAME             STATE      FLAGS   CONS    VCPU  MEMORY   UTIL  UPTIME
+11GR2SE          bound      ------  5003    24    8G             
+
+UUID
+    73c71d9c-0f12-6689-c61b-8dac5db5ffe0
+
+MAC
+    00:14:4f:fa:a2:18
+
+HOSTID
+    0x84faa218
+
+CONTROL
+    failure-policy=ignore
+    extended-mapin-space=off
+    cpu-arch=native
+    rc-add-policy=
+    shutdown-group=15
+
+DEPENDENCY
+    master= 
+
+CORE
+    CID    CPUSET
+    9      (72, 73, 74, 75, 76, 77, 78, 79)
+    10     (80, 81, 82, 83, 84, 85, 86, 87)
+    11     (88, 89, 90, 91, 92, 93, 94, 95)
+
+VCPU
+    VID    PID    CID    UTIL STRAND
+    0      72     9             100%
+    1      73     9             100%
+    2      74     9             100%
+    3      75     9             100%
+    4      76     9             100%
+    5      77     9             100%
+    6      78     9             100%
+    7      79     9             100%
+    8      80     10            100%
+    9      81     10            100%
+    10     82     10            100%
+    11     83     10            100%
+    12     84     10            100%
+    13     85     10            100%
+    14     86     10            100%
+    15     87     10            100%
+    16     88     11            100%
+    17     89     11            100%
+    18     90     11            100%
+    19     91     11            100%
+    20     92     11            100%
+    21     93     11            100%
+    22     94     11            100%
+    23     95     11            100%
+
+MEMORY
+    RA               PA               SIZE            
+    0x10000000       0x20000000       7680M
+    0x400000000      0x400000000      512M
+
+CONSTRAINT
+    threading=max-throughput
+
+VARIABLES
+    pm_boot_policy=disabled=1;ttfc=0;ttmr=0;
+
+NETWORK
+    NAME             SERVICE                     ID   DEVICE     MAC               MODE   PVID VID                  MTU   LINKPROP  
+    vnet0            ovmt-vsw0@primary           0    network@0  00:14:4f:fb:e8:42        1                         1500            
+
+DISK
+    NAME             VOLUME                      TOUT ID   DEVICE  SERVER         MPGROUP       
+    vdisk0           11gr2se_system@ovmt-vds0         0    disk@0  primary                      
+    vdisk1           11gr2se_app@ovmt-vds0            1    disk@1  primary                      
+
+VCONS
+    NAME             SERVICE                     PORT   LOGGING
+    11GR2SE          ovmt-vcc0@primary           5003   on      
+
+------------------------------------------------------------------------------
+NAME             STATE      FLAGS   CONS    VCPU  MEMORY   UTIL  UPTIME
+OVM_S11.1        bound      ------  5006    4     2G             
+
+UUID
+    78060c3d-bf90-ccbe-8314-9d934154bb46
+
+MAC
+    00:14:4f:f9:e6:94
+
+HOSTID
+    0x84f9e694
+
+CONTROL
+    failure-policy=ignore
+    extended-mapin-space=off
+    cpu-arch=native
+    rc-add-policy=
+    shutdown-group=15
+
+DEPENDENCY
+    master= 
+
+CORE
+    CID    CPUSET
+    13     (104, 105, 106, 107)
+
+VCPU
+    VID    PID    CID    UTIL STRAND
+    0      104    13            100%
+    1      105    13            100%
+    2      106    13            100%
+    3      107    13            100%
+
+MEMORY
+    RA               PA               SIZE            
+    0x10000000       0xb00000000      2G
+
+CONSTRAINT
+    threading=max-throughput
+
+VARIABLES
+    pm_boot_policy=disabled=1;ttfc=0;ttmr=0;
+
+NETWORK
+    NAME             SERVICE                     ID   DEVICE     MAC               MODE   PVID VID                  MTU   LINKPROP  
+    vnet0            ovmt-vsw0@primary           0    network@0  00:14:4f:fb:9f:d7        1                         1500            
+
+DISK
+    NAME             VOLUME                      TOUT ID   DEVICE  SERVER         MPGROUP       
+    vdisk0           s11.1_system@ovmt-vds0           0    disk@0  primary                      
+
+VCONS
+    NAME             SERVICE                     PORT   LOGGING
+    OVM_S11.1        ovmt-vcc0@primary           5006   on      
+
+------------------------------------------------------------------------------
+NAME             STATE      FLAGS   CONS    VCPU  MEMORY   UTIL  UPTIME
+OVM_S11.1_MIN    active     -n----  5004    4     4G       0.2%  1d 21h 49m
+
+SOFTSTATE
+Solaris running
+
+UUID
+    0ec7726f-131b-c28a-b967-97cce55415bb
+
+MAC
+    00:14:4f:fa:5f:fb
+
+HOSTID
+    0x84fa5ffb
+
+CONTROL
+    failure-policy=ignore
+    extended-mapin-space=off
+    cpu-arch=native
+    rc-add-policy=
+    shutdown-group=0
+
+DEPENDENCY
+    master= 
+
+CORE
+    CID    CPUSET
+    12     (96, 97, 98, 99)
+
+VCPU
+    VID    PID    CID    UTIL STRAND
+    0      96     12     0.4%   100%
+    1      97     12     0.0%   100%
+    2      98     12     0.1%   100%
+    3      99     12     0.3%   100%
+
+MEMORY
+    RA               PA               SIZE            
+    0x10000000       0xa10000000      3840M
+    0x400000000      0xbc0000000      256M
+
+CONSTRAINT
+    threading=max-throughput
+
+VARIABLES
+    OVMTPROP=OVMT KEY1=VALUE1
+    OVMTPROP_0=KEY1=VALUE1
+    OVMTVAR_0=ovmt.prop.key.HOSTNAME=fred
+    OVMTVAR_1=ovmt.prop.key.HOSTNAME=solaris
+    OVMTVAR_10=ovmt.prop.key.SEARCHLIST=oracle.com
+    OVMTVAR_11=ovmt.prop.key.TIMEZONE="US/Pacific"
+    OVMTVAR_2=ovmt.prop.key.ROOTPASSWD='$5$1ZkjJPm6$XDqhjFSfd5mTtUWq6flN4ZULCb4zwsEDiLn889xxQ48'
+    OVMTVAR_3=ovmt.prop.key.USERACC=admin
+    OVMTVAR_4=ovmt.prop.key.USERPASSWD='$5$1ZkjJPm6$XDqhjFSfd5mTtUWq6flN4ZULCb4zwsEDiLn889xxQ48'
+    OVMTVAR_5=ovmt.prop.key.LDGIFNAME=net0
+    OVMTVAR_6=ovmt.prop.key.NETMASK=255.255.255.0
+    OVMTVAR_7=ovmt.prop.key.DEFROUTER=10.0.0.1
+    OVMTVAR_8=ovmt.prop.key.DNSERVER_0=10.0.0.2
+    OVMTVAR_9=ovmt.prop.key.DNSERVER_1=10.0.0.3
+    auto-boot?=true
+    avar_0=var0
+    avar_1=var1
+    boot-device=/virtual-devices@100/channel-devices@200/disk@0:a disk net
+    instring_0=Hi John
+    myname=tony shoumack2
+    myname_1=tony shoumack1
+    nvramrc=setenv tony shoumack2
+    pm_boot_policy=disabled=1;ttfc=0;ttmr=0;
+    setenv=
+    shoumack=
+    tony=
+    use-nvramrc?=true
+
+NETWORK
+    NAME             SERVICE                     ID   DEVICE     MAC               MODE   PVID VID                  MTU   LINKPROP  
+    vnet0            ovmt-vsw0@primary           0    network@0  00:14:4f:fa:31:0d        1                         1500            
+
+DISK
+    NAME             VOLUME                      TOUT ID   DEVICE  SERVER         MPGROUP       
+    vdisk0           s11.1_min_system@ovmt-vds0       0    disk@0  primary                      
+
+VCONS
+    NAME             SERVICE                     PORT   LOGGING
+    OVM_S11.1_MIN    ovmt-vcc0@primary           5004   on      
+
+------------------------------------------------------------------------------
+NAME             STATE      FLAGS   CONS    VCPU  MEMORY   UTIL  UPTIME
+S12B24_1         active     -n----  5002    8     4G       0.1%  30d 2h 38m
+
+SOFTSTATE
+Solaris running
+
+UUID
+    7ee92298-43c1-ea61-e63b-941d49dc5560
+
+MAC
+    00:14:4f:fb:04:be
+
+HOSTID
+    0x84fb04be
+
+CONTROL
+    failure-policy=ignore
+    extended-mapin-space=off
+    cpu-arch=native
+    rc-add-policy=
+    shutdown-group=15
+
+DEPENDENCY
+    master= 
+
+CORE
+    CID    CPUSET
+    7      (56, 57, 58, 59, 60, 61, 62, 63)
+
+VCPU
+    VID    PID    CID    UTIL STRAND
+    0      56     7      0.3%   100%
+    1      57     7      0.1%   100%
+    2      58     7      0.1%   100%
+    3      59     7      0.0%   100%
+    4      60     7      0.1%   100%
+    5      61     7      0.3%   100%
+    6      62     7      0.0%   100%
+    7      63     7      0.0%   100%
+
+MEMORY
+    RA               PA               SIZE            
+    0x10000000       0xb80000000      1G
+    0x400000000      0xd30000000      3G
+
+CONSTRAINT
+    threading=max-throughput
+
+VARIABLES
+    pm_boot_policy=disabled=1;ttfc=0;ttmr=0;
+
+NETWORK
+    NAME             SERVICE                     ID   DEVICE     MAC               MODE   PVID VID                  MTU   LINKPROP  
+    vnet0            primary-vsw0@primary        0    network@0  00:14:4f:fb:de:59        1                         1500            
+
+DISK
+    NAME             VOLUME                      TOUT ID   DEVICE  SERVER         MPGROUP       
+    vdisk0           S12B24_1-vol0@ovmt-vds0          0    disk@0  primary                      
+
+VCONS
+    NAME             SERVICE                     PORT   LOGGING
+    S12B24_1         ovmt-vcc0@primary           5002   on      
+
+------------------------------------------------------------------------------
+NAME             STATE      FLAGS   CONS    VCPU  MEMORY   UTIL  UPTIME
+WLS_1212_0       active     -n----  5000    16    8G       0.1%  20d 22h 58m
+
+SOFTSTATE
+Solaris running
+
+UUID
+    b0df388a-69ab-e61b-c327-f1b7314dc5a9
+
+MAC
+    00:14:4f:f9:8c:db
+
+HOSTID
+    0x84f98cdb
+
+CONTROL
+    failure-policy=ignore
+    extended-mapin-space=off
+    cpu-arch=native
+    rc-add-policy=
+    shutdown-group=15
+
+DEPENDENCY
+    master= 
+
+CORE
+    CID    CPUSET
+    1      (8, 9, 10, 11, 12, 13, 14, 15)
+    8      (64, 65, 66, 67, 68, 69, 70, 71)
+
+VCPU
+    VID    PID    CID    UTIL STRAND
+    0      8      1      0.3%   100%
+    1      9      1      0.0%   100%
+    2      10     1      0.7%   100%
+    3      11     1      0.0%   100%
+    4      12     1      0.0%   100%
+    5      13     1      0.0%   100%
+    6      14     1      0.0%   100%
+    7      15     1      0.1%   100%
+    8      64     8      0.0%   100%
+    9      65     8      0.0%   100%
+    10     66     8      0.0%   100%
+    11     67     8      0.1%   100%
+    12     68     8      0.0%   100%
+    13     69     8      0.0%   100%
+    14     70     8      0.0%   100%
+    15     71     8      0.0%   100%
+
+MEMORY
+    RA               PA               SIZE            
+    0x10000000       0x210000000      1536M
+    0x400000000      0x600000000      6400M
+    0x800000000      0xa00000000      256M
+
+CONSTRAINT
+    threading=max-throughput
+
+VARIABLES
+    pm_boot_policy=disabled=1;ttfc=0;ttmr=0;
+
+NETWORK
+    NAME             SERVICE                     ID   DEVICE     MAC               MODE   PVID VID                  MTU   LINKPROP  
+    vnet0            ovmt-vsw0@primary           0    network@0  00:14:4f:f9:a1:58        1                         1500            
+
+DISK
+    NAME             VOLUME                      TOUT ID   DEVICE  SERVER         MPGROUP       
+    vdisk0           WLS_1212_0-vol0@ovmt-vds0        0    disk@0  primary                      
+    vdisk1           WLS_1212_0-vol1@ovmt-vds0        1    disk@1  primary                      
+
+VCONS
+    NAME             SERVICE                     PORT   LOGGING
+    WLS_1212_0       ovmt-vcc0@primary           5000   on      
+

@@ -1,0 +1,9 @@
+
+Logical Domains Manager (v 3.1.0.0.24)
+	Hypervisor control protocol v 1.9
+	Using Hypervisor MD v 1.4
+
+System PROM:
+	Hostconfig	v. 1.2.3.	@(#)Hostconfig 1.2.3.b 2013/04/23 07:41 [solana-yf:release]
+	Hypervisor	v. 1.11.3.	@(#)Hypervisor 1.11.3.b 2013/04/23 07:05
+	OpenBoot	v. 4.34.3.	@(#)OpenBoot 4.34.3.a 2013/07/29 13:21

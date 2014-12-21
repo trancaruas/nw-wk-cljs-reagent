@@ -1,0 +1,266 @@
+NAME             STATE      FLAGS   CONS    VCPU  MEMORY   UTIL  UPTIME
+primary          active     -n-cv-  SP      32    32512M   0.3%  10d 6h 43m
+
+SOFTSTATE
+Solaris running
+
+UUID
+    40c3155c-4c63-4dc4-f30f-dc3e6dbc99c8
+
+MAC
+    00:21:28:4f:58:64
+
+HOSTID
+    0x854f5864
+
+CONTROL
+    failure-policy=ignore
+    extended-mapin-space=off
+    cpu-arch=native
+    rc-add-policy=
+    shutdown-group=0
+
+DEPENDENCY
+    master= 
+
+CORE
+    CID    CPUSET
+    0      (0, 1, 2, 3, 4, 5, 6, 7)
+    5      (40, 41, 42, 43, 44, 45, 46, 47)
+    6      (48, 49, 50, 51, 52, 53, 54, 55)
+    7      (56, 57, 58, 59, 60, 61, 62, 63)
+
+VCPU
+    VID    PID    CID    UTIL STRAND
+    0      0      0      0.3%   100%
+    1      1      0      0.0%   100%
+    2      2      0      0.0%   100%
+    3      3      0      0.0%   100%
+    4      4      0      0.2%   100%
+    5      5      0      0.1%   100%
+    6      6      0      0.0%   100%
+    7      7      0      0.0%   100%
+    8      56     7      0.0%   100%
+    9      57     7      0.0%   100%
+    10     58     7      0.1%   100%
+    11     59     7      0.0%   100%
+    12     60     7      0.0%   100%
+    13     61     7      0.0%   100%
+    14     62     7      0.1%   100%
+    15     63     7      0.0%   100%
+    16     48     6      0.1%   100%
+    17     49     6      0.0%   100%
+    18     50     6      0.0%   100%
+    19     51     6      0.0%   100%
+    20     52     6      0.1%   100%
+    21     53     6      1.8%   100%
+    22     54     6      0.0%   100%
+    23     55     6      0.0%   100%
+    24     40     5      2.7%   100%
+    25     41     5      0.0%   100%
+    26     42     5      0.0%   100%
+    27     43     5      0.0%   100%
+    28     44     5      0.0%   100%
+    29     45     5      0.0%   100%
+    30     46     5      0.0%   100%
+    31     47     5      0.0%   100%
+
+MAU
+    ID     CPUSET
+    0      (0, 1, 2, 3, 4, 5, 6, 7)
+    7      (56, 57, 58, 59, 60, 61, 62, 63)
+
+MEMORY
+    RA               PA               SIZE            
+    0x8000000        0x8000000        7680M
+    0x400000000      0x9f0000000      16G
+    0x810000000      0xdf0000000      512M
+    0xc00000000      0xe10000000      7936M
+
+CONSTRAINT
+    threading=max-throughput
+
+VARIABLES
+    boot-device=/pci@0/pci@0/pci@2/scsi@0/disk@0,0:a disk net
+    pm_boot_policy=disabled=1;ttfc=0;ttmr=0;
+
+IO
+    DEVICE                           PSEUDONYM        OPTIONS
+    pci@0                            pci             
+    niu@80                           niu             
+    pci@0/pci@0/pci@8/pci@0/pci@9    MB/RISER0/PCIE0 
+    pci@0/pci@0/pci@8/pci@0/pci@1    MB/RISER1/PCIE1 
+    pci@0/pci@0/pci@9                MB/RISER2/PCIE2 
+    pci@0/pci@0/pci@8/pci@0/pci@a    MB/RISER0/PCIE3 
+    pci@0/pci@0/pci@8/pci@0/pci@2    MB/RISER1/PCIE4 
+    pci@0/pci@0/pci@8/pci@0/pci@8    MB/RISER2/PCIE5 
+    pci@0/pci@0/pci@1/pci@0/pci@2    MB/NET0         
+    pci@0/pci@0/pci@1/pci@0/pci@3    MB/NET2         
+    pci@0/pci@0/pci@2                MB/SASHBA       
+VCC
+    NAME             PORT-RANGE
+    primary-vcc0     5000-5100
+
+VSW
+    NAME             MAC               NET-DEV   ID   DEVICE     LINKPROP   DEFAULT-VLAN-ID PVID VID                  MTU   MODE   INTER-VNET-LINK
+    primary-vsw0     00:14:4f:fb:a7:1f net2      0    switch@0              1               1                         1500         on         
+    private-vsw1     00:14:4f:fb:52:3c           1    switch@1              1               1                         1500         on         
+
+VDS
+    NAME             VOLUME         OPTIONS          MPGROUP        DEVICE
+    ovmt-vds0        test1_0-vol0                                   /newldoms/test1_0/dom1
+                     dom1                                           /ldoms/dom1
+                     t4                                             /dev/rdsk/c3t4d0s2
+                     t5                                             /dev/rdsk/c3t5d0s2
+                     cdrom                                          /root/sol-11-1111-text-sparc.iso
+                     cdrom10                                        /distro/sol-10-u11-ga-sparc-dvd.iso
+                     dom10                                          /ldoms/dom10/system
+
+VCONS
+    NAME             SERVICE                     PORT   LOGGING
+                     SP
+
+------------------------------------------------------------------------------
+NAME             STATE      FLAGS   CONS    VCPU  MEMORY   UTIL  UPTIME
+dom10            bound      ------  5000    8     8G             
+
+UUID
+    728fda28-18af-e0fc-ef7b-e3b28a5bb522
+
+MAC
+    00:14:4f:f9:cc:e2
+
+HOSTID
+    0x84f9cce2
+
+CONTROL
+    failure-policy=ignore
+    extended-mapin-space=off
+    cpu-arch=native
+    rc-add-policy=
+    shutdown-group=15
+
+DEPENDENCY
+    master= 
+
+CORE
+    CID    CPUSET
+    1      (8, 9, 10, 11, 12, 13, 14, 15)
+
+VCPU
+    VID    PID    CID    UTIL STRAND
+    0      8      1             100%
+    1      9      1             100%
+    2      10     1             100%
+    3      11     1             100%
+    4      12     1             100%
+    5      13     1             100%
+    6      14     1             100%
+    7      15     1             100%
+
+MEMORY
+    RA               PA               SIZE            
+    0x8000000        0x1e8000000      8G
+
+CONSTRAINT
+    threading=max-throughput
+
+VARIABLES
+    boot-device=disk:a cdrom10
+    keyboard-layout=US-English
+
+NETWORK
+    NAME             SERVICE                     ID   DEVICE     MAC               MODE   PVID VID                  MTU   LINKPROP  
+    vnet0            primary-vsw0@primary        0    network@0  00:14:4f:fa:70:5f        1                         1500            
+
+DISK
+    NAME             VOLUME                      TOUT ID   DEVICE  SERVER         MPGROUP       
+    dom10            dom10@ovmt-vds0                  0    disk@0  primary                      
+
+VCONS
+    NAME             SERVICE                     PORT   LOGGING
+    dom10            primary-vcc0@primary        5000   on      
+
+------------------------------------------------------------------------------
+NAME             STATE      FLAGS   CONS    VCPU  MEMORY   UTIL  UPTIME
+dom1             inactive   ------          32    32G            
+
+UUID
+    665ad291-ec28-60d3-a823-b99584141d5d
+
+MAC
+    00:14:4f:fb:e8:e3
+
+CONTROL
+    failure-policy=ignore
+    extended-mapin-space=off
+    cpu-arch=native
+    rc-add-policy=
+    shutdown-group=0
+
+DEPENDENCY
+    master= 
+
+CORE
+    COUNT:    4
+
+MAU
+    COUNT:    4
+
+MEMORY
+    SIZE:    32G
+
+CONSTRAINT
+    cpu=whole-core
+    max-cores=unlimited
+    threading=max-throughput
+
+VARIABLES
+    boot-device=/virtual-devices@100/channel-devices@200/disk@0:a cdrom
+    pm_boot_policy=disabled=1;ttfc=0;ttmr=0;
+
+NETWORK
+    NAME             SERVICE                     ID   DEVICE     MAC               MODE   PVID VID                  MTU   LINKPROP  
+    vnet1            primary-vsw0                0               00:14:4f:fb:80:74        1                                         
+
+DISK
+    NAME             VOLUME                      TOUT ID   DEVICE  SERVER         MPGROUP       
+    vdisk1           dom1@ovmt-vds0                   0                                         
+
+------------------------------------------------------------------------------
+NAME             STATE      FLAGS   CONS    VCPU  MEMORY   UTIL  UPTIME
+test1_0          inactive   ------          8     32G            
+
+UUID
+    4148a73c-0bff-cddf-965c-9a46ef2b19b8
+
+MAC
+    00:14:4f:fb:4b:06
+
+CONTROL
+    failure-policy=ignore
+    extended-mapin-space=off
+    cpu-arch=native
+    rc-add-policy=
+    shutdown-group=15
+
+DEPENDENCY
+    master= 
+
+MEMORY
+    SIZE:    32G
+
+CONSTRAINT
+    threading=max-throughput
+
+VARIABLES
+    pm_boot_policy=disabled=1;ttfc=0;ttmr=0;
+
+NETWORK
+    NAME             SERVICE                     ID   DEVICE     MAC               MODE   PVID VID                  MTU   LINKPROP  
+    vnet0            primary-vsw0                0               00:14:4f:fa:2e:48        1                                         
+
+DISK
+    NAME             VOLUME                      TOUT ID   DEVICE  SERVER         MPGROUP       
+    vdisk0           test1_0-vol0@ovmt-vds0           0                                         
+

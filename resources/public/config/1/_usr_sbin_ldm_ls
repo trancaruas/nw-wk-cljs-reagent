@@ -1,0 +1,4 @@
+NAME             STATE      FLAGS   CONS    VCPU  MEMORY   UTIL  UPTIME
+primary          active     -n-cv-  SP      96    48928M   0.4%  22d 4h 48m
+ldg1             active     -t----  5000    16    16G      6.2%  153d 14h 
+ovmt-1           inactive   ------          16    16G            

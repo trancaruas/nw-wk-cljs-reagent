@@ -1,0 +1,11 @@
+VERSION 1.5
+|dev=pci@400|alias=pci_0|domain=primary
+|dev=pci@500|alias=pci_1|domain=primary
+|dev=pci@400/pci@0/pci@c|alias=PCIE1|status=EMP|domain=-
+|dev=pci@400/pci@0/pci@9|alias=PCIE2|status=EMP|domain=ldg1
+|dev=pci@400/pci@0/pci@d|alias=PCIE3|status=EMP|domain=ldg1
+|dev=pci@400/pci@0/pci@8|alias=MB/SASHBA|status=OCC|domain=primary
+|dev=pci@500/pci@0/pci@9|alias=PCIE0|status=OCC|domain=primary
+|dev=pci@500/pci@0/pci@d|alias=PCIE4|status=EMP|domain=-
+|dev=pci@500/pci@0/pci@c|alias=PCIE5|status=EMP|domain=-
+|dev=pci@500/pci@0/pci@8|alias=MB/NET0|status=OCC|domain=primary

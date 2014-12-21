@@ -1,0 +1,5 @@
+NAME             STATE      FLAGS   CONS    VCPU  MEMORY   UTIL  UPTIME
+primary          active     -n-cv-  SP      32    32512M   0.3%  10d 6h 43m
+dom10            bound      ------  5000    8     8G             
+dom1             inactive   ------          32    32G            
+test1_0          inactive   ------          8     32G            

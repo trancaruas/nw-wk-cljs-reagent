@@ -1,0 +1,73 @@
+VERSION 1.11
+DOMAIN|name=primary|state=active|flags=normal,control,vio-service|cons=UART|ncpu=16|mem=17179869184|util=10.7|uptime=1103026|norm_util=10.7
+UUID|uuid=b416e6c9-727f-c31c-ac0d-e562e546c0d1
+MAC|mac-addr=00:21:28:bd:2d:fc
+HOSTID|hostid=0x85bd2dfc
+CONTROL|failure-policy=ignore|extended-mapin-space=off|cpu-arch=native|rc-add-policy=iov|shutdown-group=0
+DEPENDENCY|master= 
+CORE
+|cid=0|cpuset=0,1,2,3,4,5,6,7
+|cid=1|cpuset=8,9,10,11,12,13,14,15
+VCPU
+|vid=0|pid=0|util=2.3%|strand=100|cid=0|norm_util=2.3%
+|vid=1|pid=1|util= 16%|strand=100|cid=0|norm_util= 16%
+|vid=2|pid=2|util=1.5%|strand=100|cid=0|norm_util=1.5%
+|vid=3|pid=3|util=1.9%|strand=100|cid=0|norm_util=1.9%
+|vid=4|pid=4|util= 12%|strand=100|cid=0|norm_util= 12%
+|vid=5|pid=5|util=2.5%|strand=100|cid=0|norm_util=2.5%
+|vid=6|pid=6|util= 21%|strand=100|cid=0|norm_util= 21%
+|vid=7|pid=7|util=2.7%|strand=100|cid=0|norm_util=2.7%
+|vid=8|pid=8|util=1.8%|strand=100|cid=1|norm_util=1.8%
+|vid=9|pid=9|util= 17%|strand=100|cid=1|norm_util= 17%
+|vid=10|pid=10|util=1.9%|strand=100|cid=1|norm_util=1.9%
+|vid=11|pid=11|util= 41%|strand=100|cid=1|norm_util= 41%
+|vid=12|pid=12|util=1.3%|strand=100|cid=1|norm_util=1.3%
+|vid=13|pid=13|util=1.6%|strand=100|cid=1|norm_util=1.6%
+|vid=14|pid=14|util=1.9%|strand=100|cid=1|norm_util=1.9%
+|vid=15|pid=15|util= 12%|strand=100|cid=1|norm_util= 12%
+MEMORY
+|ra=0x20000000|pa=0x20000000|size=268435456
+|ra=0x80000000|pa=0x80000000|size=3221225472
+|ra=0x480000000|pa=0x180000000|size=2147483648
+|ra=0x1000000000|pa=0xc00000000|size=11542724608
+CONSTRAINT|cpu=|max-cores=|threading=max-throughput|physical-bindings=
+VARIABLES
+|boot-device=/pci@400/pci@2/pci@0/pci@e/scsi@0/disk@w5000c50033295ab1,0:a disk1
+|boot-file=-kv
+|pm_boot_policy=disabled=0;ttfc=2500000;ttmr=0;
+IO
+|dev=pci@400|alias=pci_0|evacuated=no
+|dev=niu@480|alias=niu_0|evacuated=no
+|dev=niu@580|alias=niu_1|evacuated=no
+|dev=pci@400/pci@2/pci@0/pci@8|alias=/SYS/MB/PCIE0|evacuated=no
+|dev=pci@400/pci@2/pci@0/pci@4|alias=/SYS/MB/PCIE2|evacuated=no
+|dev=pci@400/pci@2/pci@0/pci@0|alias=/SYS/MB/PCIE4|evacuated=no
+|dev=pci@400/pci@1/pci@0/pci@8|alias=/SYS/MB/PCIE6|evacuated=no
+|dev=pci@400/pci@1/pci@0/pci@c|alias=/SYS/MB/PCIE8|evacuated=no
+|dev=pci@400/pci@2/pci@0/pci@e|alias=/SYS/MB/SASHBA|evacuated=no
+|dev=pci@400/pci@1/pci@0/pci@4|alias=/SYS/MB/NET0|evacuated=no
+VCC|name=primary-vcc0|port-range=5000-5200
+|client=ldg2@primary-vcc0|port=5000|log=on
+|client=ldg1@primary-vcc0|port=5001|log=on
+|client=terrys@primary-vcc0|port=5002|log=on
+VSW|name=primary-vsw0|mac-addr=00:14:4f:f8:5f:f6|net-dev=net0|dev=switch@0|default-vlan-id=1|pvid=1|vid=|mode=|mtu=1500|linkprop=|inter-vnet-link=on|id=0
+|peer=net@ldg2|mac-addr=00:14:4f:fa:10:8a|pvid=1|vid=|mtu=1500
+|peer=vnet1@ldg1|mac-addr=00:14:4f:f8:b9:fa|pvid=1|vid=|mtu=1500
+|peer=vnet0@terrys|mac-addr=00:14:4f:f8:56:ee|pvid=1|vid=|mtu=1500
+VSW|name=vsw-on-igb3|mac-addr=00:14:4f:fa:13:52|net-dev=|dev=switch@2|default-vlan-id=1|pvid=1|vid=|mode=|mtu=1500|linkprop=|inter-vnet-link=on|id=2
+VSW|name=vsw-on-igb2|mac-addr=00:14:4f:f9:40:c1|net-dev=|dev=switch@1|default-vlan-id=1|pvid=1|vid=|mode=|mtu=1500|linkprop=|inter-vnet-link=on|id=1
+VDS|name=primary-vds0
+|vol=disk-ldg2|opts=|dev=/net/dt241-150/rpool/test/11.1.haik1/ldg2/disk.img|mpgroup=foo
+|vol=disk-ldg1|opts=|dev=/net/dt241-150/rpool/test/11.1.haik1/ldg1/disk.img|mpgroup=
+|vol=disk-secondary|opts=|dev=/net/dt241-150/rpool/test/11.1.haik1/ldg3/disk.img|mpgroup=
+|vol=rac1-root-from-csqa151-42|opts=|dev=/tmp/foo1|mpgroup=
+|vol=rac1-root-from-csqa151-53|opts=|dev=/tmp/foo2|mpgroup=
+|vol=rac1-root-from-csqa151-62|opts=|dev=/tmp/foo3|mpgroup=
+|vol=rac1-root-from-csqa151-71|opts=|dev=/tmp/foo4|mpgroup=
+|vol=database-disk-100g|opts=|dev=/tmp/foo5|mpgroup=
+|vol=database-disk-800g|opts=|dev=/tmp/foo6|mpgroup=
+|vol=vol0_terrys|opts=|dev=/rpool/test/12.0/25d/terrys/disk.img|mpgroup=
+|client=vdisk-2a@ldg2|vol=disk-ldg2
+|client=vdisk1@ldg1|vol=disk-ldg1
+|client=vdisk0@terrys|vol=vol0_terrys
+VCONS|type=UART

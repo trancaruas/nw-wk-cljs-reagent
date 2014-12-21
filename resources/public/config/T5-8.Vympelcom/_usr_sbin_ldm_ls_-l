@@ -1,0 +1,316 @@
+NAME             STATE      FLAGS   CONS    VCPU  MEMORY   UTIL  NORM  UPTIME
+primary          active     -n-cv-  UART    10    10G      1.9%  1.9%  5h 29m
+
+SOFTSTATE
+Solaris running
+
+UUID
+    19119a7f-fe7c-4765-86f6-e57508b32c12
+
+MAC
+    00:10:e0:2a:6f:48
+
+HOSTID
+    0x862a6f48
+
+CONTROL
+    failure-policy=ignore
+    extended-mapin-space=off
+    cpu-arch=native
+    rc-add-policy=
+    shutdown-group=0
+
+DEPENDENCY
+    master= 
+
+CORE
+    CID    CPUSET
+    0      (0, 1)
+    112    (896, 897, 898, 899, 900, 901, 902, 903)
+
+VCPU
+    VID    PID    CID    UTIL NORM STRAND
+    0      0      0      0.4% 0.4%   100%
+    1      1      0      0.3% 0.3%   100%
+    2      896    112    0.2% 0.2%   100%
+    3      897    112    0.3% 0.3%   100%
+    4      898    112    0.2% 0.2%   100%
+    5      899    112    0.1% 0.1%   100%
+    6      900    112    0.1% 0.1%   100%
+    7      901    112    0.1% 0.1%   100%
+    8      902    112    0.1% 0.1%   100%
+    9      903    112    0.1% 0.1%   100%
+
+MEMORY
+    RA               PA               SIZE            
+    0x30000000       0x30000000       2G
+    0x2000000000     0x380000000000   8G
+
+CONSTRAINT
+    threading=max-throughput
+
+VARIABLES
+    auto-boot?=false
+    pm_boot_policy=disabled=1;ttfc=0;ttmr=0;
+
+IO
+    DEVICE                           PSEUDONYM        OPTIONS
+    pci@300                          pci_0           
+    pci@340                          pci_1           
+    pci@380                          pci_2           
+    pci@3c0                          pci_3           
+    pci@400                          pci_4           
+    pci@440                          pci_5           
+    pci@480                          pci_6           
+    pci@4c0                          pci_7           
+    pci@500                          pci_8           
+    pci@540                          pci_9           
+    pci@580                          pci_10          
+    pci@5c0                          pci_11          
+    pci@600                          pci_12          
+    pci@640                          pci_13          
+    pci@680                          pci_14          
+    pci@6c0                          pci_15          
+    pci@300/pci@1/pci@0/pci@6        /SYS/RCSA/PCIE1 
+    pci@300/pci@1/pci@0/pci@4/pci@0/pci@c /SYS/MB/SASHBA0 
+    pci@300/pci@1/pci@0/pci@4/pci@0/pci@8 /SYS/RIO/NET0   
+    pci@340/pci@1/pci@0/pci@6        /SYS/RCSA/PCIE3 
+    pci@380/pci@1/pci@0/pci@a        /SYS/RCSA/PCIE9 
+    pci@3c0/pci@1/pci@0/pci@e        /SYS/RCSA/PCIE11
+    pci@400/pci@1/pci@0/pci@c        /SYS/RCSA/PCIE2 
+    pci@440/pci@1/pci@0/pci@c        /SYS/RCSA/PCIE4 
+    pci@480/pci@1/pci@0/pci@4        /SYS/RCSA/PCIE10
+    pci@4c0/pci@1/pci@0/pci@8        /SYS/RCSA/PCIE12
+    pci@500/pci@1/pci@0/pci@e        /SYS/RCSA/PCIE5 
+    pci@540/pci@1/pci@0/pci@e        /SYS/RCSA/PCIE7 
+    pci@580/pci@1/pci@0/pci@a        /SYS/RCSA/PCIE13
+    pci@5c0/pci@1/pci@0/pci@8        /SYS/RCSA/PCIE15
+    pci@600/pci@1/pci@0/pci@8        /SYS/RCSA/PCIE6 
+    pci@640/pci@1/pci@0/pci@8        /SYS/RCSA/PCIE8 
+    pci@680/pci@1/pci@0/pci@4        /SYS/RCSA/PCIE14
+    pci@6c0/pci@1/pci@0/pci@4        /SYS/RCSA/PCIE16
+    pci@6c0/pci@1/pci@0/pci@c/pci@0/pci@c /SYS/MB/SASHBA1 
+    pci@6c0/pci@1/pci@0/pci@c/pci@0/pci@4 /SYS/RIO/NET2   
+VCC
+    NAME             PORT-RANGE
+    primary-vcc0     5000-5100
+
+VSW
+    NAME             MAC               NET-DEV   ID   DEVICE     LINKPROP   DEFAULT-VLAN-ID PVID VID                  MTU   MODE   INTER-VNET-LINK
+    primary-vsw0     00:14:4f:f8:6e:29 net0      0    switch@0              1               1                         1500         on         
+
+VDS
+    NAME             VOLUME         OPTIONS          MPGROUP        DEVICE
+    primary-vds0     zdisk0                                         /dev/zvol/dsk/ldpool/ld_grabby/zdisk0
+                     ams_25000_240                                  /dev/vx/dmp/ams_25000_240s2
+                     ams_25000_239                                  /dev/vx/dmp/ams_25000_239s2
+                     hus_1500_28                                    /dev/vx/dmp/hus_1500_28s2
+                     hus_1500_29                                    /dev/vx/dmp/hus_1500_29s2
+
+VCONS
+    NAME             SERVICE                     PORT   LOGGING
+                     UART
+
+------------------------------------------------------------------------------
+NAME             STATE      FLAGS   CONS    VCPU  MEMORY   UTIL  NORM  UPTIME
+ld_grabby        active     -n----  5000    128   32G      0.0%  0.0%  4h 58m
+
+SOFTSTATE
+Solaris running
+
+UUID
+    a9daf222-18c5-c81e-8b3c-abeef74bba53
+
+MAC
+    00:14:4f:fa:21:50
+
+HOSTID
+    0x84fa2150
+
+CONTROL
+    failure-policy=ignore
+    extended-mapin-space=off
+    cpu-arch=native
+    rc-add-policy=
+    shutdown-group=15
+
+DEPENDENCY
+    master= 
+
+CORE
+    CID    CPUSET
+    16     (128, 129, 130, 131, 132, 133, 134, 135)
+    17     (136, 137, 138, 139, 140, 141, 142, 143)
+    18     (144, 145, 146, 147, 148, 149, 150, 151)
+    19     (152, 153, 154, 155, 156, 157, 158, 159)
+    20     (160, 161, 162, 163, 164, 165, 166, 167)
+    21     (168, 169, 170, 171, 172, 173, 174, 175)
+    22     (176, 177, 178, 179, 180, 181, 182, 183)
+    23     (184, 185, 186, 187, 188, 189, 190, 191)
+    24     (192, 193, 194, 195, 196, 197, 198, 199)
+    25     (200, 201, 202, 203, 204, 205, 206, 207)
+    26     (208, 209, 210, 211, 212, 213, 214, 215)
+    27     (216, 217, 218, 219, 220, 221, 222, 223)
+    28     (224, 225, 226, 227, 228, 229, 230, 231)
+    29     (232, 233, 234, 235, 236, 237, 238, 239)
+    30     (240, 241, 242, 243, 244, 245, 246, 247)
+    31     (248, 249, 250, 251, 252, 253, 254, 255)
+
+VCPU
+    VID    PID    CID    UTIL NORM STRAND
+    0      128    16     0.2% 0.2%   100%
+    1      129    16     0.0% 0.0%   100%
+    2      130    16     0.0% 0.0%   100%
+    3      131    16     0.0% 0.0%   100%
+    4      132    16     0.0% 0.0%   100%
+    5      133    16     0.0% 0.0%   100%
+    6      134    16     0.0% 0.0%   100%
+    7      135    16     0.0% 0.0%   100%
+    8      136    17     0.0% 0.0%   100%
+    9      137    17     0.0% 0.0%   100%
+    10     138    17     0.0% 0.0%   100%
+    11     139    17     0.0% 0.0%   100%
+    12     140    17     0.0% 0.0%   100%
+    13     141    17     0.0% 0.0%   100%
+    14     142    17     0.0% 0.0%   100%
+    15     143    17     0.0% 0.0%   100%
+    16     144    18     0.0% 0.0%   100%
+    17     145    18     0.0% 0.0%   100%
+    18     146    18     0.0% 0.0%   100%
+    19     147    18     0.0% 0.0%   100%
+    20     148    18     0.0% 0.0%   100%
+    21     149    18     0.0% 0.0%   100%
+    22     150    18     0.0% 0.0%   100%
+    23     151    18     0.0% 0.0%   100%
+    24     152    19     0.0% 0.0%   100%
+    25     153    19     0.0% 0.0%   100%
+    26     154    19     0.0% 0.0%   100%
+    27     155    19     0.0% 0.0%   100%
+    28     156    19     0.0% 0.0%   100%
+    29     157    19     0.1% 0.1%   100%
+    30     158    19     0.0% 0.0%   100%
+    31     159    19     0.0% 0.0%   100%
+    32     160    20     0.0% 0.0%   100%
+    33     161    20     0.0% 0.0%   100%
+    34     162    20     0.0% 0.0%   100%
+    35     163    20     0.0% 0.0%   100%
+    36     164    20     0.0% 0.0%   100%
+    37     165    20     0.0% 0.0%   100%
+    38     166    20     0.0% 0.0%   100%
+    39     167    20     0.0% 0.0%   100%
+    40     168    21     0.0% 0.0%   100%
+    41     169    21     0.0% 0.0%   100%
+    42     170    21     0.0% 0.0%   100%
+    43     171    21     0.1% 0.1%   100%
+    44     172    21     0.0% 0.0%   100%
+    45     173    21     0.0% 0.0%   100%
+    46     174    21     0.0% 0.0%   100%
+    47     175    21     0.0% 0.0%   100%
+    48     176    22     0.0% 0.0%   100%
+    49     177    22     0.0% 0.0%   100%
+    50     178    22     0.0% 0.0%   100%
+    51     179    22     0.0% 0.0%   100%
+    52     180    22     0.0% 0.0%   100%
+    53     181    22     0.0% 0.0%   100%
+    54     182    22     0.0% 0.0%   100%
+    55     183    22     0.0% 0.0%   100%
+    56     184    23     0.0% 0.0%   100%
+    57     185    23     0.0% 0.0%   100%
+    58     186    23     0.0% 0.0%   100%
+    59     187    23     0.0% 0.0%   100%
+    60     188    23     0.0% 0.0%   100%
+    61     189    23     0.0% 0.0%   100%
+    62     190    23     0.0% 0.0%   100%
+    63     191    23     0.0% 0.0%   100%
+    64     192    24     0.0% 0.0%   100%
+    65     193    24     0.0% 0.0%   100%
+    66     194    24     0.0% 0.0%   100%
+    67     195    24     0.0% 0.0%   100%
+    68     196    24     0.0% 0.0%   100%
+    69     197    24     0.0% 0.0%   100%
+    70     198    24     0.0% 0.0%   100%
+    71     199    24     0.0% 0.0%   100%
+    72     200    25     0.0% 0.0%   100%
+    73     201    25     0.0% 0.0%   100%
+    74     202    25     0.0% 0.0%   100%
+    75     203    25     0.0% 0.0%   100%
+    76     204    25     0.0% 0.0%   100%
+    77     205    25     0.0% 0.0%   100%
+    78     206    25     0.0% 0.0%   100%
+    79     207    25     0.0% 0.0%   100%
+    80     208    26     0.0% 0.0%   100%
+    81     209    26     0.0% 0.0%   100%
+    82     210    26     0.0% 0.0%   100%
+    83     211    26     0.0% 0.0%   100%
+    84     212    26     0.0% 0.0%   100%
+    85     213    26     0.0% 0.0%   100%
+    86     214    26     0.0% 0.0%   100%
+    87     215    26     0.0% 0.0%   100%
+    88     216    27     0.0% 0.0%   100%
+    89     217    27     0.0% 0.0%   100%
+    90     218    27     0.0% 0.0%   100%
+    91     219    27     0.0% 0.0%   100%
+    92     220    27     0.0% 0.0%   100%
+    93     221    27     0.0% 0.0%   100%
+    94     222    27     0.0% 0.0%   100%
+    95     223    27     0.0% 0.0%   100%
+    96     224    28     0.0% 0.0%   100%
+    97     225    28     0.0% 0.0%   100%
+    98     226    28     0.0% 0.0%   100%
+    99     227    28     0.0% 0.0%   100%
+    100    228    28     0.0% 0.0%   100%
+    101    229    28     0.0% 0.0%   100%
+    102    230    28     0.0% 0.0%   100%
+    103    231    28     0.0% 0.0%   100%
+    104    232    29     0.0% 0.0%   100%
+    105    233    29     0.0% 0.0%   100%
+    106    234    29     0.0% 0.0%   100%
+    107    235    29     0.0% 0.0%   100%
+    108    236    29     0.0% 0.0%   100%
+    109    237    29     0.0% 0.0%   100%
+    110    238    29     0.0% 0.0%   100%
+    111    239    29     0.0% 0.0%   100%
+    112    240    30     0.0% 0.0%   100%
+    113    241    30     0.0% 0.0%   100%
+    114    242    30     0.0% 0.0%   100%
+    115    243    30     0.0% 0.0%   100%
+    116    244    30     0.0% 0.0%   100%
+    117    245    30     0.0% 0.0%   100%
+    118    246    30     0.0% 0.0%   100%
+    119    247    30     0.0% 0.0%   100%
+    120    248    31     0.0% 0.0%   100%
+    121    249    31     0.0% 0.0%   100%
+    122    250    31     0.0% 0.0%   100%
+    123    251    31     0.0% 0.0%   100%
+    124    252    31     0.0% 0.0%   100%
+    125    253    31     0.0% 0.0%   100%
+    126    254    31     0.0% 0.0%   100%
+    127    255    31     0.0% 0.0%   100%
+
+MEMORY
+    RA               PA               SIZE            
+    0x80000000       0x80000000000    32G
+
+CONSTRAINT
+    threading=max-throughput
+
+VARIABLES
+    auto-boot?=true
+    boot-device=/virtual-devices@100/channel-devices@200/disk@0:a zdisk0
+    network-boot-arguments=host-ip=192.168.181.12,subnet-mask=255.255.255.0,hostname=ld_grabby,router-ip=192.168.181.3,file=http://192.168.181.117:5555/cgi-bin/wanboot-cgi
+    pm_boot_policy=disabled=1;ttfc=0;ttmr=0;
+
+NETWORK
+    NAME             SERVICE                     ID   DEVICE     MAC               MODE   PVID VID                  MTU   LINKPROP  
+    vnet1            primary-vsw0@primary        0    network@0  00:14:4f:f9:19:0f        1                         1500            
+
+DISK
+    NAME             VOLUME                      TOUT ID   DEVICE  SERVER         MPGROUP       
+    zdisk0           zdisk0@primary-vds0              0    disk@0  primary                      
+    vxdisk1          hus_1500_28@primary-vds0         1    disk@1  primary                      
+    vxdisk2          hus_1500_29@primary-vds0         2    disk@2  primary                      
+
+VCONS
+    NAME             SERVICE                     PORT   LOGGING
+    ld_grabby        primary-vcc0@primary        5000   on      
+

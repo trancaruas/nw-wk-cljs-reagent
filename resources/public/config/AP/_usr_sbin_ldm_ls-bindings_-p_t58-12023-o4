@@ -1,0 +1,13 @@
+VERSION 1.11
+DOMAIN|name=t58-12023-o4|state=inactive|flags=|cons=|ncpu=24|mem=51539607552|util=|uptime=|norm_util=
+UUID|uuid=95126acc-3989-6885-bca8-d4064f04544a
+MAC|mac-addr=00:14:4f:f8:85:d9
+CONTROL|failure-policy=ignore|extended-mapin-space=on|cpu-arch=native|rc-add-policy=|shutdown-group=0
+DEPENDENCY|master= 
+CONSTRAINT|cpu=whole-core|max-cores=unlimited|threading=max-throughput|physical-bindings=
+VARIABLES
+|boot-device=o4boot0
+|pm_boot_policy=disabled=1;ttfc=0;ttmr=0;
+VNET|name=vnet0|dev=|service=primary-vsw0|mac-addr=00:14:4f:fa:a5:fd|mode=|pvid=3|vid=|mtu=|linkprop=phys-state|id=0|alt-mac-addrs=|maxbw=|pvlan=
+VNET|name=vnet1|dev=|service=secondary-vsw0|mac-addr=00:14:4f:fb:a7:54|mode=|pvid=3|vid=|mtu=|linkprop=phys-state|id=1|alt-mac-addrs=|maxbw=|pvlan=
+VDISK|name=s4boot0|vol=P9500-3_0408-s4boot@primary-vds0|timeout=|dev=|server=|mpgroup=|id=0

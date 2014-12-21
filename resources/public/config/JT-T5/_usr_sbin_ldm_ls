@@ -1,0 +1,3 @@
+NAME             STATE      FLAGS   CONS    VCPU  MEMORY   UTIL  NORM  UPTIME
+primary          active     -n-cv-  UART    128   261632M  0.1%  0.1%  3d 10h 27m
+db2ldom          active     -n----  5000    128   248G     0.0%  0.0%  12h 55m

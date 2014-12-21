@@ -1,0 +1,9 @@
+VERSION 1.9
+|dev=pci@400|alias=pci|status=|domain=primary|type=BUS|bus=pci
+|dev=niu@480|alias=niu|status=|domain=primary|type=NIU|bus=niu
+|dev=pci@400/pci@2/pci@0/pci@4|alias=/SYS/MB/PCI-EM0|status=OCC|domain=primary|type=PCIE|bus=pci
+|dev=pci@400/pci@1/pci@0/pci@4|alias=/SYS/MB/PCI-EM1|status=EMP|domain=primary|type=PCIE|bus=pci
+|dev=pci@400/pci@1/pci@0/pci@c|alias=/SYS/MB/FEM0|status=EMP|domain=primary|type=PCIE|bus=pci
+|dev=pci@400/pci@2/pci@0/pci@c|alias=/SYS/MB/FEM1|status=EMP|domain=primary|type=PCIE|bus=pci
+|dev=pci@400/pci@2/pci@0/pci@2|alias=/SYS/MB/NET0|status=OCC|domain=primary|type=PCIE|bus=pci
+|dev=pci@400/pci@1/pci@0/pci@2|alias=/SYS/MB/REM|status=OCC|domain=primary|type=PCIE|bus=pci

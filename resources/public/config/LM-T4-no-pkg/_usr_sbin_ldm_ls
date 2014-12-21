@@ -1,0 +1,5 @@
+NAME             STATE      FLAGS   CONS    VCPU  MEMORY   UTIL  NORM  UPTIME
+primary          active     -n-cv-  UART    16    16G      7.6%  7.6%  12d 18h 24m
+ldg1             active     -n----  5001    13    8G       0.1%  0.1%  4d 19h 35m
+ldg2             bound      ------  5000    4     2G                   
+terrys           active     -n----  5002    16    8G       0.1%  0.1%  20h 53m

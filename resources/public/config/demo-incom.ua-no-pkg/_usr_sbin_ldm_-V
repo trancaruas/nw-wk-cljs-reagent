@@ -1,0 +1,9 @@
+
+Logical Domains Manager (v 3.0.0.3)
+	Hypervisor control protocol v 1.9
+	Using Hypervisor MD v 1.4
+
+System PROM:
+	Hostconfig	v. 1.2.3.	@(#)Hostconfig 1.2.3.b 2013/04/23 07:42 [seville-yf:release]
+	Hypervisor	v. 1.11.3.	@(#)Hypervisor 1.11.3.b 2013/04/23 07:07
+	OpenBoot	v. 4.34.3	@(#)OpenBoot 4.34.3 2013/02/06 11:46

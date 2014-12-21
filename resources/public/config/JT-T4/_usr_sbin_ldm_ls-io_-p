@@ -1,0 +1,18 @@
+VERSION 1.6
+|dev=pci@400|alias=pci_0|status=|domain=primary|type=BUS
+|dev=niu@480|alias=niu_0|status=|domain=primary|type=NIU
+|dev=pci@500|alias=pci_1|status=|domain=db2ldom|type=BUS
+|dev=niu@580|alias=niu_1|status=|domain=db2ldom|type=NIU
+|dev=pci@400/pci@2/pci@0/pci@8|alias=/SYS/MB/PCIE0|status=OCC|domain=primary|type=PCIE
+|dev=pci@400/pci@2/pci@0/pci@4|alias=/SYS/MB/PCIE2|status=EMP|domain=-|type=PCIE
+|dev=pci@400/pci@2/pci@0/pci@0|alias=/SYS/MB/PCIE4|status=EMP|domain=-|type=PCIE
+|dev=pci@400/pci@1/pci@0/pci@8|alias=/SYS/MB/PCIE6|status=OCC|domain=primary|type=PCIE
+|dev=pci@400/pci@1/pci@0/pci@c|alias=/SYS/MB/PCIE8|status=EMP|domain=-|type=PCIE
+|dev=pci@400/pci@2/pci@0/pci@e|alias=/SYS/MB/SASHBA|status=OCC|domain=primary|type=PCIE
+|dev=pci@400/pci@1/pci@0/pci@4|alias=/SYS/MB/NET0|status=OCC|domain=primary|type=PCIE
+|dev=pci@500/pci@2/pci@0/pci@a|alias=/SYS/MB/PCIE1|status=UNK|domain=-|type=PCIE
+|dev=pci@500/pci@2/pci@0/pci@6|alias=/SYS/MB/PCIE3|status=UNK|domain=-|type=PCIE
+|dev=pci@500/pci@2/pci@0/pci@0|alias=/SYS/MB/PCIE5|status=UNK|domain=-|type=PCIE
+|dev=pci@500/pci@1/pci@0/pci@6|alias=/SYS/MB/PCIE7|status=UNK|domain=-|type=PCIE
+|dev=pci@500/pci@1/pci@0/pci@0|alias=/SYS/MB/PCIE9|status=UNK|domain=-|type=PCIE
+|dev=pci@500/pci@1/pci@0/pci@5|alias=/SYS/MB/NET2|status=UNK|domain=-|type=PCIE

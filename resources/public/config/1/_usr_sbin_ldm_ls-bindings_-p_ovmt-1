@@ -1,0 +1,9 @@
+VERSION 1.5
+DOMAIN|name=ovmt-1|state=inactive|flags=|cons=|ncpu=16|mem=17179869184|util=|uptime=
+UUID|uuid=8435af61-f29d-6198-a1bc-c028e67650e1
+CONTROL|failure-policy=ignore
+DEPENDENCY|master= 
+VARIABLES
+|boot-device=vdisk0:a disk net
+|keyboard-layout=Unknown
+VDISK|name=cdrom|vol=s10u10-17b@primary-vds0|timeout=|dev=|server=|mpgroup=|id=0

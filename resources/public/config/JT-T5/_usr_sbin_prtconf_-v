@@ -1,0 +1,1990 @@
+System Configuration:  Oracle Corporation  sun4v
+Memory size: 261632 Megabytes
+System Peripherals (Software Nodes):
+
+ORCL,SPARC-T5-2
+sun4v
+    System properties:
+        name='fm-capable' type=int items=1
+            value=00000009
+        name='relative-addressing' type=int items=1
+            value=00000001
+        name='MMU_PAGEOFFSET' type=int items=1
+            value=00001fff
+        name='MMU_PAGESIZE' type=int items=1
+            value=00002000
+        name='PAGESIZE' type=int items=1
+            value=00002000
+    Driver properties:
+        name='pm-hardware-state' type=string items=1 dev=none
+            value='no-suspend-resume'
+        name='fm-errcb-capable' type=boolean dev=none
+        name='fm-ereport-capable' type=boolean dev=none
+    scsi_vhci, instance #0
+        System properties:
+            name='class' type=string items=1
+                value='root'
+            name='load-balance' type=string items=1
+                value='round-robin'
+            name='auto-failback' type=string items=1
+                value='enable'
+            name='scsi-vhci-update-pathstate-on-reset' type=string items=2
+                value='Pillar  Axiom' + 'yes'
+        Driver properties:
+            name='pm-want-child-notification?' type=boolean dev=none
+            name='fm-ereport-capable' type=boolean dev=none
+        Hardware properties:
+            name='initiator-interconnect-type' type=string items=1
+                value='SPI'
+            name='scsi-initiator-id' type=int items=1
+                value=00000007
+            name='scsi-tag-age-limit' type=int items=1
+                value=00000002
+            name='scsi-selection-timeout' type=int items=1
+                value=000000fa
+            name='scsi-watchdog-tick' type=int items=1
+                value=0000000a
+            name='scsi-reset-delay' type=int items=1
+                value=00000bb8
+            name='scsi-options' type=int items=1
+                value=00107ff8
+            name='scsi-enumeration' type=int items=1
+                value=00000000
+        Device Minor Nodes:
+            dev=(189,0)
+                dev_path=/scsi_vhci:devctl
+                    spectype=chr type=minor
+        disk, instance #2
+            Driver properties:
+                name='inquiry-serial-no' type=string items=1 dev=none
+                    value='001230NDBL9D        PWGDBL9D'
+                name='pm-components' type=string items=3 dev=none
+                    value='NAME=spindle-motor' + '0=off' + '1=on'
+                name='pm-hardware-state' type=string items=1 dev=none
+                    value='needs-suspend-resume'
+                name='ddi-failfast-supported' type=boolean dev=none
+                name='ddi-kernel-ioctl' type=boolean dev=none
+                name='device-nblocks' type=int64 items=1 dev=none
+                    value=0000000022ecb25c
+            Hardware properties:
+                name='devid' type=string items=1
+                    value='id1,sd@n5000cca03c167fd8'
+                name='class' type=string items=1
+                    value='scsi'
+                name='inquiry-revision-id' type=string items=1
+                    value='A2B0'
+                name='inquiry-product-id' type=string items=1
+                    value='H106030SDSUN300G'
+                name='inquiry-vendor-id' type=string items=1
+                    value='HITACHI'
+                name='inquiry-device-type' type=int items=1
+                    value=00000000
+                name='compatible' type=string items=4
+                    value='scsiclass,00.vHITACHI.pH106030SDSUN300G.rA2B0' + 'scsiclass,00.vHITACHI.pH106030SDSUN300G' + 'scsiclass,00' + 'scsiclass'
+                name='client-guid' type=string items=1
+                    value='5000cca03c167fd8'
+            Paths from multipath bus adapters:
+                Path 1: /pci@340/pci@1/pci@0/pci@9/scsi@0/iport@1/disk@w5000cca03c167fd9,0
+                mpt_sas#1 (online)
+                    name='wwn' type=string items=1
+                        value='5000cca03c167fd8'
+                    name='lun' type=int items=1
+                        value=00000000
+                    name='target-port' type=string items=1
+                        value='5000cca03c167fd9'
+                    name='obp-path' type=string items=1
+                        value='/pci@340/pci@1/pci@0/pci@9/scsi@0/disk@w5000cca03c167fd9,0'
+                    name='phy-num' type=int items=1
+                        value=00000000
+                    name='path-class' type=string items=1
+                        value='primary'
+            Device Minor Nodes:
+                dev=(32,16)
+                    dev_path=/scsi_vhci/disk@g5000cca03c167fd8:a
+                        spectype=blk type=minor
+                        dev_link=/dev/dsk/c0t5000CCA03C167FD8d0s0
+                        dev_link=/dev/sd2a
+                    dev_path=/scsi_vhci/disk@g5000cca03c167fd8:a,raw
+                        spectype=chr type=minor
+                        dev_link=/dev/rdsk/c0t5000CCA03C167FD8d0s0
+                        dev_link=/dev/rsd2a
+                    Device Minor Layered Under:
+                        mod=zfs accesstype=blk
+                            dev_path=/pseudo/zfs@0
+                dev=(32,17)
+                    dev_path=/scsi_vhci/disk@g5000cca03c167fd8:b
+                        spectype=blk type=minor
+                        dev_link=/dev/dsk/c0t5000CCA03C167FD8d0s1
+                        dev_link=/dev/sd2b
+                    dev_path=/scsi_vhci/disk@g5000cca03c167fd8:b,raw
+                        spectype=chr type=minor
+                        dev_link=/dev/rdsk/c0t5000CCA03C167FD8d0s1
+                        dev_link=/dev/rsd2b
+                dev=(32,18)
+                    dev_path=/scsi_vhci/disk@g5000cca03c167fd8:c
+                        spectype=blk type=minor
+                        dev_link=/dev/dsk/c0t5000CCA03C167FD8d0s2
+                        dev_link=/dev/sd2c
+                    dev_path=/scsi_vhci/disk@g5000cca03c167fd8:c,raw
+                        spectype=chr type=minor
+                        dev_link=/dev/rdsk/c0t5000CCA03C167FD8d0s2
+                        dev_link=/dev/rsd2c
+                dev=(32,19)
+                    dev_path=/scsi_vhci/disk@g5000cca03c167fd8:d
+                        spectype=blk type=minor
+                        dev_link=/dev/dsk/c0t5000CCA03C167FD8d0s3
+                        dev_link=/dev/sd2d
+                    dev_path=/scsi_vhci/disk@g5000cca03c167fd8:d,raw
+                        spectype=chr type=minor
+                        dev_link=/dev/rdsk/c0t5000CCA03C167FD8d0s3
+                        dev_link=/dev/rsd2d
+                dev=(32,20)
+                    dev_path=/scsi_vhci/disk@g5000cca03c167fd8:e
+                        spectype=blk type=minor
+                        dev_link=/dev/dsk/c0t5000CCA03C167FD8d0s4
+                        dev_link=/dev/sd2e
+                    dev_path=/scsi_vhci/disk@g5000cca03c167fd8:e,raw
+                        spectype=chr type=minor
+                        dev_link=/dev/rdsk/c0t5000CCA03C167FD8d0s4
+                        dev_link=/dev/rsd2e
+                dev=(32,21)
+                    dev_path=/scsi_vhci/disk@g5000cca03c167fd8:f
+                        spectype=blk type=minor
+                        dev_link=/dev/dsk/c0t5000CCA03C167FD8d0s5
+                        dev_link=/dev/sd2f
+                    dev_path=/scsi_vhci/disk@g5000cca03c167fd8:f,raw
+                        spectype=chr type=minor
+                        dev_link=/dev/rdsk/c0t5000CCA03C167FD8d0s5
+                        dev_link=/dev/rsd2f
+                dev=(32,22)
+                    dev_path=/scsi_vhci/disk@g5000cca03c167fd8:g
+                        spectype=blk type=minor
+                        dev_link=/dev/dsk/c0t5000CCA03C167FD8d0s6
+                        dev_link=/dev/sd2g
+                    dev_path=/scsi_vhci/disk@g5000cca03c167fd8:g,raw
+                        spectype=chr type=minor
+                        dev_link=/dev/rdsk/c0t5000CCA03C167FD8d0s6
+                        dev_link=/dev/rsd2g
+                dev=(32,23)
+                    dev_path=/scsi_vhci/disk@g5000cca03c167fd8:h
+                        spectype=blk type=minor
+                        dev_link=/dev/dsk/c0t5000CCA03C167FD8d0s7
+                        dev_link=/dev/sd2h
+                    dev_path=/scsi_vhci/disk@g5000cca03c167fd8:h,raw
+                        spectype=chr type=minor
+                        dev_link=/dev/rdsk/c0t5000CCA03C167FD8d0s7
+                        dev_link=/dev/rsd2h
+        disk, instance #4
+            Driver properties:
+                name='inquiry-serial-no' type=string items=1 dev=none
+                    value='00100471NF0X        3SE1NF0X'
+                name='pm-components' type=string items=3 dev=none
+                    value='NAME=spindle-motor' + '0=off' + '1=on'
+                name='pm-hardware-state' type=string items=1 dev=none
+                    value='needs-suspend-resume'
+                name='ddi-failfast-supported' type=boolean dev=none
+                name='ddi-kernel-ioctl' type=boolean dev=none
+                name='device-nblocks' type=int64 items=1 dev=none
+                    value=0000000022ecb25c
+            Hardware properties:
+                name='devid' type=string items=1
+                    value='id1,sd@n5000c5001d40e69b'
+                name='class' type=string items=1
+                    value='scsi'
+                name='inquiry-revision-id' type=string items=1
+                    value='0868'
+                name='inquiry-product-id' type=string items=1
+                    value='ST930003SSUN300G'
+                name='inquiry-vendor-id' type=string items=1
+                    value='SEAGATE'
+                name='inquiry-device-type' type=int items=1
+                    value=00000000
+                name='compatible' type=string items=4
+                    value='scsiclass,00.vSEAGATE.pST930003SSUN300G.r0868' + 'scsiclass,00.vSEAGATE.pST930003SSUN300G' + 'scsiclass,00' + 'scsiclass'
+                name='client-guid' type=string items=1
+                    value='5000c5001d40e69b'
+            Paths from multipath bus adapters:
+                Path 2: /pci@340/pci@1/pci@0/pci@9/scsi@0/iport@2/disk@w5000c5001d40e699,0
+                mpt_sas#4 (online)
+                    name='wwn' type=string items=1
+                        value='5000c5001d40e69b'
+                    name='lun' type=int items=1
+                        value=00000000
+                    name='target-port' type=string items=1
+                        value='5000c5001d40e699'
+                    name='obp-path' type=string items=1
+                        value='/pci@340/pci@1/pci@0/pci@9/scsi@0/disk@w5000c5001d40e699,0'
+                    name='phy-num' type=int items=1
+                        value=00000001
+                    name='path-class' type=string items=1
+                        value='primary'
+            Device Minor Nodes:
+                dev=(32,32)
+                    dev_path=/scsi_vhci/disk@g5000c5001d40e69b:a
+                        spectype=blk type=minor
+                        dev_link=/dev/dsk/c0t5000C5001D40E69Bd0s0
+                        dev_link=/dev/sd4a
+                    dev_path=/scsi_vhci/disk@g5000c5001d40e69b:a,raw
+                        spectype=chr type=minor
+                        dev_link=/dev/rdsk/c0t5000C5001D40E69Bd0s0
+                        dev_link=/dev/rsd4a
+                    Device Minor Layered Under:
+                        mod=zfs accesstype=blk
+                            dev_path=/pseudo/zfs@0
+                dev=(32,33)
+                    dev_path=/scsi_vhci/disk@g5000c5001d40e69b:b
+                        spectype=blk type=minor
+                        dev_link=/dev/dsk/c0t5000C5001D40E69Bd0s1
+                        dev_link=/dev/sd4b
+                    dev_path=/scsi_vhci/disk@g5000c5001d40e69b:b,raw
+                        spectype=chr type=minor
+                        dev_link=/dev/rdsk/c0t5000C5001D40E69Bd0s1
+                        dev_link=/dev/rsd4b
+                dev=(32,34)
+                    dev_path=/scsi_vhci/disk@g5000c5001d40e69b:c
+                        spectype=blk type=minor
+                        dev_link=/dev/dsk/c0t5000C5001D40E69Bd0s2
+                        dev_link=/dev/sd4c
+                    dev_path=/scsi_vhci/disk@g5000c5001d40e69b:c,raw
+                        spectype=chr type=minor
+                        dev_link=/dev/rdsk/c0t5000C5001D40E69Bd0s2
+                        dev_link=/dev/rsd4c
+                dev=(32,35)
+                    dev_path=/scsi_vhci/disk@g5000c5001d40e69b:d
+                        spectype=blk type=minor
+                        dev_link=/dev/dsk/c0t5000C5001D40E69Bd0s3
+                        dev_link=/dev/sd4d
+                    dev_path=/scsi_vhci/disk@g5000c5001d40e69b:d,raw
+                        spectype=chr type=minor
+                        dev_link=/dev/rdsk/c0t5000C5001D40E69Bd0s3
+                        dev_link=/dev/rsd4d
+                dev=(32,36)
+                    dev_path=/scsi_vhci/disk@g5000c5001d40e69b:e
+                        spectype=blk type=minor
+                        dev_link=/dev/dsk/c0t5000C5001D40E69Bd0s4
+                        dev_link=/dev/sd4e
+                    dev_path=/scsi_vhci/disk@g5000c5001d40e69b:e,raw
+                        spectype=chr type=minor
+                        dev_link=/dev/rdsk/c0t5000C5001D40E69Bd0s4
+                        dev_link=/dev/rsd4e
+                dev=(32,37)
+                    dev_path=/scsi_vhci/disk@g5000c5001d40e69b:f
+                        spectype=blk type=minor
+                        dev_link=/dev/dsk/c0t5000C5001D40E69Bd0s5
+                        dev_link=/dev/sd4f
+                    dev_path=/scsi_vhci/disk@g5000c5001d40e69b:f,raw
+                        spectype=chr type=minor
+                        dev_link=/dev/rdsk/c0t5000C5001D40E69Bd0s5
+                        dev_link=/dev/rsd4f
+                dev=(32,38)
+                    dev_path=/scsi_vhci/disk@g5000c5001d40e69b:g
+                        spectype=blk type=minor
+                        dev_link=/dev/dsk/c0t5000C5001D40E69Bd0s6
+                        dev_link=/dev/sd4g
+                    dev_path=/scsi_vhci/disk@g5000c5001d40e69b:g,raw
+                        spectype=chr type=minor
+                        dev_link=/dev/rdsk/c0t5000C5001D40E69Bd0s6
+                        dev_link=/dev/rsd4g
+                dev=(32,39)
+                    dev_path=/scsi_vhci/disk@g5000c5001d40e69b:wd
+                        spectype=blk type=minor
+                        dev_link=/dev/dsk/c0t5000C5001D40E69Bd0
+                    dev_path=/scsi_vhci/disk@g5000c5001d40e69b:wd,raw
+                        spectype=chr type=minor
+                        dev_link=/dev/rdsk/c0t5000C5001D40E69Bd0
+    packages (driver not attached)
+        SUNW,builtin-drivers (driver not attached)
+        deblocker (driver not attached)
+        disk-label (driver not attached)
+        terminal-emulator (driver not attached)
+        dropins (driver not attached)
+        SUNW,asr (driver not attached)
+        kbd-translator (driver not attached)
+        obp-tftp (driver not attached)
+        zfs-file-system (driver not attached)
+        hsfs-file-system (driver not attached)
+    chosen (driver not attached)
+    openprom (driver not attached)
+        client-services (driver not attached)
+    options, instance #0
+        System properties:
+            name='ttymodes' type=byte items=36
+                value=00.00.25.02.00.00.18.05.00.00.00.bd.00.00.8a.3b.03.1c.7f.15.04.00.00.00.11.13.1a.19.12.0f.17.16.00.00.00.00
+            name='class' type=string items=1
+                value='root'
+    aliases (driver not attached)
+    memory (driver not attached)
+    virtual-memory (driver not attached)
+    iscsi-hba (driver not attached)
+        disk (driver not attached)
+    virtual-devices, instance #0
+        Register Specifications:
+            Bus Type=0xc0000100, Address=0x0, Size=0x0
+        flashprom (driver not attached)
+        random-number-generator, instance #0
+            System software properties:
+                name='ddi-no-autodetach' type=int items=1
+                    value=00000001
+                name='ddi-forceattach' type=int items=1
+                    value=00000001
+        console, instance #0
+            Driver properties:
+                name='ddi-no-autodetach' type=int items=1 dev=none
+                    value=00000001
+            Device Minor Nodes:
+                dev=(246,0)
+                    dev_path=/virtual-devices@100/console@1:qcn
+                        spectype=chr type=internal
+        channel-devices, instance #0
+            Device Minor Nodes:
+                dev=(96,0)
+                    dev_path=/virtual-devices@100/channel-devices@200:devctl
+                        spectype=chr type=minor
+            virtual-channel, instance #0
+                Device Minor Nodes:
+                    dev=(108,0)
+                        dev_path=/virtual-devices@100/channel-devices@200/virtual-channel@0:hvctl
+                            spectype=chr type=minor
+                            dev_link=/dev/term/0
+                    dev=(108,1)
+                        dev_path=/virtual-devices@100/channel-devices@200/virtual-channel@0:ldom-primary
+                            spectype=chr type=minor
+                            dev_link=/dev/term/1
+                    dev=(108,2)
+                        dev_path=/virtual-devices@100/channel-devices@200/virtual-channel@0:fmactl
+                            spectype=chr type=minor
+                            dev_link=/dev/term/2
+            virtual-channel, instance #1
+                Device Minor Nodes:
+                    dev=(108,2048)
+                        dev_path=/virtual-devices@100/channel-devices@200/virtual-channel@3:spds
+                            spectype=chr type=minor
+                            dev_link=/dev/term/3
+                    dev=(108,2049)
+                        dev_path=/virtual-devices@100/channel-devices@200/virtual-channel@3:sunvts
+                            spectype=chr type=minor
+                            dev_link=/dev/term/4
+                    dev=(108,2050)
+                        dev_path=/virtual-devices@100/channel-devices@200/virtual-channel@3:ipmi
+                            spectype=chr type=minor
+                            dev_link=/dev/term/5
+            virtual-console-concentrator, instance #0
+                Device Minor Nodes:
+                    dev=(100,2047)
+                        dev_path=/virtual-devices@100/channel-devices@200/virtual-console-concentrator@0:ctl
+                            spectype=chr type=minor
+                            dev_link=/dev/term/6
+                    dev=(100,0)
+                        dev_path=/virtual-devices@100/channel-devices@200/virtual-console-concentrator@0:ldom-db2ldom
+                            spectype=chr type=minor
+                            dev_link=/dev/term/9
+            virtual-channel-client, instance #2
+                Device Minor Nodes:
+                    dev=(108,4096)
+                        dev_path=/virtual-devices@100/channel-devices@200/virtual-channel-client@1:ldmfma
+                            spectype=chr type=minor
+                            dev_link=/dev/term/7
+            virtual-channel-client, instance #3
+                Device Minor Nodes:
+                    dev=(108,6144)
+                        dev_path=/virtual-devices@100/channel-devices@200/virtual-channel-client@2:spfma
+                            spectype=chr type=minor
+                            dev_link=/dev/term/8
+            pciv-communication, instance #0
+                System software properties:
+                    name='ddi-forceattach' type=int items=1
+                        value=00000001
+            virtual-domain-service, instance #0
+                Device Minor Nodes:
+                    dev=(99,0)
+                        dev_path=/virtual-devices@100/channel-devices@200/virtual-domain-service@0:vlds
+                            spectype=chr type=minor
+    cpu, instance #1
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000000, Address=0x0, Size=0x0
+    cpu, instance #2
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000001, Address=0x0, Size=0x0
+    cpu, instance #3
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000002, Address=0x0, Size=0x0
+    cpu, instance #4
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000003, Address=0x0, Size=0x0
+    cpu, instance #5
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000004, Address=0x0, Size=0x0
+    cpu, instance #6
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000005, Address=0x0, Size=0x0
+    cpu, instance #7
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000006, Address=0x0, Size=0x0
+    cpu, instance #8
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000007, Address=0x0, Size=0x0
+    cpu, instance #9
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000008, Address=0x0, Size=0x0
+    cpu, instance #10
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000009, Address=0x0, Size=0x0
+    cpu, instance #11
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc000000a, Address=0x0, Size=0x0
+    cpu, instance #12
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc000000b, Address=0x0, Size=0x0
+    cpu, instance #13
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc000000c, Address=0x0, Size=0x0
+    cpu, instance #14
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc000000d, Address=0x0, Size=0x0
+    cpu, instance #15
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc000000e, Address=0x0, Size=0x0
+    cpu, instance #16
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc000000f, Address=0x0, Size=0x0
+    cpu, instance #0
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000010, Address=0x0, Size=0x0
+    cpu, instance #17
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000011, Address=0x0, Size=0x0
+    cpu, instance #18
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000012, Address=0x0, Size=0x0
+    cpu, instance #19
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000013, Address=0x0, Size=0x0
+    cpu, instance #20
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000014, Address=0x0, Size=0x0
+    cpu, instance #21
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000015, Address=0x0, Size=0x0
+    cpu, instance #22
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000016, Address=0x0, Size=0x0
+    cpu, instance #23
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000017, Address=0x0, Size=0x0
+    cpu, instance #24
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000018, Address=0x0, Size=0x0
+    cpu, instance #25
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000019, Address=0x0, Size=0x0
+    cpu, instance #26
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc000001a, Address=0x0, Size=0x0
+    cpu, instance #27
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc000001b, Address=0x0, Size=0x0
+    cpu, instance #28
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc000001c, Address=0x0, Size=0x0
+    cpu, instance #29
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc000001d, Address=0x0, Size=0x0
+    cpu, instance #30
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc000001e, Address=0x0, Size=0x0
+    cpu, instance #31
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc000001f, Address=0x0, Size=0x0
+    cpu, instance #32
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000020, Address=0x0, Size=0x0
+    cpu, instance #33
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000021, Address=0x0, Size=0x0
+    cpu, instance #34
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000022, Address=0x0, Size=0x0
+    cpu, instance #35
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000023, Address=0x0, Size=0x0
+    cpu, instance #36
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000024, Address=0x0, Size=0x0
+    cpu, instance #37
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000025, Address=0x0, Size=0x0
+    cpu, instance #38
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000026, Address=0x0, Size=0x0
+    cpu, instance #39
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000027, Address=0x0, Size=0x0
+    cpu, instance #40
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000028, Address=0x0, Size=0x0
+    cpu, instance #41
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000029, Address=0x0, Size=0x0
+    cpu, instance #42
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc000002a, Address=0x0, Size=0x0
+    cpu, instance #43
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc000002b, Address=0x0, Size=0x0
+    cpu, instance #44
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc000002c, Address=0x0, Size=0x0
+    cpu, instance #45
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc000002d, Address=0x0, Size=0x0
+    cpu, instance #46
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc000002e, Address=0x0, Size=0x0
+    cpu, instance #47
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc000002f, Address=0x0, Size=0x0
+    cpu, instance #48
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000030, Address=0x0, Size=0x0
+    cpu, instance #49
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000031, Address=0x0, Size=0x0
+    cpu, instance #50
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000032, Address=0x0, Size=0x0
+    cpu, instance #51
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000033, Address=0x0, Size=0x0
+    cpu, instance #52
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000034, Address=0x0, Size=0x0
+    cpu, instance #53
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000035, Address=0x0, Size=0x0
+    cpu, instance #54
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000036, Address=0x0, Size=0x0
+    cpu, instance #55
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000037, Address=0x0, Size=0x0
+    cpu, instance #56
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000038, Address=0x0, Size=0x0
+    cpu, instance #57
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000039, Address=0x0, Size=0x0
+    cpu, instance #58
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc000003a, Address=0x0, Size=0x0
+    cpu, instance #59
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc000003b, Address=0x0, Size=0x0
+    cpu, instance #60
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc000003c, Address=0x0, Size=0x0
+    cpu, instance #61
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc000003d, Address=0x0, Size=0x0
+    cpu, instance #62
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc000003e, Address=0x0, Size=0x0
+    cpu, instance #63
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc000003f, Address=0x0, Size=0x0
+    cpu, instance #64
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000040, Address=0x0, Size=0x0
+    cpu, instance #65
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000041, Address=0x0, Size=0x0
+    cpu, instance #66
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000042, Address=0x0, Size=0x0
+    cpu, instance #67
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000043, Address=0x0, Size=0x0
+    cpu, instance #68
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000044, Address=0x0, Size=0x0
+    cpu, instance #69
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000045, Address=0x0, Size=0x0
+    cpu, instance #70
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000046, Address=0x0, Size=0x0
+    cpu, instance #71
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000047, Address=0x0, Size=0x0
+    cpu, instance #72
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000048, Address=0x0, Size=0x0
+    cpu, instance #73
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000049, Address=0x0, Size=0x0
+    cpu, instance #74
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc000004a, Address=0x0, Size=0x0
+    cpu, instance #75
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc000004b, Address=0x0, Size=0x0
+    cpu, instance #76
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc000004c, Address=0x0, Size=0x0
+    cpu, instance #77
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc000004d, Address=0x0, Size=0x0
+    cpu, instance #78
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc000004e, Address=0x0, Size=0x0
+    cpu, instance #79
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc000004f, Address=0x0, Size=0x0
+    cpu, instance #80
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000050, Address=0x0, Size=0x0
+    cpu, instance #81
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000051, Address=0x0, Size=0x0
+    cpu, instance #82
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000052, Address=0x0, Size=0x0
+    cpu, instance #83
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000053, Address=0x0, Size=0x0
+    cpu, instance #84
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000054, Address=0x0, Size=0x0
+    cpu, instance #85
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000055, Address=0x0, Size=0x0
+    cpu, instance #86
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000056, Address=0x0, Size=0x0
+    cpu, instance #87
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000057, Address=0x0, Size=0x0
+    cpu, instance #88
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000058, Address=0x0, Size=0x0
+    cpu, instance #89
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000059, Address=0x0, Size=0x0
+    cpu, instance #90
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc000005a, Address=0x0, Size=0x0
+    cpu, instance #91
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc000005b, Address=0x0, Size=0x0
+    cpu, instance #92
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc000005c, Address=0x0, Size=0x0
+    cpu, instance #93
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc000005d, Address=0x0, Size=0x0
+    cpu, instance #94
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc000005e, Address=0x0, Size=0x0
+    cpu, instance #95
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc000005f, Address=0x0, Size=0x0
+    cpu, instance #96
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000060, Address=0x0, Size=0x0
+    cpu, instance #97
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000061, Address=0x0, Size=0x0
+    cpu, instance #98
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000062, Address=0x0, Size=0x0
+    cpu, instance #99
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000063, Address=0x0, Size=0x0
+    cpu, instance #100
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000064, Address=0x0, Size=0x0
+    cpu, instance #101
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000065, Address=0x0, Size=0x0
+    cpu, instance #102
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000066, Address=0x0, Size=0x0
+    cpu, instance #103
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000067, Address=0x0, Size=0x0
+    cpu, instance #104
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000068, Address=0x0, Size=0x0
+    cpu, instance #105
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000069, Address=0x0, Size=0x0
+    cpu, instance #106
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc000006a, Address=0x0, Size=0x0
+    cpu, instance #107
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc000006b, Address=0x0, Size=0x0
+    cpu, instance #108
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc000006c, Address=0x0, Size=0x0
+    cpu, instance #109
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc000006d, Address=0x0, Size=0x0
+    cpu, instance #110
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc000006e, Address=0x0, Size=0x0
+    cpu, instance #111
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc000006f, Address=0x0, Size=0x0
+    cpu, instance #112
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000070, Address=0x0, Size=0x0
+    cpu, instance #113
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000071, Address=0x0, Size=0x0
+    cpu, instance #114
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000072, Address=0x0, Size=0x0
+    cpu, instance #115
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000073, Address=0x0, Size=0x0
+    cpu, instance #116
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000074, Address=0x0, Size=0x0
+    cpu, instance #117
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000075, Address=0x0, Size=0x0
+    cpu, instance #118
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000076, Address=0x0, Size=0x0
+    cpu, instance #119
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000077, Address=0x0, Size=0x0
+    cpu, instance #120
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000078, Address=0x0, Size=0x0
+    cpu, instance #121
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc0000079, Address=0x0, Size=0x0
+    cpu, instance #122
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc000007a, Address=0x0, Size=0x0
+    cpu, instance #123
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc000007b, Address=0x0, Size=0x0
+    cpu, instance #124
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc000007c, Address=0x0, Size=0x0
+    cpu, instance #125
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc000007d, Address=0x0, Size=0x0
+    cpu, instance #126
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc000007e, Address=0x0, Size=0x0
+    cpu, instance #127
+        Driver properties:
+            name='pm-hardware-state' type=string items=1 dev=none
+                value='no-suspend-resume'
+        Register Specifications:
+            Bus Type=0xc000007f, Address=0x0, Size=0x0
+    pci, instance #0
+        Driver properties:
+            name='ddi-kernel-ioctl' type=boolean dev=none
+            name='pm-want-child-notification?' type=boolean dev=none
+            name='fm-accchk-capable' type=boolean dev=none
+            name='fm-dmachk-capable' type=boolean dev=none
+            name='fm-errcb-capable' type=boolean dev=none
+            name='fm-ereport-capable' type=boolean dev=none
+            name='pci-conf-indirect' type=int items=1 dev=(241,255)
+                value=00000001
+            name='device_type' type=string items=1 dev=none
+                value='pciex'
+        Hardware properties:
+            name='available' type=int items=15
+                value=81000000.00000000.00001000.00000000.0ffff000.82000000.00000000.00200000.00000000.7ee00000.c2000000.00000001.20000000.00000006.e0000000
+        Register Specifications:
+            Bus Type=0xc0000340, Address=0x0, Size=0x0
+        Device Minor Nodes:
+            dev=(241,255)
+                dev_path=/pci@340:devctl
+                    spectype=chr type=minor
+            dev=(241,253)
+                dev_path=/pci@340:reg
+                    spectype=chr type=minor
+            dev=(241,252)
+                dev_path=/pci@340:intr
+                    spectype=chr type=minor
+        pci, instance #0
+            System software properties:
+                name='ddi-forceattach' type=int items=1
+                    value=00000001
+            Driver properties:
+                name='device_type' type=string items=1 dev=none
+                    value='pciex'
+                name='pm-components' type=string items=3 dev=none
+                    value='NAME=PCIe switch/bridge PM' + '0=Power Off (D3)' + '3=Full Power D0'
+                name='pm-want-child-notification?' type=boolean dev=none
+                name='fm-ereport-capable' type=boolean dev=none
+            Device Minor Nodes:
+                dev=(242,255)
+                    dev_path=/pci@340/pci@1:devctl
+                        spectype=chr type=minor
+            pci, instance #1
+                System software properties:
+                    name='ddi-forceattach' type=int items=1
+                        value=00000001
+                Driver properties:
+                    name='device_type' type=string items=1 dev=none
+                        value='pciex'
+                    name='pm-components' type=string items=3 dev=none
+                        value='NAME=PCIe switch/bridge PM' + '0=Power Off (D3)' + '3=Full Power D0'
+                    name='pm-want-child-notification?' type=boolean dev=none
+                    name='fm-ereport-capable' type=boolean dev=none
+                Device Minor Nodes:
+                    dev=(242,511)
+                        dev_path=/pci@340/pci@1/pci@0:devctl
+                            spectype=chr type=minor
+                pci, instance #2
+                    System software properties:
+                        name='ddi-forceattach' type=int items=1
+                            value=00000001
+                    Driver properties:
+                        name='device_type' type=string items=1 dev=none
+                            value='pciex'
+                        name='pm-components' type=string items=3 dev=none
+                            value='NAME=PCIe switch/bridge PM' + '0=Power Off (D3)' + '3=Full Power D0'
+                        name='pm-want-child-notification?' type=boolean dev=none
+                        name='fm-ereport-capable' type=boolean dev=none
+                    Device Minor Nodes:
+                        dev=(242,767)
+                            dev_path=/pci@340/pci@1/pci@0/pci@4:devctl
+                                spectype=chr type=minor
+                pci, instance #3
+                    System software properties:
+                        name='ddi-forceattach' type=int items=1
+                            value=00000001
+                    Driver properties:
+                        name='device_type' type=string items=1 dev=none
+                            value='pciex'
+                        name='pm-components' type=string items=3 dev=none
+                            value='NAME=PCIe switch/bridge PM' + '0=Power Off (D3)' + '3=Full Power D0'
+                        name='pm-want-child-notification?' type=boolean dev=none
+                        name='fm-ereport-capable' type=boolean dev=none
+                    Hardware properties:
+                        name='available' type=int items=5
+                            value=c2000000.00000001.00002000.00000000.0fffe000
+                    Device Minor Nodes:
+                        dev=(242,1023)
+                            dev_path=/pci@340/pci@1/pci@0/pci@8:devctl
+                                spectype=chr type=minor
+                    usb, instance #0
+                        Driver properties:
+                            name='fm-dmachk-capable' type=boolean dev=none
+                            name='fm-errcb-capable' type=boolean dev=none
+                            name='fm-ereport-capable' type=boolean dev=none
+                        Hardware properties:
+                            name='pm-want-child-notification?' type=boolean
+                            name='driver-minor' type=int items=1
+                                value=00000000
+                            name='driver-major' type=int items=1
+                                value=00000002
+                            name='root-hub' type=boolean
+                        Device Minor Nodes:
+                            dev=(67,0)
+                                dev_path=/pci@340/pci@1/pci@0/pci@8/usb@0:1
+                                    spectype=chr type=minor
+                                    dev_link=/dev/cfg/usb0/1
+                                dev_path=/pci@340/pci@1/pci@0/pci@8/usb@0:8
+                                    spectype=chr type=minor
+                                    dev_link=/dev/cfg/usb0/8
+                                dev_path=/pci@340/pci@1/pci@0/pci@8/usb@0:7
+                                    spectype=chr type=minor
+                                    dev_link=/dev/cfg/usb0/7
+                                dev_path=/pci@340/pci@1/pci@0/pci@8/usb@0:6
+                                    spectype=chr type=minor
+                                    dev_link=/dev/cfg/usb0/6
+                                dev_path=/pci@340/pci@1/pci@0/pci@8/usb@0:5
+                                    spectype=chr type=minor
+                                    dev_link=/dev/cfg/usb0/5
+                                dev_path=/pci@340/pci@1/pci@0/pci@8/usb@0:4
+                                    spectype=chr type=minor
+                                    dev_link=/dev/cfg/usb0/4
+                                dev_path=/pci@340/pci@1/pci@0/pci@8/usb@0:3
+                                    spectype=chr type=minor
+                                    dev_link=/dev/cfg/usb0/3
+                                dev_path=/pci@340/pci@1/pci@0/pci@8/usb@0:2
+                                    spectype=chr type=minor
+                                    dev_link=/dev/cfg/usb0/2
+                            dev=(67,4096)
+                                dev_path=/pci@340/pci@1/pci@0/pci@8/usb@0:hubd
+                                    spectype=chr type=minor
+                                    dev_link=/dev/usb/hub0
+                        hub, instance #0
+                            Hardware properties:
+                                name='pm-want-child-notification?' type=boolean
+                                name='driver-minor' type=int items=1
+                                    value=00000000
+                                name='driver-major' type=int items=1
+                                    value=00000002
+                                name='usb-release' type=int items=1
+                                    value=00000200
+                                name='usb-num-configs' type=int items=1
+                                    value=00000001
+                                name='usb-revision-id' type=int items=1
+                                    value=0000000b
+                                name='usb-product-id' type=int items=1
+                                    value=00006560
+                                name='usb-vendor-id' type=int items=1
+                                    value=000004b4
+                                name='compatible' type=string items=15
+                                    value='usb4b4,6560.b' + 'usb4b4,6560' + 'usb4b4,class9.0.2' + 'usb4b4,class9.0' + 'usb4b4,class9' + 'usb,class9.0.2' + 'usb,class9.0' + 'usb,class9' + 'usbif4b4,class9.0.1' + 'usbif4b4,class9.0' + 'usbif4b4,class9' + 'usbif,class9.0.1' + 'usbif,class9.0' + 'usbif,class9' + 'usb,device'
+                                name='reg' type=int items=1
+                                    value=00000005
+                                name='assigned-address' type=int items=1
+                                    value=00000001
+                            Device Minor Nodes:
+                                dev=(53,0)
+                                    dev_path=/pci@340/pci@1/pci@0/pci@8/usb@0/hub@5:5.1
+                                        spectype=chr type=minor
+                                        dev_link=/dev/cfg/usb0/5.1
+                                    dev_path=/pci@340/pci@1/pci@0/pci@8/usb@0/hub@5:hubd
+                                        spectype=chr type=minor
+                                        dev_link=/dev/usb/hub1
+                                    dev_path=/pci@340/pci@1/pci@0/pci@8/usb@0/hub@5:5.4
+                                        spectype=chr type=minor
+                                        dev_link=/dev/cfg/usb0/5.4
+                                    dev_path=/pci@340/pci@1/pci@0/pci@8/usb@0/hub@5:5.3
+                                        spectype=chr type=minor
+                                        dev_link=/dev/cfg/usb0/5.3
+                                    dev_path=/pci@340/pci@1/pci@0/pci@8/usb@0/hub@5:5.2
+                                        spectype=chr type=minor
+                                        dev_link=/dev/cfg/usb0/5.2
+                        hub, instance #1
+                            Hardware properties:
+                                name='pm-want-child-notification?' type=boolean
+                                name='driver-minor' type=int items=1
+                                    value=00000000
+                                name='driver-major' type=int items=1
+                                    value=00000002
+                                name='usb-release' type=int items=1
+                                    value=00000200
+                                name='usb-num-configs' type=int items=1
+                                    value=00000001
+                                name='usb-revision-id' type=int items=1
+                                    value=0000000b
+                                name='usb-product-id' type=int items=1
+                                    value=00006560
+                                name='usb-vendor-id' type=int items=1
+                                    value=000004b4
+                                name='compatible' type=string items=15
+                                    value='usb4b4,6560.b' + 'usb4b4,6560' + 'usb4b4,class9.0.2' + 'usb4b4,class9.0' + 'usb4b4,class9' + 'usb,class9.0.2' + 'usb,class9.0' + 'usb,class9' + 'usbif4b4,class9.0.1' + 'usbif4b4,class9.0' + 'usbif4b4,class9' + 'usbif,class9.0.1' + 'usbif,class9.0' + 'usbif,class9' + 'usb,device'
+                                name='reg' type=int items=1
+                                    value=00000008
+                                name='assigned-address' type=int items=1
+                                    value=00000002
+                            Device Minor Nodes:
+                                dev=(53,1)
+                                    dev_path=/pci@340/pci@1/pci@0/pci@8/usb@0/hub@8:8.1
+                                        spectype=chr type=minor
+                                        dev_link=/dev/cfg/usb0/8.1
+                                    dev_path=/pci@340/pci@1/pci@0/pci@8/usb@0/hub@8:hubd
+                                        spectype=chr type=minor
+                                        dev_link=/dev/usb/hub2
+                                    dev_path=/pci@340/pci@1/pci@0/pci@8/usb@0/hub@8:8.4
+                                        spectype=chr type=minor
+                                        dev_link=/dev/cfg/usb0/8.4
+                                    dev_path=/pci@340/pci@1/pci@0/pci@8/usb@0/hub@8:8.3
+                                        spectype=chr type=minor
+                                        dev_link=/dev/cfg/usb0/8.3
+                                    dev_path=/pci@340/pci@1/pci@0/pci@8/usb@0/hub@8:8.2
+                                        spectype=chr type=minor
+                                        dev_link=/dev/cfg/usb0/8.2
+                pci, instance #4
+                    System software properties:
+                        name='ddi-forceattach' type=int items=1
+                            value=00000001
+                    Driver properties:
+                        name='device_type' type=string items=1 dev=none
+                            value='pciex'
+                        name='pm-components' type=string items=3 dev=none
+                            value='NAME=PCIe switch/bridge PM' + '0=Power Off (D3)' + '3=Full Power D0'
+                        name='pm-want-child-notification?' type=boolean dev=none
+                        name='fm-ereport-capable' type=boolean dev=none
+                    Hardware properties:
+                        name='available' type=int items=15
+                            value=81000000.00000000.00000100.00000000.00000f00.c2000000.00000001.10010000.00000000.00030000.c2000000.00000001.10080000.00000000.0ff80000
+                    Device Minor Nodes:
+                        dev=(242,1279)
+                            dev_path=/pci@340/pci@1/pci@0/pci@9:devctl
+                                spectype=chr type=minor
+                    scsi, instance #0
+                        System software properties:
+                            name='ddi-vhci-class' type=string items=1
+                                value='scsi_vhci'
+                            name='mpxio-disable' type=string items=1
+                                value='no'
+                        Driver properties:
+                            name='scsi-iports' type=string items=4 dev=none
+                                value='1' + '2' + '8' + 'v0'
+                            name='num-phys' type=int items=1 dev=none
+                                value=00000008
+                            name='base-wwid' type=int64 items=1 dev=none
+                                value=508002000145e8b1
+                            name='firmware-version' type=string items=1 dev=none
+                                value='13.0.57.0'
+                            name='pm-components' type=string items=3 dev=none
+                                value='NAME=mptsas0' + '0=Off (PCI D3 State)' + '3=On (PCI D0 State)'
+                            name='fm-accchk-capable' type=boolean dev=none
+                            name='fm-dmachk-capable' type=boolean dev=none
+                            name='fm-errcb-capable' type=boolean dev=none
+                            name='fm-ereport-capable' type=boolean dev=none
+                        Hardware properties:
+                            name='ddi-config-driver-node' type=boolean
+                            name='ddi-intr-weight' type=int items=1
+                                value=0000000a
+                        Device Minor Nodes:
+                            dev=(318,0)
+                                dev_path=/pci@340/pci@1/pci@0/pci@9/scsi@0:devctl
+                                    spectype=chr type=minor
+                        iport, instance #1
+                            System software properties:
+                                name='ddi-vhci-class' type=string items=1
+                                    value='scsi_vhci'
+                                name='mpxio-disable' type=string items=1
+                                    value='no'
+                            Driver properties:
+                                name='dynamic-port' type=int items=1 dev=none
+                                    value=00000001
+                                name='phymask' type=int items=1 dev=none
+                                    value=00000001
+                                name='initiator-port' type=string items=1 dev=none
+                                    value='508002000145e8b1'
+                                name='fm-ereport-capable' type=boolean dev=none
+                            Hardware properties:
+                                name='initiator-interconnect-type' type=string items=1
+                                    value='SAS'
+                                name='scsi-initiator-id' type=int items=1
+                                    value=00000007
+                                name='scsi-tag-age-limit' type=int items=1
+                                    value=00000002
+                                name='scsi-selection-timeout' type=int items=1
+                                    value=000000fa
+                                name='scsi-watchdog-tick' type=int items=1
+                                    value=0000000a
+                                name='scsi-reset-delay' type=int items=1
+                                    value=00000bb8
+                                name='scsi-options' type=int items=1
+                                    value=00107ff8
+                                name='scsi-enumeration' type=int items=1
+                                    value=00000000
+                                name='obp-path' type=string items=1
+                                    value='/pci@340/pci@1/pci@0/pci@9/scsi@0'
+                                name='compatible' type=string items=1
+                                    value='mpt_sas'
+                                name='scsi-iport' type=string items=1
+                                    value='1'
+                            Device Minor Nodes:
+                                dev=(318,64)
+                                    dev_path=/pci@340/pci@1/pci@0/pci@9/scsi@0/iport@1:devctl
+                                        spectype=chr type=minor
+                                dev=(318,65)
+                                    dev_path=/pci@340/pci@1/pci@0/pci@9/scsi@0/iport@1:scsi
+                                        spectype=chr type=minor
+                                        dev_link=/dev/cfg/c4
+                        iport, instance #4
+                            System software properties:
+                                name='ddi-vhci-class' type=string items=1
+                                    value='scsi_vhci'
+                                name='mpxio-disable' type=string items=1
+                                    value='no'
+                            Driver properties:
+                                name='dynamic-port' type=int items=1 dev=none
+                                    value=00000001
+                                name='phymask' type=int items=1 dev=none
+                                    value=00000002
+                                name='initiator-port' type=string items=1 dev=none
+                                    value='508002000145e8b3'
+                                name='fm-ereport-capable' type=boolean dev=none
+                            Hardware properties:
+                                name='initiator-interconnect-type' type=string items=1
+                                    value='SAS'
+                                name='scsi-initiator-id' type=int items=1
+                                    value=00000007
+                                name='scsi-tag-age-limit' type=int items=1
+                                    value=00000002
+                                name='scsi-selection-timeout' type=int items=1
+                                    value=000000fa
+                                name='scsi-watchdog-tick' type=int items=1
+                                    value=0000000a
+                                name='scsi-reset-delay' type=int items=1
+                                    value=00000bb8
+                                name='scsi-options' type=int items=1
+                                    value=00107ff8
+                                name='scsi-enumeration' type=int items=1
+                                    value=00000000
+                                name='obp-path' type=string items=1
+                                    value='/pci@340/pci@1/pci@0/pci@9/scsi@0'
+                                name='compatible' type=string items=1
+                                    value='mpt_sas'
+                                name='scsi-iport' type=string items=1
+                                    value='2'
+                            Device Minor Nodes:
+                                dev=(318,256)
+                                    dev_path=/pci@340/pci@1/pci@0/pci@9/scsi@0/iport@2:devctl
+                                        spectype=chr type=minor
+                                dev=(318,257)
+                                    dev_path=/pci@340/pci@1/pci@0/pci@9/scsi@0/iport@2:scsi
+                                        spectype=chr type=minor
+                                        dev_link=/dev/cfg/c6
+                        iport, instance #2
+                            System software properties:
+                                name='ddi-vhci-class' type=string items=1
+                                    value='scsi_vhci'
+                                name='mpxio-disable' type=string items=1
+                                    value='no'
+                            Driver properties:
+                                name='dynamic-port' type=int items=1 dev=none
+                                    value=00000001
+                                name='phymask' type=int items=1 dev=none
+                                    value=00000008
+                                name='initiator-port' type=string items=1 dev=none
+                                    value='508002000145e8b2'
+                                name='fm-ereport-capable' type=boolean dev=none
+                            Hardware properties:
+                                name='initiator-interconnect-type' type=string items=1
+                                    value='SAS'
+                                name='scsi-initiator-id' type=int items=1
+                                    value=00000007
+                                name='scsi-tag-age-limit' type=int items=1
+                                    value=00000002
+                                name='scsi-selection-timeout' type=int items=1
+                                    value=000000fa
+                                name='scsi-watchdog-tick' type=int items=1
+                                    value=0000000a
+                                name='scsi-reset-delay' type=int items=1
+                                    value=00000bb8
+                                name='scsi-options' type=int items=1
+                                    value=00107ff8
+                                name='scsi-enumeration' type=int items=1
+                                    value=00000000
+                                name='obp-path' type=string items=1
+                                    value='/pci@340/pci@1/pci@0/pci@9/scsi@0'
+                                name='compatible' type=string items=1
+                                    value='mpt_sas'
+                                name='scsi-iport' type=string items=1
+                                    value='8'
+                            Device Minor Nodes:
+                                dev=(318,128)
+                                    dev_path=/pci@340/pci@1/pci@0/pci@9/scsi@0/iport@8:devctl
+                                        spectype=chr type=minor
+                                dev=(318,129)
+                                    dev_path=/pci@340/pci@1/pci@0/pci@9/scsi@0/iport@8:scsi
+                                        spectype=chr type=minor
+                                        dev_link=/dev/cfg/c1
+                            cdrom, instance #3
+                                Driver properties:
+                                    name='pm-components' type=string items=3 dev=none
+                                        value='NAME=spindle-motor' + '0=off' + '1=on'
+                                    name='pm-hardware-state' type=string items=1 dev=none
+                                        value='needs-suspend-resume'
+                                    name='ddi-failfast-supported' type=boolean dev=none
+                                    name='ddi-kernel-ioctl' type=boolean dev=none
+                                    name='removable-media' type=boolean dev=none
+                                Hardware properties:
+                                    name='inquiry-revision-id' type=string items=1
+                                        value='1.0B'
+                                    name='inquiry-product-id' type=string items=1
+                                        value='DV-W28SS-V'
+                                    name='inquiry-vendor-id' type=string items=1
+                                        value='TEAC'
+                                    name='inquiry-device-type' type=int items=1
+                                        value=00000005
+                                    name='class' type=string items=1
+                                        value='scsi'
+                                    name='phy-num' type=int items=1
+                                        value=00000003
+                                    name='obp-path' type=string items=1
+                                        value='/pci@340/pci@1/pci@0/pci@9/scsi@0/disk@p3,0'
+                                    name='variant' type=string items=1
+                                        value='atapi'
+                                    name='pm-capable' type=int items=1
+                                        value=00000001
+                                    name='sas-mpt' type=boolean
+                                    name='sata-phy' type=int items=1
+                                        value=00000003
+                                    name='compatible' type=string items=7
+                                        value='scsiclass,05R.vTEAC.pDV-W28SS-V.r1_0B' + 'scsiclass,05.vTEAC.pDV-W28SS-V.r1_0B' + 'scsiclass,05R.vTEAC.pDV-W28SS-V' + 'scsiclass,05.vTEAC.pDV-W28SS-V' + 'scsiclass,05R' + 'scsiclass,05' + 'scsiclass'
+                                    name='lun' type=int items=1
+                                        value=00000000
+                                Device Minor Nodes:
+                                    dev=(32,24)
+                                        dev_path=/pci@340/pci@1/pci@0/pci@9/scsi@0/iport@8/cdrom@p3,0:a
+                                            spectype=blk type=minor
+                                            dev_link=/dev/dsk/c1t3d0s0
+                                            dev_link=/dev/sd0a
+                                        dev_path=/pci@340/pci@1/pci@0/pci@9/scsi@0/iport@8/cdrom@p3,0:a,raw
+                                            spectype=chr type=minor
+                                            dev_link=/dev/rdsk/c1t3d0s0
+                                            dev_link=/dev/rsd0a
+                                    dev=(32,25)
+                                        dev_path=/pci@340/pci@1/pci@0/pci@9/scsi@0/iport@8/cdrom@p3,0:b
+                                            spectype=blk type=minor
+                                            dev_link=/dev/dsk/c1t3d0s1
+                                            dev_link=/dev/sd0b
+                                        dev_path=/pci@340/pci@1/pci@0/pci@9/scsi@0/iport@8/cdrom@p3,0:b,raw
+                                            spectype=chr type=minor
+                                            dev_link=/dev/rdsk/c1t3d0s1
+                                            dev_link=/dev/rsd0b
+                                    dev=(32,26)
+                                        dev_path=/pci@340/pci@1/pci@0/pci@9/scsi@0/iport@8/cdrom@p3,0:c
+                                            spectype=blk type=minor
+                                            dev_link=/dev/dsk/c1t3d0s2
+                                            dev_link=/dev/sd0c
+                                        dev_path=/pci@340/pci@1/pci@0/pci@9/scsi@0/iport@8/cdrom@p3,0:c,raw
+                                            spectype=chr type=minor
+                                            dev_link=/dev/rdsk/c1t3d0s2
+                                            dev_link=/dev/rsd0c
+                                    dev=(32,27)
+                                        dev_path=/pci@340/pci@1/pci@0/pci@9/scsi@0/iport@8/cdrom@p3,0:d
+                                            spectype=blk type=minor
+                                            dev_link=/dev/dsk/c1t3d0s3
+                                            dev_link=/dev/sd0d
+                                        dev_path=/pci@340/pci@1/pci@0/pci@9/scsi@0/iport@8/cdrom@p3,0:d,raw
+                                            spectype=chr type=minor
+                                            dev_link=/dev/rdsk/c1t3d0s3
+                                            dev_link=/dev/rsd0d
+                                    dev=(32,28)
+                                        dev_path=/pci@340/pci@1/pci@0/pci@9/scsi@0/iport@8/cdrom@p3,0:e
+                                            spectype=blk type=minor
+                                            dev_link=/dev/dsk/c1t3d0s4
+                                            dev_link=/dev/sd0e
+                                        dev_path=/pci@340/pci@1/pci@0/pci@9/scsi@0/iport@8/cdrom@p3,0:e,raw
+                                            spectype=chr type=minor
+                                            dev_link=/dev/rdsk/c1t3d0s4
+                                            dev_link=/dev/rsd0e
+                                    dev=(32,29)
+                                        dev_path=/pci@340/pci@1/pci@0/pci@9/scsi@0/iport@8/cdrom@p3,0:f
+                                            spectype=blk type=minor
+                                            dev_link=/dev/dsk/c1t3d0s5
+                                            dev_link=/dev/sd0f
+                                        dev_path=/pci@340/pci@1/pci@0/pci@9/scsi@0/iport@8/cdrom@p3,0:f,raw
+                                            spectype=chr type=minor
+                                            dev_link=/dev/rdsk/c1t3d0s5
+                                            dev_link=/dev/rsd0f
+                                    dev=(32,30)
+                                        dev_path=/pci@340/pci@1/pci@0/pci@9/scsi@0/iport@8/cdrom@p3,0:g
+                                            spectype=blk type=minor
+                                            dev_link=/dev/dsk/c1t3d0s6
+                                            dev_link=/dev/sd0g
+                                        dev_path=/pci@340/pci@1/pci@0/pci@9/scsi@0/iport@8/cdrom@p3,0:g,raw
+                                            spectype=chr type=minor
+                                            dev_link=/dev/rdsk/c1t3d0s6
+                                            dev_link=/dev/rsd0g
+                                    dev=(32,31)
+                                        dev_path=/pci@340/pci@1/pci@0/pci@9/scsi@0/iport@8/cdrom@p3,0:h
+                                            spectype=blk type=minor
+                                            dev_link=/dev/dsk/c1t3d0s7
+                                            dev_link=/dev/sd0h
+                                        dev_path=/pci@340/pci@1/pci@0/pci@9/scsi@0/iport@8/cdrom@p3,0:h,raw
+                                            spectype=chr type=minor
+                                            dev_link=/dev/rdsk/c1t3d0s7
+                                            dev_link=/dev/rsd0h
+                        iport, instance #3
+                            System software properties:
+                                name='ddi-vhci-class' type=string items=1
+                                    value='scsi_vhci'
+                                name='mpxio-disable' type=string items=1
+                                    value='no'
+                            Driver properties:
+                                name='fm-ereport-capable' type=boolean dev=none
+                            Hardware properties:
+                                name='initiator-interconnect-type' type=string items=1
+                                    value='SAS'
+                                name='scsi-initiator-id' type=int items=1
+                                    value=00000007
+                                name='scsi-tag-age-limit' type=int items=1
+                                    value=00000002
+                                name='scsi-selection-timeout' type=int items=1
+                                    value=000000fa
+                                name='scsi-watchdog-tick' type=int items=1
+                                    value=0000000a
+                                name='scsi-reset-delay' type=int items=1
+                                    value=00000bb8
+                                name='scsi-options' type=int items=1
+                                    value=00107ff8
+                                name='scsi-enumeration' type=int items=1
+                                    value=00000000
+                                name='obp-path' type=string items=1
+                                    value='/pci@340/pci@1/pci@0/pci@9/scsi@0'
+                                name='compatible' type=string items=1
+                                    value='mpt_sas'
+                                name='scsi-iport' type=string items=1
+                                    value='v0'
+                            Device Minor Nodes:
+                                dev=(318,192)
+                                    dev_path=/pci@340/pci@1/pci@0/pci@9/scsi@0/iport@v0:devctl
+                                        spectype=chr type=minor
+                                dev=(318,193)
+                                    dev_path=/pci@340/pci@1/pci@0/pci@9/scsi@0/iport@v0:scsi
+                                        spectype=chr type=minor
+                                        dev_link=/dev/cfg/c5
+                pci, instance #5
+                    System software properties:
+                        name='ddi-forceattach' type=int items=1
+                            value=00000001
+                    Driver properties:
+                        name='device_type' type=string items=1 dev=none
+                            value='pciex'
+                        name='pm-components' type=string items=3 dev=none
+                            value='NAME=PCIe switch/bridge PM' + '0=Power Off (D3)' + '3=Full Power D0'
+                        name='pm-want-child-notification?' type=boolean dev=none
+                        name='fm-ereport-capable' type=boolean dev=none
+                    Device Minor Nodes:
+                        dev=(242,1535)
+                            dev_path=/pci@340/pci@1/pci@0/pci@c:devctl
+                                spectype=chr type=minor
+    pci, instance #2
+        Driver properties:
+            name='ddi-kernel-ioctl' type=boolean dev=none
+            name='pm-want-child-notification?' type=boolean dev=none
+            name='fm-accchk-capable' type=boolean dev=none
+            name='fm-dmachk-capable' type=boolean dev=none
+            name='fm-errcb-capable' type=boolean dev=none
+            name='fm-ereport-capable' type=boolean dev=none
+            name='pci-conf-indirect' type=int items=1 dev=(241,767)
+                value=00000001
+            name='device_type' type=string items=1 dev=none
+                value='pciex'
+        Hardware properties:
+            name='available' type=int items=15
+                value=81000000.00000000.00002000.00000000.0fffe000.82000000.00000000.00200000.00000000.7ee00000.c2000000.00000001.20000000.00000006.e0000000
+        Register Specifications:
+            Bus Type=0xc00003c0, Address=0x0, Size=0x0
+        Device Minor Nodes:
+            dev=(241,767)
+                dev_path=/pci@3c0:devctl
+                    spectype=chr type=minor
+            dev=(241,765)
+                dev_path=/pci@3c0:reg
+                    spectype=chr type=minor
+            dev=(241,764)
+                dev_path=/pci@3c0:intr
+                    spectype=chr type=minor
+        pci, instance #11
+            System software properties:
+                name='ddi-forceattach' type=int items=1
+                    value=00000001
+            Driver properties:
+                name='device_type' type=string items=1 dev=none
+                    value='pciex'
+                name='pm-components' type=string items=3 dev=none
+                    value='NAME=PCIe switch/bridge PM' + '0=Power Off (D3)' + '3=Full Power D0'
+                name='pm-want-child-notification?' type=boolean dev=none
+                name='fm-ereport-capable' type=boolean dev=none
+            Device Minor Nodes:
+                dev=(242,3071)
+                    dev_path=/pci@3c0/pci@1:devctl
+                        spectype=chr type=minor
+            pci, instance #12
+                System software properties:
+                    name='ddi-forceattach' type=int items=1
+                        value=00000001
+                Driver properties:
+                    name='device_type' type=string items=1 dev=none
+                        value='pciex'
+                    name='pm-components' type=string items=3 dev=none
+                        value='NAME=PCIe switch/bridge PM' + '0=Power Off (D3)' + '3=Full Power D0'
+                    name='pm-want-child-notification?' type=boolean dev=none
+                    name='fm-ereport-capable' type=boolean dev=none
+                Device Minor Nodes:
+                    dev=(242,3327)
+                        dev_path=/pci@3c0/pci@1/pci@0:devctl
+                            spectype=chr type=minor
+                pci, instance #13
+                    System software properties:
+                        name='ddi-forceattach' type=int items=1
+                            value=00000001
+                    Driver properties:
+                        name='device_type' type=string items=1 dev=none
+                            value='pciex'
+                        name='pm-components' type=string items=3 dev=none
+                            value='NAME=PCIe switch/bridge PM' + '0=Power Off (D3)' + '3=Full Power D0'
+                        name='pm-want-child-notification?' type=boolean dev=none
+                        name='fm-ereport-capable' type=boolean dev=none
+                    Hardware properties:
+                        name='available' type=int items=15
+                            value=81000000.00000000.00000040.00000000.00000fc0.c2000000.00000001.00288000.00000000.00078000.c2000000.00000001.00580000.00000000.0fa80000
+                    Device Minor Nodes:
+                        dev=(242,3583)
+                            dev_path=/pci@3c0/pci@1/pci@0/pci@6:devctl
+                                spectype=chr type=minor
+                    network, instance #2
+                        Driver properties:
+                            name='fm-accchk-capable' type=boolean dev=none
+                            name='fm-dmachk-capable' type=boolean dev=none
+                            name='fm-errcb-capable' type=boolean dev=none
+                            name='fm-ereport-capable' type=boolean dev=none
+                        Hardware properties:
+                            name='ddi-intr-weight' type=int items=1
+                                value=00000023
+                        Device Minor Nodes:
+                            dev=(154,3)
+                                dev_path=/pci@3c0/pci@1/pci@0/pci@6/network@0:ixgbe2
+                                    spectype=chr type=minor
+                                    dev_link=/dev/ixgbe2
+                            dev=(154,1023)
+                                dev_path=<clone>
+                                Device Minor Layered Under:
+                                    mod=udp accesstype=chr
+                                        dev_path=/pseudo/udp@0
+                            dev=(154,1024)
+                                dev_path=<clone>
+                                Device Minor Layered Under:
+                                    mod=udp accesstype=chr
+                                        dev_path=/pseudo/udp@0
+                    network, instance #3
+                        Driver properties:
+                            name='fm-accchk-capable' type=boolean dev=none
+                            name='fm-dmachk-capable' type=boolean dev=none
+                            name='fm-errcb-capable' type=boolean dev=none
+                            name='fm-ereport-capable' type=boolean dev=none
+                        Hardware properties:
+                            name='ddi-intr-weight' type=int items=1
+                                value=00000023
+                        Device Minor Nodes:
+                            dev=(154,4)
+                                dev_path=/pci@3c0/pci@1/pci@0/pci@6/network@0,1:ixgbe3
+                                    spectype=chr type=minor
+                                    dev_link=/dev/ixgbe3
+                            dev=(154,1025)
+                                dev_path=<clone>
+                                Device Minor Layered Under:
+                                    mod=udp accesstype=chr
+                                        dev_path=/pseudo/udp@0
+                            dev=(154,1013)
+                                dev_path=<clone>
+                                Device Minor Layered Under:
+                                    mod=udp accesstype=chr
+                                        dev_path=/pseudo/udp@0
+                pci, instance #14
+                    System software properties:
+                        name='ddi-forceattach' type=int items=1
+                            value=00000001
+                    Driver properties:
+                        name='device_type' type=string items=1 dev=none
+                            value='pciex'
+                        name='pm-components' type=string items=3 dev=none
+                            value='NAME=PCIe switch/bridge PM' + '0=Power Off (D3)' + '3=Full Power D0'
+                        name='pm-want-child-notification?' type=boolean dev=none
+                        name='fm-ereport-capable' type=boolean dev=none
+                    Hardware properties:
+                        name='available' type=int items=15
+                            value=81000000.00000000.00001040.00000000.00000fc0.c2000000.00000001.10508000.00000000.000f8000.c2000000.00000001.10900000.00000000.0f700000
+                    Device Minor Nodes:
+                        dev=(242,3839)
+                            dev_path=/pci@3c0/pci@1/pci@0/pci@a:devctl
+                                spectype=chr type=minor
+                    network, instance #4
+                        Driver properties:
+                            name='fm-accchk-capable' type=boolean dev=none
+                            name='fm-dmachk-capable' type=boolean dev=none
+                            name='fm-errcb-capable' type=boolean dev=none
+                            name='fm-ereport-capable' type=boolean dev=none
+                        Hardware properties:
+                            name='ddi-intr-weight' type=int items=1
+                                value=00000023
+                        Device Minor Nodes:
+                            dev=(154,5)
+                                dev_path=/pci@3c0/pci@1/pci@0/pci@a/network@0:ixgbe4
+                                    spectype=chr type=minor
+                                    dev_link=/dev/ixgbe4
+                    network, instance #5
+                        Driver properties:
+                            name='fm-accchk-capable' type=boolean dev=none
+                            name='fm-dmachk-capable' type=boolean dev=none
+                            name='fm-errcb-capable' type=boolean dev=none
+                            name='fm-ereport-capable' type=boolean dev=none
+                        Hardware properties:
+                            name='ddi-intr-weight' type=int items=1
+                                value=00000023
+                        Device Minor Nodes:
+                            dev=(154,6)
+                                dev_path=/pci@3c0/pci@1/pci@0/pci@a/network@0,1:ixgbe5
+                                    spectype=chr type=minor
+                                    dev_link=/dev/ixgbe5
+                            dev=(154,1003)
+                                dev_path=<clone>
+                                Device Minor Layered Under:
+                                    mod=udp accesstype=chr
+                                        dev_path=/pseudo/udp@0
+                            dev=(154,1002)
+                                dev_path=<clone>
+                                Device Minor Layered Under:
+                                    mod=udp accesstype=chr
+                                        dev_path=/pseudo/udp@0
+                pci, instance #15
+                    System software properties:
+                        name='ddi-forceattach' type=int items=1
+                            value=00000001
+                    Driver properties:
+                        name='device_type' type=string items=1 dev=none
+                            value='pciex'
+                        name='pm-components' type=string items=3 dev=none
+                            value='NAME=PCIe switch/bridge PM' + '0=Power Off (D3)' + '3=Full Power D0'
+                        name='pm-want-child-notification?' type=boolean dev=none
+                        name='fm-ereport-capable' type=boolean dev=none
+                    Device Minor Nodes:
+                        dev=(242,4095)
+                            dev_path=/pci@3c0/pci@1/pci@0/pci@e:devctl
+                                spectype=chr type=minor
+    pci-performance-counters, instance #0
+        System software properties:
+            name='ddi-forceattach' type=int items=1
+                value=00000001
+        Register Specifications:
+            Bus Type=0xc0000340, Address=0x0, Size=0x0
+    pci-performance-counters, instance #2
+        System software properties:
+            name='ddi-forceattach' type=int items=1
+                value=00000001
+        Register Specifications:
+            Bus Type=0xc00003c0, Address=0x0, Size=0x0
+    ramdisk-root, instance #0 (driver not attached)
+    os-io (driver not attached)
+    iscsi, instance #0
+        System properties:
+            name='instance' type=int items=1
+                value=00000000
+            name='ddi-forceattach' type=int items=1
+                value=00000001
+            name='mpxio-disable' type=string items=1
+                value='no'
+        Driver properties:
+            name='initiator-port' type=string items=1 dev=none
+                value='iqn.1986-03.com.sun:01:0010e00fd8cc.508b7047,4000002a00ff'
+            name='fm-ereport-capable' type=boolean dev=none
+            name='config-storm-delay' type=int items=1 dev=none
+                value=00000005
+            name='tcp-abort-threshold' type=int items=1 dev=none
+                value=00007530
+            name='tcp-conn-abort-threshold' type=int items=1 dev=none
+                value=00002710
+            name='tcp-conn-notify-threshold' type=int items=1 dev=none
+                value=000007d0
+            name='tcp-nodelay' type=int items=1 dev=none
+                value=00000000
+            name='so-sndbuf' type=int items=1 dev=none
+                value=00040000
+            name='so-rcvbuf' type=int items=1 dev=none
+                value=00040000
+        Hardware properties:
+            name='initiator-interconnect-type' type=string items=1
+                value='iSCSI'
+            name='scsi-initiator-id' type=int items=1
+                value=00000007
+            name='scsi-tag-age-limit' type=int items=1
+                value=00000002
+            name='scsi-selection-timeout' type=int items=1
+                value=000000fa
+            name='scsi-watchdog-tick' type=int items=1
+                value=0000000a
+            name='scsi-reset-delay' type=int items=1
+                value=00000bb8
+            name='scsi-options' type=int items=1
+                value=00107ff8
+            name='scsi-enumeration' type=int items=1
+                value=00000000
+        Device Minor Nodes:
+            dev=(79,0)
+                dev_path=/iscsi:devctl
+                    spectype=chr type=minor
+    pseudo, instance #0
+        System properties:
+            name='instance' type=int items=1
+                value=00000000
+            name='class' type=string items=1
+                value='root'
+        Device Minor Nodes:
+            dev=(2,0)
+                dev_path=/pseudo:devctl
+                    spectype=chr type=minor

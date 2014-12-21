@@ -1,0 +1,2675 @@
+System Configuration:  Oracle Corporation  sun4v
+Memory size: 130560 Megabytes
+System Peripherals (Software Nodes):
+
+ORCL,SPARC-T4-2
+    System properties:
+        name='fm-capable' type=int items=1
+            value=00000009
+        name='relative-addressing' type=int items=1
+            value=00000001
+        name='MMU_PAGEOFFSET' type=int items=1
+            value=00001fff
+        name='MMU_PAGESIZE' type=int items=1
+            value=00002000
+        name='PAGESIZE' type=int items=1
+            value=00002000
+    Driver properties:
+        name='pm-hardware-state' type=string items=1 dev=none
+            value='no-suspend-resume'
+        name='fm-errcb-capable' type=boolean dev=none
+        name='fm-ereport-capable' type=boolean dev=none
+    scsi_vhci, instance #0
+        System properties:
+            name='class' type=string items=1
+                value='root'
+            name='load-balance' type=string items=1
+                value='round-robin'
+            name='auto-failback' type=string items=1
+                value='enable'
+        Driver properties:
+            name='pm-want-child-notification?' type=boolean dev=none
+            name='fm-ereport-capable' type=boolean dev=none
+        Hardware properties:
+            name='initiator-interconnect-type' type=string items=1
+                value='SPI'
+            name='scsi-initiator-id' type=int items=1
+                value=00000007
+            name='scsi-tag-age-limit' type=int items=1
+                value=00000002
+            name='scsi-selection-timeout' type=int items=1
+                value=000000fa
+            name='scsi-watchdog-tick' type=int items=1
+                value=0000000a
+            name='scsi-reset-delay' type=int items=1
+                value=00000bb8
+            name='scsi-options' type=int items=1
+                value=00107ff8
+            name='scsi-enumeration' type=int items=1
+                value=00000000
+        Device Minor Nodes:
+            dev=(189,0)
+                dev_path=/scsi_vhci:devctl
+                    spectype=chr type=minor
+        disk, instance #4
+            Driver properties:
+                name='inquiry-serial-no' type=string items=1 dev=none
+                    value='001205NNYP9B        PQGNYP9B'
+                name='pm-components' type=string items=3 dev=none
+                    value='NAME=spindle-motor' + '0=off' + '1=on'
+                name='pm-hardware-state' type=string items=1 dev=none
+                    value='needs-suspend-resume'
+                name='ddi-failfast-supported' type=boolean dev=none
+                name='ddi-kernel-ioctl' type=boolean dev=none
+                name='device-nblocks' type=int64 items=1 dev=none
+                    value=0000000022ecb25c
+            Hardware properties:
+                name='devid' type=string items=1
+                    value='id1,sd@n5000cca025261b74'
+                name='class' type=string items=1
+                    value='scsi'
+                name='inquiry-revision-id' type=string items=1
+                    value='A2B0'
+                name='inquiry-product-id' type=string items=1
+                    value='H106030SDSUN300G'
+                name='inquiry-vendor-id' type=string items=1
+                    value='HITACHI'
+                name='inquiry-device-type' type=int items=1
+                    value=00000000
+                name='compatible' type=string items=4
+                    value='scsiclass,00.vHITACHI.pH106030SDSUN300G.rA2B0' + 'scsiclass,00.vHITACHI.pH106030SDSUN300G' + 'scsiclass,00' + 'scsiclass'
+                name='client-guid' type=string items=1
+                    value='5000cca025261b74'
+            Paths from multipath bus adapters:
+                Path 1: /pci@400/pci@2/pci@0/pci@e/scsi@0/iport@1/disk@w5000cca025261b75,0
+                mpt_sas#1 (online)
+                    name='wwn' type=string items=1
+                        value='5000cca025261b74'
+                    name='lun' type=int items=1
+                        value=00000000
+                    name='target-port' type=string items=1
+                        value='5000cca025261b75'
+                    name='obp-path' type=string items=1
+                        value='/pci@400/pci@2/pci@0/pci@e/scsi@0/disk@w5000cca025261b75,0'
+                    name='phy-num' type=int items=1
+                        value=00000000
+                    name='path-class' type=string items=1
+                        value='primary'
+            Device Minor Nodes:
+                dev=(32,32)
+                    dev_path=/scsi_vhci/disk@g5000cca025261b74:a
+                        spectype=blk type=minor
+                        dev_link=/dev/dsk/c0t5000CCA025261B74d0s0
+                        dev_link=/dev/sd4a
+                    dev_path=/scsi_vhci/disk@g5000cca025261b74:a,raw
+                        spectype=chr type=minor
+                        dev_link=/dev/rdsk/c0t5000CCA025261B74d0s0
+                        dev_link=/dev/rsd4a
+                dev=(32,33)
+                    dev_path=/scsi_vhci/disk@g5000cca025261b74:b
+                        spectype=blk type=minor
+                        dev_link=/dev/dsk/c0t5000CCA025261B74d0s1
+                        dev_link=/dev/sd4b
+                    dev_path=/scsi_vhci/disk@g5000cca025261b74:b,raw
+                        spectype=chr type=minor
+                        dev_link=/dev/rdsk/c0t5000CCA025261B74d0s1
+                        dev_link=/dev/rsd4b
+                dev=(32,34)
+                    dev_path=/scsi_vhci/disk@g5000cca025261b74:c
+                        spectype=blk type=minor
+                        dev_link=/dev/dsk/c0t5000CCA025261B74d0s2
+                        dev_link=/dev/sd4c
+                    dev_path=/scsi_vhci/disk@g5000cca025261b74:c,raw
+                        spectype=chr type=minor
+                        dev_link=/dev/rdsk/c0t5000CCA025261B74d0s2
+                        dev_link=/dev/rsd4c
+                dev=(32,35)
+                    dev_path=/scsi_vhci/disk@g5000cca025261b74:d
+                        spectype=blk type=minor
+                        dev_link=/dev/dsk/c0t5000CCA025261B74d0s3
+                        dev_link=/dev/sd4d
+                    dev_path=/scsi_vhci/disk@g5000cca025261b74:d,raw
+                        spectype=chr type=minor
+                        dev_link=/dev/rdsk/c0t5000CCA025261B74d0s3
+                        dev_link=/dev/rsd4d
+                dev=(32,36)
+                    dev_path=/scsi_vhci/disk@g5000cca025261b74:e
+                        spectype=blk type=minor
+                        dev_link=/dev/dsk/c0t5000CCA025261B74d0s4
+                        dev_link=/dev/sd4e
+                    dev_path=/scsi_vhci/disk@g5000cca025261b74:e,raw
+                        spectype=chr type=minor
+                        dev_link=/dev/rdsk/c0t5000CCA025261B74d0s4
+                        dev_link=/dev/rsd4e
+                dev=(32,37)
+                    dev_path=/scsi_vhci/disk@g5000cca025261b74:f
+                        spectype=blk type=minor
+                        dev_link=/dev/dsk/c0t5000CCA025261B74d0s5
+                        dev_link=/dev/sd4f
+                    dev_path=/scsi_vhci/disk@g5000cca025261b74:f,raw
+                        spectype=chr type=minor
+                        dev_link=/dev/rdsk/c0t5000CCA025261B74d0s5
+                        dev_link=/dev/rsd4f
+                dev=(32,38)
+                    dev_path=/scsi_vhci/disk@g5000cca025261b74:g
+                        spectype=blk type=minor
+                        dev_link=/dev/dsk/c0t5000CCA025261B74d0s6
+                        dev_link=/dev/sd4g
+                    dev_path=/scsi_vhci/disk@g5000cca025261b74:g,raw
+                        spectype=chr type=minor
+                        dev_link=/dev/rdsk/c0t5000CCA025261B74d0s6
+                        dev_link=/dev/rsd4g
+                dev=(32,39)
+                    dev_path=/scsi_vhci/disk@g5000cca025261b74:h
+                        spectype=blk type=minor
+                        dev_link=/dev/dsk/c0t5000CCA025261B74d0s7
+                        dev_link=/dev/sd4h
+                    dev_path=/scsi_vhci/disk@g5000cca025261b74:h,raw
+                        spectype=chr type=minor
+                        dev_link=/dev/rdsk/c0t5000CCA025261B74d0s7
+                        dev_link=/dev/rsd4h
+        disk, instance #5
+            Driver properties:
+                name='inquiry-serial-no' type=string items=1 dev=none
+                    value='001206NW029B        PQGW029B'
+                name='pm-components' type=string items=3 dev=none
+                    value='NAME=spindle-motor' + '0=off' + '1=on'
+                name='pm-hardware-state' type=string items=1 dev=none
+                    value='needs-suspend-resume'
+                name='ddi-failfast-supported' type=boolean dev=none
+                name='ddi-kernel-ioctl' type=boolean dev=none
+                name='device-nblocks' type=int64 items=1 dev=none
+                    value=0000000022ecb25c
+            Hardware properties:
+                name='devid' type=string items=1
+                    value='id1,sd@n5000cca025311930'
+                name='class' type=string items=1
+                    value='scsi'
+                name='inquiry-revision-id' type=string items=1
+                    value='A2B0'
+                name='inquiry-product-id' type=string items=1
+                    value='H106030SDSUN300G'
+                name='inquiry-vendor-id' type=string items=1
+                    value='HITACHI'
+                name='inquiry-device-type' type=int items=1
+                    value=00000000
+                name='compatible' type=string items=4
+                    value='scsiclass,00.vHITACHI.pH106030SDSUN300G.rA2B0' + 'scsiclass,00.vHITACHI.pH106030SDSUN300G' + 'scsiclass,00' + 'scsiclass'
+                name='client-guid' type=string items=1
+                    value='5000cca025311930'
+            Paths from multipath bus adapters:
+                Path 2: /pci@400/pci@2/pci@0/pci@e/scsi@0/iport@2/disk@w5000cca025311931,0
+                mpt_sas#2 (online)
+                    name='wwn' type=string items=1
+                        value='5000cca025311930'
+                    name='lun' type=int items=1
+                        value=00000000
+                    name='target-port' type=string items=1
+                        value='5000cca025311931'
+                    name='obp-path' type=string items=1
+                        value='/pci@400/pci@2/pci@0/pci@e/scsi@0/disk@w5000cca025311931,0'
+                    name='phy-num' type=int items=1
+                        value=00000001
+                    name='path-class' type=string items=1
+                        value='primary'
+            Device Minor Nodes:
+                dev=(32,40)
+                    dev_path=/scsi_vhci/disk@g5000cca025311930:a
+                        spectype=blk type=minor
+                        dev_link=/dev/dsk/c0t5000CCA025311930d0s0
+                        dev_link=/dev/sd5a
+                    dev_path=/scsi_vhci/disk@g5000cca025311930:a,raw
+                        spectype=chr type=minor
+                        dev_link=/dev/rdsk/c0t5000CCA025311930d0s0
+                        dev_link=/dev/rsd5a
+                dev=(32,41)
+                    dev_path=/scsi_vhci/disk@g5000cca025311930:b
+                        spectype=blk type=minor
+                        dev_link=/dev/dsk/c0t5000CCA025311930d0s1
+                        dev_link=/dev/sd5b
+                    dev_path=/scsi_vhci/disk@g5000cca025311930:b,raw
+                        spectype=chr type=minor
+                        dev_link=/dev/rdsk/c0t5000CCA025311930d0s1
+                        dev_link=/dev/rsd5b
+                dev=(32,42)
+                    dev_path=/scsi_vhci/disk@g5000cca025311930:c
+                        spectype=blk type=minor
+                        dev_link=/dev/dsk/c0t5000CCA025311930d0s2
+                        dev_link=/dev/sd5c
+                    dev_path=/scsi_vhci/disk@g5000cca025311930:c,raw
+                        spectype=chr type=minor
+                        dev_link=/dev/rdsk/c0t5000CCA025311930d0s2
+                        dev_link=/dev/rsd5c
+                dev=(32,43)
+                    dev_path=/scsi_vhci/disk@g5000cca025311930:d
+                        spectype=blk type=minor
+                        dev_link=/dev/dsk/c0t5000CCA025311930d0s3
+                        dev_link=/dev/sd5d
+                    dev_path=/scsi_vhci/disk@g5000cca025311930:d,raw
+                        spectype=chr type=minor
+                        dev_link=/dev/rdsk/c0t5000CCA025311930d0s3
+                        dev_link=/dev/rsd5d
+                dev=(32,44)
+                    dev_path=/scsi_vhci/disk@g5000cca025311930:e
+                        spectype=blk type=minor
+                        dev_link=/dev/dsk/c0t5000CCA025311930d0s4
+                        dev_link=/dev/sd5e
+                    dev_path=/scsi_vhci/disk@g5000cca025311930:e,raw
+                        spectype=chr type=minor
+                        dev_link=/dev/rdsk/c0t5000CCA025311930d0s4
+                        dev_link=/dev/rsd5e
+                dev=(32,45)
+                    dev_path=/scsi_vhci/disk@g5000cca025311930:f
+                        spectype=blk type=minor
+                        dev_link=/dev/dsk/c0t5000CCA025311930d0s5
+                        dev_link=/dev/sd5f
+                    dev_path=/scsi_vhci/disk@g5000cca025311930:f,raw
+                        spectype=chr type=minor
+                        dev_link=/dev/rdsk/c0t5000CCA025311930d0s5
+                        dev_link=/dev/rsd5f
+                dev=(32,46)
+                    dev_path=/scsi_vhci/disk@g5000cca025311930:g
+                        spectype=blk type=minor
+                        dev_link=/dev/dsk/c0t5000CCA025311930d0s6
+                        dev_link=/dev/sd5g
+                    dev_path=/scsi_vhci/disk@g5000cca025311930:g,raw
+                        spectype=chr type=minor
+                        dev_link=/dev/rdsk/c0t5000CCA025311930d0s6
+                        dev_link=/dev/rsd5g
+                dev=(32,47)
+                    dev_path=/scsi_vhci/disk@g5000cca025311930:h
+                        spectype=blk type=minor
+                        dev_link=/dev/dsk/c0t5000CCA025311930d0s7
+                        dev_link=/dev/sd5h
+                    dev_path=/scsi_vhci/disk@g5000cca025311930:h,raw
+                        spectype=chr type=minor
+                        dev_link=/dev/rdsk/c0t5000CCA025311930d0s7
+                        dev_link=/dev/rsd5h
+        disk, instance #6
+            Driver properties:
+                name='inquiry-serial-no' type=string items=1 dev=none
+                    value='001206NVT2VB        PQGVT2VB'
+                name='pm-components' type=string items=3 dev=none
+                    value='NAME=spindle-motor' + '0=off' + '1=on'
+                name='pm-hardware-state' type=string items=1 dev=none
+                    value='needs-suspend-resume'
+                name='ddi-failfast-supported' type=boolean dev=none
+                name='ddi-kernel-ioctl' type=boolean dev=none
+                name='device-nblocks' type=int64 items=1 dev=none
+                    value=0000000022ecb25c
+            Hardware properties:
+                name='devid' type=string items=1
+                    value='id1,sd@n5000cca02530b058'
+                name='class' type=string items=1
+                    value='scsi'
+                name='inquiry-revision-id' type=string items=1
+                    value='A2B0'
+                name='inquiry-product-id' type=string items=1
+                    value='H106030SDSUN300G'
+                name='inquiry-vendor-id' type=string items=1
+                    value='HITACHI'
+                name='inquiry-device-type' type=int items=1
+                    value=00000000
+                name='compatible' type=string items=4
+                    value='scsiclass,00.vHITACHI.pH106030SDSUN300G.rA2B0' + 'scsiclass,00.vHITACHI.pH106030SDSUN300G' + 'scsiclass,00' + 'scsiclass'
+                name='client-guid' type=string items=1
+                    value='5000cca02530b058'
+            Paths from multipath bus adapters:
+                Path 3: /pci@400/pci@2/pci@0/pci@e/scsi@0/iport@4/disk@w5000cca02530b059,0
+                mpt_sas#3 (online)
+                    name='wwn' type=string items=1
+                        value='5000cca02530b058'
+                    name='lun' type=int items=1
+                        value=00000000
+                    name='target-port' type=string items=1
+                        value='5000cca02530b059'
+                    name='obp-path' type=string items=1
+                        value='/pci@400/pci@2/pci@0/pci@e/scsi@0/disk@w5000cca02530b059,0'
+                    name='phy-num' type=int items=1
+                        value=00000002
+                    name='path-class' type=string items=1
+                        value='primary'
+            Device Minor Nodes:
+                dev=(32,48)
+                    dev_path=/scsi_vhci/disk@g5000cca02530b058:a
+                        spectype=blk type=minor
+                        dev_link=/dev/dsk/c0t5000CCA02530B058d0s0
+                        dev_link=/dev/sd6a
+                    dev_path=/scsi_vhci/disk@g5000cca02530b058:a,raw
+                        spectype=chr type=minor
+                        dev_link=/dev/rdsk/c0t5000CCA02530B058d0s0
+                        dev_link=/dev/rsd6a
+                    Device Minor Layered Under:
+                        mod=vds accesstype=blk
+                            dev_path=/virtual-devices@100/channel-devices@200/virtual-disk-server@0
+                dev=(32,49)
+                    dev_path=/scsi_vhci/disk@g5000cca02530b058:b
+                        spectype=blk type=minor
+                        dev_link=/dev/dsk/c0t5000CCA02530B058d0s1
+                        dev_link=/dev/sd6b
+                    dev_path=/scsi_vhci/disk@g5000cca02530b058:b,raw
+                        spectype=chr type=minor
+                        dev_link=/dev/rdsk/c0t5000CCA02530B058d0s1
+                        dev_link=/dev/rsd6b
+                    Device Minor Layered Under:
+                        mod=vds accesstype=blk
+                            dev_path=/virtual-devices@100/channel-devices@200/virtual-disk-server@0
+                dev=(32,50)
+                    dev_path=/scsi_vhci/disk@g5000cca02530b058:c
+                        spectype=blk type=minor
+                        dev_link=/dev/dsk/c0t5000CCA02530B058d0s2
+                        dev_link=/dev/sd6c
+                    dev_path=/scsi_vhci/disk@g5000cca02530b058:c,raw
+                        spectype=chr type=minor
+                        dev_link=/dev/rdsk/c0t5000CCA02530B058d0s2
+                        dev_link=/dev/rsd6c
+                    Device Minor Layered Under:
+                        mod=vds accesstype=blk
+                            dev_path=/virtual-devices@100/channel-devices@200/virtual-disk-server@0
+                dev=(32,51)
+                    dev_path=/scsi_vhci/disk@g5000cca02530b058:d
+                        spectype=blk type=minor
+                        dev_link=/dev/dsk/c0t5000CCA02530B058d0s3
+                        dev_link=/dev/sd6d
+                    dev_path=/scsi_vhci/disk@g5000cca02530b058:d,raw
+                        spectype=chr type=minor
+                        dev_link=/dev/rdsk/c0t5000CCA02530B058d0s3
+                        dev_link=/dev/rsd6d
+                    Device Minor Layered Under:
+                        mod=vds accesstype=blk
+                            dev_path=/virtual-devices@100/channel-devices@200/virtual-disk-server@0
+                dev=(32,52)
+                    dev_path=/scsi_vhci/disk@g5000cca02530b058:e
+                        spectype=blk type=minor
+                        dev_link=/dev/dsk/c0t5000CCA02530B058d0s4
+                        dev_link=/dev/sd6e
+                    dev_path=/scsi_vhci/disk@g5000cca02530b058:e,raw
+                        spectype=chr type=minor
+                        dev_link=/dev/rdsk/c0t5000CCA02530B058d0s4
+                        dev_link=/dev/rsd6e
+                    Device Minor Layered Under:
+                        mod=vds accesstype=blk
+                            dev_path=/virtual-devices@100/channel-devices@200/virtual-disk-server@0
+                dev=(32,53)
+                    dev_path=/scsi_vhci/disk@g5000cca02530b058:f
+                        spectype=blk type=minor
+                        dev_link=/dev/dsk/c0t5000CCA02530B058d0s5
+                        dev_link=/dev/sd6f
+                    dev_path=/scsi_vhci/disk@g5000cca02530b058:f,raw
+                        spectype=chr type=minor
+                        dev_link=/dev/rdsk/c0t5000CCA02530B058d0s5
+                        dev_link=/dev/rsd6f
+                    Device Minor Layered Under:
+                        mod=vds accesstype=blk
+                            dev_path=/virtual-devices@100/channel-devices@200/virtual-disk-server@0
+                dev=(32,54)
+                    dev_path=/scsi_vhci/disk@g5000cca02530b058:g
+                        spectype=blk type=minor
+                        dev_link=/dev/dsk/c0t5000CCA02530B058d0s6
+                        dev_link=/dev/sd6g
+                    dev_path=/scsi_vhci/disk@g5000cca02530b058:g,raw
+                        spectype=chr type=minor
+                        dev_link=/dev/rdsk/c0t5000CCA02530B058d0s6
+                        dev_link=/dev/rsd6g
+                    Device Minor Layered Under:
+                        mod=vds accesstype=blk
+                            dev_path=/virtual-devices@100/channel-devices@200/virtual-disk-server@0
+                dev=(32,55)
+                    dev_path=/scsi_vhci/disk@g5000cca02530b058:h
+                        spectype=blk type=minor
+                        dev_link=/dev/dsk/c0t5000CCA02530B058d0s7
+                        dev_link=/dev/sd6h
+                    dev_path=/scsi_vhci/disk@g5000cca02530b058:h,raw
+                        spectype=chr type=minor
+                        dev_link=/dev/rdsk/c0t5000CCA02530B058d0s7
+                        dev_link=/dev/rsd6h
+                    Device Minor Layered Under:
+                        mod=vds accesstype=blk
+                            dev_path=/virtual-devices@100/channel-devices@200/virtual-disk-server@0
+        disk, instance #7
+            Driver properties:
+                name='ddi-no-autodetach' type=int items=1 dev=none
+                    value=00000001
+                name='inquiry-serial-no' type=string items=1 dev=none
+                    value='001206N6ZDVB        PQG6ZDVB'
+                name='pm-components' type=string items=3 dev=none
+                    value='NAME=spindle-motor' + '0=off' + '1=on'
+                name='pm-hardware-state' type=string items=1 dev=none
+                    value='needs-suspend-resume'
+                name='ddi-failfast-supported' type=boolean dev=none
+                name='ddi-kernel-ioctl' type=boolean dev=none
+                name='device-nblocks' type=int64 items=1 dev=none
+                    value=0000000022ecb25c
+            Hardware properties:
+                name='devid' type=string items=1
+                    value='id1,sd@n5000cca0250cb198'
+                name='class' type=string items=1
+                    value='scsi'
+                name='inquiry-revision-id' type=string items=1
+                    value='A2B0'
+                name='inquiry-product-id' type=string items=1
+                    value='H106030SDSUN300G'
+                name='inquiry-vendor-id' type=string items=1
+                    value='HITACHI'
+                name='inquiry-device-type' type=int items=1
+                    value=00000000
+                name='compatible' type=string items=4
+                    value='scsiclass,00.vHITACHI.pH106030SDSUN300G.rA2B0' + 'scsiclass,00.vHITACHI.pH106030SDSUN300G' + 'scsiclass,00' + 'scsiclass'
+                name='client-guid' type=string items=1
+                    value='5000cca0250cb198'
+            Paths from multipath bus adapters:
+                Path 4: /pci@400/pci@2/pci@0/pci@e/scsi@0/iport@8/disk@w5000cca0250cb199,0
+                mpt_sas#4 (online)
+                    name='wwn' type=string items=1
+                        value='5000cca0250cb198'
+                    name='lun' type=int items=1
+                        value=00000000
+                    name='target-port' type=string items=1
+                        value='5000cca0250cb199'
+                    name='obp-path' type=string items=1
+                        value='/pci@400/pci@2/pci@0/pci@e/scsi@0/disk@w5000cca0250cb199,0'
+                    name='phy-num' type=int items=1
+                        value=00000003
+                    name='path-class' type=string items=1
+                        value='primary'
+            Device Minor Nodes:
+                dev=(32,56)
+                    dev_path=/scsi_vhci/disk@g5000cca0250cb198:a
+                        spectype=blk type=minor
+                        dev_link=/dev/dsk/c0t5000CCA0250CB198d0s0
+                        dev_link=/dev/sd7a
+                    dev_path=/scsi_vhci/disk@g5000cca0250cb198:a,raw
+                        spectype=chr type=minor
+                        dev_link=/dev/rdsk/c0t5000CCA0250CB198d0s0
+                        dev_link=/dev/rsd7a
+                dev=(32,57)
+                    dev_path=/scsi_vhci/disk@g5000cca0250cb198:b
+                        spectype=blk type=minor
+                        dev_link=/dev/dsk/c0t5000CCA0250CB198d0s1
+                        dev_link=/dev/sd7b
+                    dev_path=/scsi_vhci/disk@g5000cca0250cb198:b,raw
+                        spectype=chr type=minor
+                        dev_link=/dev/rdsk/c0t5000CCA0250CB198d0s1
+                        dev_link=/dev/rsd7b
+                dev=(32,58)
+                    dev_path=/scsi_vhci/disk@g5000cca0250cb198:c
+                        spectype=blk type=minor
+                        dev_link=/dev/dsk/c0t5000CCA0250CB198d0s2
+                        dev_link=/dev/sd7c
+                    dev_path=/scsi_vhci/disk@g5000cca0250cb198:c,raw
+                        spectype=chr type=minor
+                        dev_link=/dev/rdsk/c0t5000CCA0250CB198d0s2
+                        dev_link=/dev/rsd7c
+                dev=(32,59)
+                    dev_path=/scsi_vhci/disk@g5000cca0250cb198:d
+                        spectype=blk type=minor
+                        dev_link=/dev/dsk/c0t5000CCA0250CB198d0s3
+                        dev_link=/dev/sd7d
+                    dev_path=/scsi_vhci/disk@g5000cca0250cb198:d,raw
+                        spectype=chr type=minor
+                        dev_link=/dev/rdsk/c0t5000CCA0250CB198d0s3
+                        dev_link=/dev/rsd7d
+                dev=(32,60)
+                    dev_path=/scsi_vhci/disk@g5000cca0250cb198:e
+                        spectype=blk type=minor
+                        dev_link=/dev/dsk/c0t5000CCA0250CB198d0s4
+                        dev_link=/dev/sd7e
+                    dev_path=/scsi_vhci/disk@g5000cca0250cb198:e,raw
+                        spectype=chr type=minor
+                        dev_link=/dev/rdsk/c0t5000CCA0250CB198d0s4
+                        dev_link=/dev/rsd7e
+                dev=(32,61)
+                    dev_path=/scsi_vhci/disk@g5000cca0250cb198:f
+                        spectype=blk type=minor
+                        dev_link=/dev/dsk/c0t5000CCA0250CB198d0s5
+                        dev_link=/dev/sd7f
+                    dev_path=/scsi_vhci/disk@g5000cca0250cb198:f,raw
+                        spectype=chr type=minor
+                        dev_link=/dev/rdsk/c0t5000CCA0250CB198d0s5
+                        dev_link=/dev/rsd7f
+                dev=(32,62)
+                    dev_path=/scsi_vhci/disk@g5000cca0250cb198:g
+                        spectype=blk type=minor
+                        dev_link=/dev/dsk/c0t5000CCA0250CB198d0s6
+                        dev_link=/dev/sd7g
+                    dev_path=/scsi_vhci/disk@g5000cca0250cb198:g,raw
+                        spectype=chr type=minor
+                        dev_link=/dev/rdsk/c0t5000CCA0250CB198d0s6
+                        dev_link=/dev/rsd7g
+                dev=(32,63)
+                    dev_path=/scsi_vhci/disk@g5000cca0250cb198:h
+                        spectype=blk type=minor
+                        dev_link=/dev/dsk/c0t5000CCA0250CB198d0s7
+                        dev_link=/dev/sd7h
+                    dev_path=/scsi_vhci/disk@g5000cca0250cb198:h,raw
+                        spectype=chr type=minor
+                        dev_link=/dev/rdsk/c0t5000CCA0250CB198d0s7
+                        dev_link=/dev/rsd7h
+        disk, instance #9
+            Driver properties:
+                name='inquiry-serial-no' type=string items=1 dev=none
+                    value='001208P213HB        PVH213HB'
+                name='pm-components' type=string items=3 dev=none
+                    value='NAME=spindle-motor' + '0=off' + '1=on'
+                name='pm-hardware-state' type=string items=1 dev=none
+                    value='needs-suspend-resume'
+                name='ddi-failfast-supported' type=boolean dev=none
+                name='ddi-kernel-ioctl' type=boolean dev=none
+                name='device-nblocks' type=int64 items=1 dev=none
+                    value=0000000045dd2fb0
+            Hardware properties:
+                name='devid' type=string items=1
+                    value='id1,sd@n5000cca0253c11b0'
+                name='class' type=string items=1
+                    value='scsi'
+                name='inquiry-revision-id' type=string items=1
+                    value='A2B0'
+                name='inquiry-product-id' type=string items=1
+                    value='H106060SDSUN600G'
+                name='inquiry-vendor-id' type=string items=1
+                    value='HITACHI'
+                name='inquiry-device-type' type=int items=1
+                    value=00000000
+                name='compatible' type=string items=4
+                    value='scsiclass,00.vHITACHI.pH106060SDSUN600G.rA2B0' + 'scsiclass,00.vHITACHI.pH106060SDSUN600G' + 'scsiclass,00' + 'scsiclass'
+                name='client-guid' type=string items=1
+                    value='5000cca0253c11b0'
+            Paths from multipath bus adapters:
+                Path 5: /pci@400/pci@2/pci@0/pci@e/scsi@0/iport@20/disk@w5000cca0253c11b1,0
+                mpt_sas#6 (online)
+                    name='wwn' type=string items=1
+                        value='5000cca0253c11b0'
+                    name='lun' type=int items=1
+                        value=00000000
+                    name='target-port' type=string items=1
+                        value='5000cca0253c11b1'
+                    name='obp-path' type=string items=1
+                        value='/pci@400/pci@2/pci@0/pci@e/scsi@0/disk@w5000cca0253c11b1,0'
+                    name='phy-num' type=int items=1
+                        value=00000005
+                    name='path-class' type=string items=1
+                        value='primary'
+            Device Minor Nodes:
+                dev=(32,72)
+                    dev_path=/scsi_vhci/disk@g5000cca0253c11b0:a
+                        spectype=blk type=minor
+                        dev_link=/dev/dsk/c0t5000CCA0253C11B0d0s0
+                        dev_link=/dev/sd9a
+                    dev_path=/scsi_vhci/disk@g5000cca0253c11b0:a,raw
+                        spectype=chr type=minor
+                        dev_link=/dev/rdsk/c0t5000CCA0253C11B0d0s0
+                        dev_link=/dev/rsd9a
+                    Device Minor Layered Under:
+                        mod=zfs accesstype=blk
+                            dev_path=/pseudo/zfs@0
+                dev=(32,73)
+                    dev_path=/scsi_vhci/disk@g5000cca0253c11b0:b
+                        spectype=blk type=minor
+                        dev_link=/dev/dsk/c0t5000CCA0253C11B0d0s1
+                        dev_link=/dev/sd9b
+                    dev_path=/scsi_vhci/disk@g5000cca0253c11b0:b,raw
+                        spectype=chr type=minor
+                        dev_link=/dev/rdsk/c0t5000CCA0253C11B0d0s1
+                        dev_link=/dev/rsd9b
+                dev=(32,74)
+                    dev_path=/scsi_vhci/disk@g5000cca0253c11b0:c
+                        spectype=blk type=minor
+                        dev_link=/dev/dsk/c0t5000CCA0253C11B0d0s2
+                        dev_link=/dev/sd9c
+                    dev_path=/scsi_vhci/disk@g5000cca0253c11b0:c,raw
+                        spectype=chr type=minor
+                        dev_link=/dev/rdsk/c0t5000CCA0253C11B0d0s2
+                        dev_link=/dev/rsd9c
+                dev=(32,75)
+                    dev_path=/scsi_vhci/disk@g5000cca0253c11b0:d
+                        spectype=blk type=minor
+                        dev_link=/dev/dsk/c0t5000CCA0253C11B0d0s3
+                        dev_link=/dev/sd9d
+                    dev_path=/scsi_vhci/disk@g5000cca0253c11b0:d,raw
+                        spectype=chr type=minor
+                        dev_link=/dev/rdsk/c0t5000CCA0253C11B0d0s3
+                        dev_link=/dev/rsd9d
+                dev=(32,76)
+                    dev_path=/scsi_vhci/disk@g5000cca0253c11b0:e
+                        spectype=blk type=minor
+                        dev_link=/dev/dsk/c0t5000CCA0253C11B0d0s4
+                        dev_link=/dev/sd9e
+                    dev_path=/scsi_vhci/disk@g5000cca0253c11b0:e,raw
+                        spectype=chr type=minor
+                        dev_link=/dev/rdsk/c0t5000CCA0253C11B0d0s4
+                        dev_link=/dev/rsd9e
+                dev=(32,77)
+                    dev_path=/scsi_vhci/disk@g5000cca0253c11b0:f
+                        spectype=blk type=minor
+                        dev_link=/dev/dsk/c0t5000CCA0253C11B0d0s5
+                        dev_link=/dev/sd9f
+                    dev_path=/scsi_vhci/disk@g5000cca0253c11b0:f,raw
+                        spectype=chr type=minor
+                        dev_link=/dev/rdsk/c0t5000CCA0253C11B0d0s5
+                        dev_link=/dev/rsd9f
+                dev=(32,78)
+                    dev_path=/scsi_vhci/disk@g5000cca0253c11b0:g
+                        spectype=blk type=minor
+                        dev_link=/dev/dsk/c0t5000CCA0253C11B0d0s6
+                        dev_link=/dev/sd9g
+                    dev_path=/scsi_vhci/disk@g5000cca0253c11b0:g,raw
+                        spectype=chr type=minor
+                        dev_link=/dev/rdsk/c0t5000CCA0253C11B0d0s6
+                        dev_link=/dev/rsd9g
+                dev=(32,79)
+                    dev_path=/scsi_vhci/disk@g5000cca0253c11b0:wd
+                        spectype=blk type=minor
+                        dev_link=/dev/dsk/c0t5000CCA0253C11B0d0
+                        dev_link=/dev/sd9wd
+                    dev_path=/scsi_vhci/disk@g5000cca0253c11b0:wd,raw
+                        spectype=chr type=minor
+                        dev_link=/dev/rdsk/c0t5000CCA0253C11B0d0
+                        dev_link=/dev/rsd9wd
+        disk, instance #8
+            Driver properties:
+                name='inquiry-serial-no' type=string items=1 dev=none
+                    value='001208PWNM0B        PVGWNM0B'
+                name='pm-components' type=string items=3 dev=none
+                    value='NAME=spindle-motor' + '0=off' + '1=on'
+                name='pm-hardware-state' type=string items=1 dev=none
+                    value='needs-suspend-resume'
+                name='ddi-failfast-supported' type=boolean dev=none
+                name='ddi-kernel-ioctl' type=boolean dev=none
+                name='device-nblocks' type=int64 items=1 dev=none
+                    value=0000000045dd2fb0
+            Hardware properties:
+                name='devid' type=string items=1
+                    value='id1,sd@n5000cca025324d98'
+                name='class' type=string items=1
+                    value='scsi'
+                name='inquiry-revision-id' type=string items=1
+                    value='A2B0'
+                name='inquiry-product-id' type=string items=1
+                    value='H106060SDSUN600G'
+                name='inquiry-vendor-id' type=string items=1
+                    value='HITACHI'
+                name='inquiry-device-type' type=int items=1
+                    value=00000000
+                name='compatible' type=string items=4
+                    value='scsiclass,00.vHITACHI.pH106060SDSUN600G.rA2B0' + 'scsiclass,00.vHITACHI.pH106060SDSUN600G' + 'scsiclass,00' + 'scsiclass'
+                name='client-guid' type=string items=1
+                    value='5000cca025324d98'
+            Paths from multipath bus adapters:
+                Path 6: /pci@400/pci@2/pci@0/pci@e/scsi@0/iport@10/disk@w5000cca025324d99,0
+                mpt_sas#5 (online)
+                    name='wwn' type=string items=1
+                        value='5000cca025324d98'
+                    name='lun' type=int items=1
+                        value=00000000
+                    name='target-port' type=string items=1
+                        value='5000cca025324d99'
+                    name='obp-path' type=string items=1
+                        value='/pci@400/pci@2/pci@0/pci@e/scsi@0/disk@w5000cca025324d99,0'
+                    name='phy-num' type=int items=1
+                        value=00000004
+                    name='path-class' type=string items=1
+                        value='primary'
+            Device Minor Nodes:
+                dev=(32,64)
+                    dev_path=/scsi_vhci/disk@g5000cca025324d98:a
+                        spectype=blk type=minor
+                        dev_link=/dev/dsk/c0t5000CCA025324D98d0s0
+                        dev_link=/dev/sd8a
+                    dev_path=/scsi_vhci/disk@g5000cca025324d98:a,raw
+                        spectype=chr type=minor
+                        dev_link=/dev/rdsk/c0t5000CCA025324D98d0s0
+                        dev_link=/dev/rsd8a
+                dev=(32,65)
+                    dev_path=/scsi_vhci/disk@g5000cca025324d98:b
+                        spectype=blk type=minor
+                        dev_link=/dev/dsk/c0t5000CCA025324D98d0s1
+                        dev_link=/dev/sd8b
+                    dev_path=/scsi_vhci/disk@g5000cca025324d98:b,raw
+                        spectype=chr type=minor
+                        dev_link=/dev/rdsk/c0t5000CCA025324D98d0s1
+                        dev_link=/dev/rsd8b
+                dev=(32,66)
+                    dev_path=/scsi_vhci/disk@g5000cca025324d98:c
+                        spectype=blk type=minor
+                        dev_link=/dev/dsk/c0t5000CCA025324D98d0s2
+                        dev_link=/dev/sd8c
+                    dev_path=/scsi_vhci/disk@g5000cca025324d98:c,raw
+                        spectype=chr type=minor
+                        dev_link=/dev/rdsk/c0t5000CCA025324D98d0s2
+                        dev_link=/dev/rsd8c
+                dev=(32,67)
+                    dev_path=/scsi_vhci/disk@g5000cca025324d98:d
+                        spectype=blk type=minor
+                        dev_link=/dev/dsk/c0t5000CCA025324D98d0s3
+                        dev_link=/dev/sd8d
+                    dev_path=/scsi_vhci/disk@g5000cca025324d98:d,raw
+                        spectype=chr type=minor
+                        dev_link=/dev/rdsk/c0t5000CCA025324D98d0s3
+                        dev_link=/dev/rsd8d
+                dev=(32,68)
+                    dev_path=/scsi_vhci/disk@g5000cca025324d98:e
+                        spectype=blk type=minor
+                        dev_link=/dev/dsk/c0t5000CCA025324D98d0s4
+                        dev_link=/dev/sd8e
+                    dev_path=/scsi_vhci/disk@g5000cca025324d98:e,raw
+                        spectype=chr type=minor
+                        dev_link=/dev/rdsk/c0t5000CCA025324D98d0s4
+                        dev_link=/dev/rsd8e
+                dev=(32,69)
+                    dev_path=/scsi_vhci/disk@g5000cca025324d98:f
+                        spectype=blk type=minor
+                        dev_link=/dev/dsk/c0t5000CCA025324D98d0s5
+                        dev_link=/dev/sd8f
+                    dev_path=/scsi_vhci/disk@g5000cca025324d98:f,raw
+                        spectype=chr type=minor
+                        dev_link=/dev/rdsk/c0t5000CCA025324D98d0s5
+                        dev_link=/dev/rsd8f
+                dev=(32,70)
+                    dev_path=/scsi_vhci/disk@g5000cca025324d98:g
+                        spectype=blk type=minor
+                        dev_link=/dev/dsk/c0t5000CCA025324D98d0s6
+                        dev_link=/dev/sd8g
+                    dev_path=/scsi_vhci/disk@g5000cca025324d98:g,raw
+                        spectype=chr type=minor
+                        dev_link=/dev/rdsk/c0t5000CCA025324D98d0s6
+                        dev_link=/dev/rsd8g
+                dev=(32,71)
+                    dev_path=/scsi_vhci/disk@g5000cca025324d98:h
+                        spectype=blk type=minor
+                        dev_link=/dev/dsk/c0t5000CCA025324D98d0s7
+                        dev_link=/dev/sd8h
+                    dev_path=/scsi_vhci/disk@g5000cca025324d98:h,raw
+                        spectype=chr type=minor
+                        dev_link=/dev/rdsk/c0t5000CCA025324D98d0s7
+                        dev_link=/dev/rsd8h
+    packages (driver not attached)
+        SUNW,builtin-drivers (driver not attached)
+        deblocker (driver not attached)
+        disk-label (driver not attached)
+        terminal-emulator (driver not attached)
+        dropins (driver not attached)
+        SUNW,asr (driver not attached)
+        kbd-translator (driver not attached)
+        obp-tftp (driver not attached)
+        ufs-file-system (driver not attached)
+        hsfs-file-system (driver not attached)
+    chosen (driver not attached)
+    openprom (driver not attached)
+        client-services (driver not attached)
+    options, instance #0
+        System properties:
+            name='ttymodes' type=byte items=36
+                value=00.00.25.02.00.00.18.05.00.00.00.bd.00.00.8a.3b.03.1c.7f.15.04.00.00.00.11.13.1a.19.12.0f.17.16.00.00.00.00
+            name='class' type=string items=1
+                value='root'
+    aliases (driver not attached)
+    memory (driver not attached)
+    virtual-memory (driver not attached)
+    iscsi-hba (driver not attached)
+        disk (driver not attached)
+    virtual-devices, instance #0
+        Register Specifications:
+            Bus Type=0xc0000100, Address=0x0, Size=0x0
+        flashprom (driver not attached)
+        tpm (driver not attached)
+        random-number-generator, instance #0
+            System software properties:
+                name='ddi-no-autodetach' type=int items=1
+                    value=00000001
+                name='ddi-forceattach' type=int items=1
+                    value=00000001
+        console, instance #0
+            Driver properties:
+                name='ddi-no-autodetach' type=int items=1 dev=none
+                    value=00000001
+            Device Minor Nodes:
+                dev=(246,0)
+                    dev_path=/virtual-devices@100/console@1:qcn
+                        spectype=chr type=internal
+        channel-devices, instance #0
+            Device Minor Nodes:
+                dev=(117,0)
+                    dev_path=/virtual-devices@100/channel-devices@200:devctl
+                        spectype=chr type=minor
+            virtual-channel, instance #0
+                Device Minor Nodes:
+                    dev=(154,0)
+                        dev_path=/virtual-devices@100/channel-devices@200/virtual-channel@0:hvctl
+                            spectype=chr type=minor
+                            dev_link=/dev/term/0
+                    dev=(154,1)
+                        dev_path=/virtual-devices@100/channel-devices@200/virtual-channel@0:ldom-primary
+                            spectype=chr type=minor
+                            dev_link=/dev/term/1
+                    dev=(154,2)
+                        dev_path=/virtual-devices@100/channel-devices@200/virtual-channel@0:fmactl
+                            spectype=chr type=minor
+                            dev_link=/dev/term/2
+            virtual-channel, instance #3
+                Device Minor Nodes:
+                    dev=(154,6144)
+                        dev_path=/virtual-devices@100/channel-devices@200/virtual-channel@3:spds
+                            spectype=chr type=minor
+                            dev_link=/dev/term/5
+                    dev=(154,6145)
+                        dev_path=/virtual-devices@100/channel-devices@200/virtual-channel@3:sunvts
+                            spectype=chr type=minor
+                            dev_link=/dev/term/6
+                    dev=(154,6146)
+                        dev_path=/virtual-devices@100/channel-devices@200/virtual-channel@3:sunmc
+                            spectype=chr type=minor
+                            dev_link=/dev/term/7
+                    dev=(154,6147)
+                        dev_path=/virtual-devices@100/channel-devices@200/virtual-channel@3:explorer
+                            spectype=chr type=minor
+                            dev_link=/dev/term/8
+                    dev=(154,6148)
+                        dev_path=/virtual-devices@100/channel-devices@200/virtual-channel@3:flashupdate
+                            spectype=chr type=minor
+                            dev_link=/dev/term/9
+                    dev=(154,6149)
+                        dev_path=/virtual-devices@100/channel-devices@200/virtual-channel@3:ipmi
+                            spectype=chr type=minor
+                            dev_link=/dev/term/10
+            virtual-disk-server, instance #0
+                Driver properties:
+                    name='ddi-no-autodetach' type=int items=1 dev=none
+                        value=00000001
+                Hardware properties:
+                    name='ddi-intr-weight' type=int items=1
+                        value=0000000a
+                Device Layered Over:
+                    mod=sd dev=(32,55)
+                        dev_path=/scsi_vhci/disk@g5000cca02530b058
+                    mod=sd dev=(32,50)
+                        dev_path=/scsi_vhci/disk@g5000cca02530b058
+                    mod=sd dev=(32,54)
+                        dev_path=/scsi_vhci/disk@g5000cca02530b058
+                    mod=sd dev=(32,49)
+                        dev_path=/scsi_vhci/disk@g5000cca02530b058
+                    mod=sd dev=(32,48)
+                        dev_path=/scsi_vhci/disk@g5000cca02530b058
+                    mod=sd dev=(32,51)
+                        dev_path=/scsi_vhci/disk@g5000cca02530b058
+                    mod=sd dev=(32,53)
+                        dev_path=/scsi_vhci/disk@g5000cca02530b058
+                    mod=sd dev=(32,52)
+                        dev_path=/scsi_vhci/disk@g5000cca02530b058
+            virtual-channel-client, instance #1
+                Device Minor Nodes:
+                    dev=(154,2048)
+                        dev_path=/virtual-devices@100/channel-devices@200/virtual-channel-client@1:ldmfma
+                            spectype=chr type=minor
+                            dev_link=/dev/term/3
+            virtual-channel-client, instance #2
+                Device Minor Nodes:
+                    dev=(154,4096)
+                        dev_path=/virtual-devices@100/channel-devices@200/virtual-channel-client@2:spfma
+                            spectype=chr type=minor
+                            dev_link=/dev/term/4
+            pciv-communication (driver not attached)
+            virtual-domain-service, instance #0
+                Device Minor Nodes:
+                    dev=(148,0)
+                        dev_path=/virtual-devices@100/channel-devices@200/virtual-domain-service@0:vlds
+                            spectype=chr type=minor
+            virtual-console-concentrator, instance #0
+                Hardware properties:
+                    name='reg' type=int items=1
+                        value=00000000
+                    name='device_type' type=string items=1
+                        value='vcc'
+                    name='compatible' type=string items=1
+                        value='SUNW,sun4v-console-concentrator'
+                    name='name' type=string items=1
+                        value='virtual-console-concentrator'
+                Device Minor Nodes:
+                    dev=(149,2047)
+                        dev_path=/virtual-devices@100/channel-devices@200/virtual-console-concentrator@0:ctl
+                            spectype=chr type=minor
+                            dev_link=/dev/term/11
+                    dev=(149,0)
+                        dev_path=/virtual-devices@100/channel-devices@200/virtual-console-concentrator@0:ldom-db2ldom
+                            spectype=chr type=minor
+                            dev_link=/dev/term/12
+    cpu (driver not attached)
+    cpu (driver not attached)
+    cpu (driver not attached)
+    cpu (driver not attached)
+    cpu (driver not attached)
+    cpu (driver not attached)
+    cpu (driver not attached)
+    cpu (driver not attached)
+    cpu (driver not attached)
+    cpu (driver not attached)
+    cpu (driver not attached)
+    cpu (driver not attached)
+    cpu (driver not attached)
+    cpu (driver not attached)
+    cpu (driver not attached)
+    cpu (driver not attached)
+    cpu (driver not attached)
+    cpu (driver not attached)
+    cpu (driver not attached)
+    cpu (driver not attached)
+    cpu (driver not attached)
+    cpu (driver not attached)
+    cpu (driver not attached)
+    cpu (driver not attached)
+    cpu (driver not attached)
+    cpu (driver not attached)
+    cpu (driver not attached)
+    cpu (driver not attached)
+    cpu (driver not attached)
+    cpu (driver not attached)
+    cpu (driver not attached)
+    cpu (driver not attached)
+    cpu (driver not attached)
+    cpu (driver not attached)
+    cpu (driver not attached)
+    cpu (driver not attached)
+    cpu (driver not attached)
+    cpu (driver not attached)
+    cpu (driver not attached)
+    cpu (driver not attached)
+    cpu (driver not attached)
+    cpu (driver not attached)
+    cpu (driver not attached)
+    cpu (driver not attached)
+    cpu (driver not attached)
+    cpu (driver not attached)
+    cpu (driver not attached)
+    cpu (driver not attached)
+    cpu (driver not attached)
+    cpu (driver not attached)
+    cpu (driver not attached)
+    cpu (driver not attached)
+    cpu (driver not attached)
+    cpu (driver not attached)
+    cpu (driver not attached)
+    cpu (driver not attached)
+    cpu (driver not attached)
+    cpu (driver not attached)
+    cpu (driver not attached)
+    cpu (driver not attached)
+    cpu (driver not attached)
+    cpu (driver not attached)
+    cpu (driver not attached)
+    cpu (driver not attached)
+    pci, instance #0
+        Driver properties:
+            name='ddi-kernel-ioctl' type=boolean dev=none
+            name='pm-want-child-notification?' type=boolean dev=none
+            name='fm-accchk-capable' type=boolean dev=none
+            name='fm-dmachk-capable' type=boolean dev=none
+            name='fm-errcb-capable' type=boolean dev=none
+            name='fm-ereport-capable' type=boolean dev=none
+            name='pci-conf-indirect' type=int items=1 dev=(241,255)
+                value=00000001
+            name='device_type' type=string items=1 dev=none
+                value='pciex'
+        Register Specifications:
+            Bus Type=0xc0000400, Address=0x0, Size=0x0
+        Device Minor Nodes:
+            dev=(241,255)
+                dev_path=/pci@400:devctl
+                    spectype=chr type=minor
+            dev=(241,253)
+                dev_path=/pci@400:reg
+                    spectype=chr type=minor
+            dev=(241,252)
+                dev_path=/pci@400:intr
+                    spectype=chr type=minor
+        pci, instance #0
+            System software properties:
+                name='ddi-forceattach' type=int items=1
+                    value=00000001
+            Driver properties:
+                name='device_type' type=string items=1 dev=none
+                    value='pciex'
+                name='pm-components' type=string items=3 dev=none
+                    value='NAME=PCIe switch/bridge PM' + '0=Power Off (D3)' + '3=Full Power D0'
+                name='pm-want-child-notification?' type=boolean dev=none
+                name='fm-ereport-capable' type=boolean dev=none
+            Device Minor Nodes:
+                dev=(242,255)
+                    dev_path=/pci@400/pci@1:devctl
+                        spectype=chr type=minor
+            pci, instance #2
+                System software properties:
+                    name='ddi-forceattach' type=int items=1
+                        value=00000001
+                Driver properties:
+                    name='device_type' type=string items=1 dev=none
+                        value='pciex'
+                    name='pm-components' type=string items=3 dev=none
+                        value='NAME=PCIe switch/bridge PM' + '0=Power Off (D3)' + '3=Full Power D0'
+                    name='pm-want-child-notification?' type=boolean dev=none
+                    name='fm-ereport-capable' type=boolean dev=none
+                Device Minor Nodes:
+                    dev=(242,767)
+                        dev_path=/pci@400/pci@1/pci@0:devctl
+                            spectype=chr type=minor
+                pci, instance #3
+                    System software properties:
+                        name='ddi-forceattach' type=int items=1
+                            value=00000001
+                    Driver properties:
+                        name='device_type' type=string items=1 dev=none
+                            value='pciex'
+                        name='pm-components' type=string items=3 dev=none
+                            value='NAME=PCIe switch/bridge PM' + '0=Power Off (D3)' + '3=Full Power D0'
+                        name='pm-want-child-notification?' type=boolean dev=none
+                        name='fm-ereport-capable' type=boolean dev=none
+                    Device Minor Nodes:
+                        dev=(242,1023)
+                            dev_path=/pci@400/pci@1/pci@0/pci@0:devctl
+                                spectype=chr type=minor
+                    pci, instance #5
+                        System software properties:
+                            name='ddi-forceattach' type=int items=1
+                                value=00000001
+                        Driver properties:
+                            name='device_type' type=string items=1 dev=none
+                                value='pci'
+                            name='pm-components' type=string items=5 dev=none
+                                value='NAME=PCIe switch/bridge PM' + '0=Power Off (D3)' + '1=D2' + '2=D1' + '3=Full Power D0'
+                            name='pm-want-child-notification?' type=boolean dev=none
+                            name='fm-ereport-capable' type=boolean dev=none
+                        Device Minor Nodes:
+                            dev=(242,1535)
+                                dev_path=/pci@400/pci@1/pci@0/pci@0/pci@0:devctl
+                                    spectype=chr type=minor
+                        display, instance #0
+                            Driver properties:
+                                name='ddi-no-autodetach' type=int items=1 dev=none
+                                    value=00000001
+                                name='fm-errcb-capable' type=boolean dev=none
+                                name='fm-ereport-capable' type=boolean dev=none
+                                name='tem-support' type=int items=1 dev=none
+                                    value=00000001
+                            Device Minor Nodes:
+                                dev=(280,0)
+                                    dev_path=/pci@400/pci@1/pci@0/pci@0/pci@0/display@0:ast0
+                                        spectype=chr type=minor
+                                        dev_link=/dev/fbs/ast0
+                                        dev_link=/dev/fb0
+                pci, instance #4
+                    System software properties:
+                        name='ddi-forceattach' type=int items=1
+                            value=00000001
+                    Driver properties:
+                        name='device_type' type=string items=1 dev=none
+                            value='pciex'
+                        name='pm-components' type=string items=3 dev=none
+                            value='NAME=PCIe switch/bridge PM' + '0=Power Off (D3)' + '3=Full Power D0'
+                        name='pm-want-child-notification?' type=boolean dev=none
+                        name='fm-ereport-capable' type=boolean dev=none
+                    Device Minor Nodes:
+                        dev=(242,1279)
+                            dev_path=/pci@400/pci@1/pci@0/pci@4:devctl
+                                spectype=chr type=minor
+                    network, instance #0
+                        Driver properties:
+                            name='fm-accchk-capable' type=boolean dev=none
+                            name='fm-dmachk-capable' type=boolean dev=none
+                            name='fm-errcb-capable' type=boolean dev=none
+                            name='fm-ereport-capable' type=boolean dev=none
+                        Hardware properties:
+                            name='ddi-intr-weight' type=int items=1
+                                value=00000023
+                        Device Minor Nodes:
+                            dev=(284,1)
+                                dev_path=/pci@400/pci@1/pci@0/pci@4/network@0:igb0
+                                    spectype=chr type=minor
+                                    dev_link=/dev/igb0
+                            dev=(284,1003)
+                                dev_path=<clone>
+                                Device Minor Layered Under:
+                                    mod=udp accesstype=chr
+                                        dev_path=/pseudo/udp@0
+                            dev=(284,1002)
+                                dev_path=<clone>
+                                Device Minor Layered Under:
+                                    mod=udp accesstype=chr
+                                        dev_path=/pseudo/udp@0
+                    network, instance #1
+                        Driver properties:
+                            name='fm-accchk-capable' type=boolean dev=none
+                            name='fm-dmachk-capable' type=boolean dev=none
+                            name='fm-errcb-capable' type=boolean dev=none
+                            name='fm-ereport-capable' type=boolean dev=none
+                        Hardware properties:
+                            name='ddi-intr-weight' type=int items=1
+                                value=00000023
+                        Device Minor Nodes:
+                            dev=(284,2)
+                                dev_path=/pci@400/pci@1/pci@0/pci@4/network@0,1:igb1
+                                    spectype=chr type=minor
+                                    dev_link=/dev/igb1
+                pci, instance #6
+                    System software properties:
+                        name='ddi-forceattach' type=int items=1
+                            value=00000001
+                    Driver properties:
+                        name='device_type' type=string items=1 dev=none
+                            value='pciex'
+                        name='pm-components' type=string items=3 dev=none
+                            value='NAME=PCIe switch/bridge PM' + '0=Power Off (D3)' + '3=Full Power D0'
+                        name='pm-want-child-notification?' type=boolean dev=none
+                        name='fm-ereport-capable' type=boolean dev=none
+                    Device Minor Nodes:
+                        dev=(242,1791)
+                            dev_path=/pci@400/pci@1/pci@0/pci@8:devctl
+                                spectype=chr type=minor
+                    network, instance #2
+                        Driver properties:
+                            name='fm-accchk-capable' type=boolean dev=none
+                            name='fm-dmachk-capable' type=boolean dev=none
+                            name='fm-errcb-capable' type=boolean dev=none
+                            name='fm-ereport-capable' type=boolean dev=none
+                        Hardware properties:
+                            name='ddi-intr-weight' type=int items=1
+                                value=00000023
+                        Device Minor Nodes:
+                            dev=(313,3)
+                                dev_path=/pci@400/pci@1/pci@0/pci@8/network@0:ixgbe2
+                                    spectype=chr type=minor
+                                    dev_link=/dev/ixgbe2
+                            dev=(313,1005)
+                                dev_path=<clone>
+                                Device Minor Layered Under:
+                                    mod=udp accesstype=chr
+                                        dev_path=/pseudo/udp@0
+                            dev=(313,1004)
+                                dev_path=<clone>
+                                Device Minor Layered Under:
+                                    mod=udp accesstype=chr
+                                        dev_path=/pseudo/udp@0
+                    network, instance #3
+                        Driver properties:
+                            name='fm-accchk-capable' type=boolean dev=none
+                            name='fm-dmachk-capable' type=boolean dev=none
+                            name='fm-errcb-capable' type=boolean dev=none
+                            name='fm-ereport-capable' type=boolean dev=none
+                        Hardware properties:
+                            name='ddi-intr-weight' type=int items=1
+                                value=00000023
+                        Device Minor Nodes:
+                            dev=(313,4)
+                                dev_path=/pci@400/pci@1/pci@0/pci@8/network@0,1:ixgbe3
+                                    spectype=chr type=minor
+                                    dev_link=/dev/ixgbe3
+                            dev=(313,1001)
+                                dev_path=<clone>
+                                Device Minor Layered Under:
+                                    mod=udp accesstype=chr
+                                        dev_path=/pseudo/udp@0
+                            dev=(313,1006)
+                                dev_path=<clone>
+                                Device Minor Layered Under:
+                                    mod=udp accesstype=chr
+                                        dev_path=/pseudo/udp@0
+                pci, instance #7
+                    System software properties:
+                        name='ddi-forceattach' type=int items=1
+                            value=00000001
+                    Driver properties:
+                        name='device_type' type=string items=1 dev=none
+                            value='pciex'
+                        name='pm-components' type=string items=3 dev=none
+                            value='NAME=PCIe switch/bridge PM' + '0=Power Off (D3)' + '3=Full Power D0'
+                        name='pm-want-child-notification?' type=boolean dev=none
+                        name='fm-ereport-capable' type=boolean dev=none
+                    Device Minor Nodes:
+                        dev=(242,2047)
+                            dev_path=/pci@400/pci@1/pci@0/pci@b:devctl
+                                spectype=chr type=minor
+                    pci, instance #9
+                        System software properties:
+                            name='ddi-forceattach' type=int items=1
+                                value=00000001
+                        Driver properties:
+                            name='pcie_ce_mask' type=int items=1 dev=none
+                                value=00000001
+                            name='device_type' type=string items=1 dev=none
+                                value='pci'
+                            name='pm-want-child-notification?' type=boolean dev=none
+                            name='fm-ereport-capable' type=boolean dev=none
+                        Device Minor Nodes:
+                            dev=(242,2559)
+                                dev_path=/pci@400/pci@1/pci@0/pci@b/pci@0:devctl
+                                    spectype=chr type=minor
+                        usb, instance #0
+                            System software properties:
+                                name='ddi-forceattach' type=int items=1
+                                    value=00000001
+                            Driver properties:
+                                name='fm-errcb-capable' type=boolean dev=none
+                                name='fm-ereport-capable' type=boolean dev=none
+                            Hardware properties:
+                                name='pm-want-child-notification?' type=boolean
+                                name='driver-minor' type=int items=1
+                                    value=00000000
+                                name='driver-major' type=int items=1
+                                    value=00000002
+                                name='root-hub' type=boolean
+                            Device Minor Nodes:
+                                dev=(78,0)
+                                    dev_path=/pci@400/pci@1/pci@0/pci@b/pci@0/usb@0:1
+                                        spectype=chr type=minor
+                                        dev_link=/dev/cfg/usb0/1
+                                    dev_path=/pci@400/pci@1/pci@0/pci@b/pci@0/usb@0:3
+                                        spectype=chr type=minor
+                                        dev_link=/dev/cfg/usb0/3
+                                    dev_path=/pci@400/pci@1/pci@0/pci@b/pci@0/usb@0:2
+                                        spectype=chr type=minor
+                                        dev_link=/dev/cfg/usb0/2
+                                dev=(78,4096)
+                                    dev_path=/pci@400/pci@1/pci@0/pci@b/pci@0/usb@0:hubd
+                                        spectype=chr type=minor
+                                        dev_link=/dev/usb/hub0
+                        usb, instance #1
+                            System software properties:
+                                name='ddi-forceattach' type=int items=1
+                                    value=00000001
+                            Driver properties:
+                                name='fm-errcb-capable' type=boolean dev=none
+                                name='fm-ereport-capable' type=boolean dev=none
+                            Hardware properties:
+                                name='pm-want-child-notification?' type=boolean
+                                name='driver-minor' type=int items=1
+                                    value=00000000
+                                name='driver-major' type=int items=1
+                                    value=00000002
+                                name='root-hub' type=boolean
+                            Device Minor Nodes:
+                                dev=(78,1)
+                                    dev_path=/pci@400/pci@1/pci@0/pci@b/pci@0/usb@0,1:1
+                                        spectype=chr type=minor
+                                        dev_link=/dev/cfg/usb1/1
+                                    dev_path=/pci@400/pci@1/pci@0/pci@b/pci@0/usb@0,1:2
+                                        spectype=chr type=minor
+                                        dev_link=/dev/cfg/usb1/2
+                                dev=(78,4097)
+                                    dev_path=/pci@400/pci@1/pci@0/pci@b/pci@0/usb@0,1:hubd
+                                        spectype=chr type=minor
+                                        dev_link=/dev/usb/hub1
+                        usb, instance #0
+                            System software properties:
+                                name='ddi-forceattach' type=int items=1
+                                    value=00000001
+                            Driver properties:
+                                name='fm-errcb-capable' type=boolean dev=none
+                                name='fm-ereport-capable' type=boolean dev=none
+                            Hardware properties:
+                                name='pm-want-child-notification?' type=boolean
+                                name='driver-minor' type=int items=1
+                                    value=00000000
+                                name='driver-major' type=int items=1
+                                    value=00000002
+                                name='root-hub' type=boolean
+                            Device Minor Nodes:
+                                dev=(79,0)
+                                    dev_path=/pci@400/pci@1/pci@0/pci@b/pci@0/usb@0,2:1
+                                        spectype=chr type=minor
+                                        dev_link=/dev/cfg/usb2/1
+                                    dev_path=/pci@400/pci@1/pci@0/pci@b/pci@0/usb@0,2:5
+                                        spectype=chr type=minor
+                                        dev_link=/dev/cfg/usb2/5
+                                    dev_path=/pci@400/pci@1/pci@0/pci@b/pci@0/usb@0,2:4
+                                        spectype=chr type=minor
+                                        dev_link=/dev/cfg/usb2/4
+                                    dev_path=/pci@400/pci@1/pci@0/pci@b/pci@0/usb@0,2:3
+                                        spectype=chr type=minor
+                                        dev_link=/dev/cfg/usb2/3
+                                    dev_path=/pci@400/pci@1/pci@0/pci@b/pci@0/usb@0,2:2
+                                        spectype=chr type=minor
+                                        dev_link=/dev/cfg/usb2/2
+                                dev=(79,4096)
+                                    dev_path=/pci@400/pci@1/pci@0/pci@b/pci@0/usb@0,2:hubd
+                                        spectype=chr type=minor
+                                        dev_link=/dev/usb/hub2
+                            hub, instance #1
+                                Driver properties:
+                                    name='pm-components' type=string items=3 dev=none
+                                        value='NAME= hubd1 Power' + '0=USB D3 State' + '3=USB D0 State'
+                                Hardware properties:
+                                    name='pm-want-child-notification?' type=boolean
+                                    name='driver-minor' type=int items=1
+                                        value=00000000
+                                    name='driver-major' type=int items=1
+                                        value=00000002
+                                    name='usb-release' type=int items=1
+                                        value=00000200
+                                    name='usb-num-configs' type=int items=1
+                                        value=00000001
+                                    name='usb-revision-id' type=int items=1
+                                        value=0000000b
+                                    name='usb-product-id' type=int items=1
+                                        value=00006560
+                                    name='usb-vendor-id' type=int items=1
+                                        value=000004b4
+                                    name='compatible' type=string items=15
+                                        value='usb4b4,6560.b' + 'usb4b4,6560' + 'usb4b4,class9.0.2' + 'usb4b4,class9.0' + 'usb4b4,class9' + 'usb,class9.0.2' + 'usb,class9.0' + 'usb,class9' + 'usbif4b4,class9.0.1' + 'usbif4b4,class9.0' + 'usbif4b4,class9' + 'usbif,class9.0.1' + 'usbif,class9.0' + 'usbif,class9' + 'usb,device'
+                                    name='reg' type=int items=1
+                                        value=00000002
+                                    name='assigned-address' type=int items=1
+                                        value=00000002
+                                Device Minor Nodes:
+                                    dev=(66,1)
+                                        dev_path=/pci@400/pci@1/pci@0/pci@b/pci@0/usb@0,2/hub@2:2.1
+                                            spectype=chr type=minor
+                                            dev_link=/dev/cfg/usb2/2.1
+                                        dev_path=/pci@400/pci@1/pci@0/pci@b/pci@0/usb@0,2/hub@2:hubd
+                                            spectype=chr type=minor
+                                            dev_link=/dev/usb/hub3
+                                        dev_path=/pci@400/pci@1/pci@0/pci@b/pci@0/usb@0,2/hub@2:2.4
+                                            spectype=chr type=minor
+                                            dev_link=/dev/cfg/usb2/2.4
+                                        dev_path=/pci@400/pci@1/pci@0/pci@b/pci@0/usb@0,2/hub@2:2.3
+                                            spectype=chr type=minor
+                                            dev_link=/dev/cfg/usb2/2.3
+                                        dev_path=/pci@400/pci@1/pci@0/pci@b/pci@0/usb@0,2/hub@2:2.2
+                                            spectype=chr type=minor
+                                            dev_link=/dev/cfg/usb2/2.2
+                                device, instance #4
+                                    Driver properties:
+                                        name='pm-components' type=string items=3 dev=none
+                                            value='NAME= usb_mid4 Power' + '0=USB D3 State' + '3=USB D0 State'
+                                    Hardware properties:
+                                        name='driver-minor' type=int items=1
+                                            value=00000000
+                                        name='driver-major' type=int items=1
+                                            value=00000002
+                                        name='low-speed' type=boolean
+                                        name='configuration#' type=int items=1
+                                            value=00000001
+                                        name='usb-product-name' type=string items=1
+                                            value='Virtual Keyboard and Mouse'
+                                        name='usb-vendor-name' type=string items=1
+                                            value='American Megatrends Inc.'
+                                        name='usb-release' type=int items=1
+                                            value=00000110
+                                        name='usb-num-configs' type=int items=1
+                                            value=00000001
+                                        name='usb-revision-id' type=int items=1
+                                            value=00000100
+                                        name='usb-product-id' type=int items=1
+                                            value=0000ff10
+                                        name='usb-vendor-id' type=int items=1
+                                            value=0000046b
+                                        name='compatible' type=string items=3
+                                            value='usb46b,ff10.100' + 'usb46b,ff10' + 'usb,device'
+                                        name='reg' type=int items=1
+                                            value=00000004
+                                        name='assigned-address' type=int items=1
+                                            value=00000003
+                                    Device Minor Nodes:
+                                        dev=(68,2048)
+                                            dev_path=/pci@400/pci@1/pci@0/pci@b/pci@0/usb@0,2/hub@2/device@4:usb_mid
+                                                spectype=chr type=minor
+                                                dev_link=/dev/usb/device0
+                                        dev=(68,2049)
+                                            dev_path=/pci@400/pci@1/pci@0/pci@b/pci@0/usb@0,2/hub@2/device@4:46b.ff10.devstat
+                                                spectype=chr type=minor
+                                                dev_link=/dev/usb/46b.ff10/0/devstat
+                                        dev=(68,2050)
+                                            dev_path=/pci@400/pci@1/pci@0/pci@b/pci@0/usb@0,2/hub@2/device@4:46b.ff10.cntrl0
+                                                spectype=chr type=minor
+                                                dev_link=/dev/usb/46b.ff10/0/cntrl0
+                                        dev=(68,2051)
+                                            dev_path=/pci@400/pci@1/pci@0/pci@b/pci@0/usb@0,2/hub@2/device@4:46b.ff10.cntrl0stat
+                                                spectype=chr type=minor
+                                                dev_link=/dev/usb/46b.ff10/0/cntrl0stat
+                                        dev=(68,2052)
+                                            dev_path=/pci@400/pci@1/pci@0/pci@b/pci@0/usb@0,2/hub@2/device@4:46b.ff10.if0in1
+                                                spectype=chr type=minor
+                                                dev_link=/dev/usb/46b.ff10/0/if0in1
+                                        dev=(68,2053)
+                                            dev_path=/pci@400/pci@1/pci@0/pci@b/pci@0/usb@0,2/hub@2/device@4:46b.ff10.if0in1stat
+                                                spectype=chr type=minor
+                                                dev_link=/dev/usb/46b.ff10/0/if0in1stat
+                                        dev=(68,2054)
+                                            dev_path=/pci@400/pci@1/pci@0/pci@b/pci@0/usb@0,2/hub@2/device@4:46b.ff10.if1in2
+                                                spectype=chr type=minor
+                                                dev_link=/dev/usb/46b.ff10/0/if1in2
+                                        dev=(68,2055)
+                                            dev_path=/pci@400/pci@1/pci@0/pci@b/pci@0/usb@0,2/hub@2/device@4:46b.ff10.if1in2stat
+                                                spectype=chr type=minor
+                                                dev_link=/dev/usb/46b.ff10/0/if1in2stat
+                                    keyboard, instance #2
+                                        Driver properties:
+                                            name='ddi-no-autodetach' type=int items=1 dev=none
+                                                value=00000001
+                                        Hardware properties:
+                                            name='driver-minor' type=int items=1
+                                                value=00000000
+                                            name='driver-major' type=int items=1
+                                                value=00000002
+                                            name='interface' type=int items=1
+                                                value=00000000
+                                            name='compatible' type=string items=8
+                                                value='usbif46b,ff10.100.config1.0' + 'usbif46b,ff10.config1.0' + 'usbif46b,class3.1.1' + 'usbif46b,class3.1' + 'usbif46b,class3' + 'usbif,class3.1.1' + 'usbif,class3.1' + 'usbif,class3'
+                                            name='reg' type=int items=2
+                                                value=00000000.00000001
+                                            name='assigned-address' type=int items=1
+                                                value=00000003
+                                        Device Minor Nodes:
+                                            dev=(65,4)
+                                                dev_path=/pci@400/pci@1/pci@0/pci@b/pci@0/usb@0,2/hub@2/device@4/keyboard@0:keyboard
+                                                    spectype=chr type=minor
+                                                    dev_link=/dev/usb/hid0
+                                            dev=(65,5)
+                                                dev_path=/pci@400/pci@1/pci@0/pci@b/pci@0/usb@0,2/hub@2/device@4/keyboard@0:internal_keyboard
+                                                    spectype=chr type=internal
+                                                Device Minor Layered Under:
+                                                    mod=conskbd accesstype=chr
+                                                        dev_path=/pseudo/conskbd@0
+                                    mouse, instance #3
+                                        Driver properties:
+                                            name='ddi-no-autodetach' type=int items=1 dev=none
+                                                value=00000001
+                                        Hardware properties:
+                                            name='driver-minor' type=int items=1
+                                                value=00000000
+                                            name='driver-major' type=int items=1
+                                                value=00000002
+                                            name='interface' type=int items=1
+                                                value=00000001
+                                            name='compatible' type=string items=8
+                                                value='usbif46b,ff10.100.config1.1' + 'usbif46b,ff10.config1.1' + 'usbif46b,class3.1.2' + 'usbif46b,class3.1' + 'usbif46b,class3' + 'usbif,class3.1.2' + 'usbif,class3.1' + 'usbif,class3'
+                                            name='reg' type=int items=2
+                                                value=00000001.00000001
+                                            name='assigned-address' type=int items=1
+                                                value=00000003
+                                        Device Minor Nodes:
+                                            dev=(65,6)
+                                                dev_path=/pci@400/pci@1/pci@0/pci@b/pci@0/usb@0,2/hub@2/device@4/mouse@1:mouse
+                                                    spectype=chr type=minor
+                                                    dev_link=/dev/usb/hid1
+                                            dev=(65,7)
+                                                dev_path=/pci@400/pci@1/pci@0/pci@b/pci@0/usb@0,2/hub@2/device@4/mouse@1:internal_mouse
+                                                    spectype=chr type=internal
+                                                Device Minor Layered Under:
+                                                    mod=consms accesstype=chr
+                                                        dev_path=/pseudo/consms@0
+                                hub, instance #3
+                                    Driver properties:
+                                        name='pm-components' type=string items=3 dev=none
+                                            value='NAME= hubd3 Power' + '0=USB D3 State' + '3=USB D0 State'
+                                    Hardware properties:
+                                        name='pm-want-child-notification?' type=boolean
+                                        name='driver-minor' type=int items=1
+                                            value=00000000
+                                        name='driver-major' type=int items=1
+                                            value=00000002
+                                        name='usb-product-name' type=string items=1
+                                            value='Generic Hub'
+                                        name='usb-vendor-name' type=string items=1
+                                            value='American Megatrends Inc.'
+                                        name='usb-release' type=int items=1
+                                            value=00000200
+                                        name='usb-num-configs' type=int items=1
+                                            value=00000001
+                                        name='usb-revision-id' type=int items=1
+                                            value=00000100
+                                        name='usb-product-id' type=int items=1
+                                            value=0000ff01
+                                        name='usb-vendor-id' type=int items=1
+                                            value=0000046b
+                                        name='compatible' type=string items=9
+                                            value='usb46b,ff01.100' + 'usb46b,ff01' + 'usbif46b,class9.0.0' + 'usbif46b,class9.0' + 'usbif46b,class9' + 'usbif,class9.0.0' + 'usbif,class9.0' + 'usbif,class9' + 'usb,device'
+                                        name='reg' type=int items=1
+                                            value=00000003
+                                        name='assigned-address' type=int items=1
+                                            value=00000005
+                                    Device Minor Nodes:
+                                        dev=(66,3)
+                                            dev_path=/pci@400/pci@1/pci@0/pci@b/pci@0/usb@0,2/hub@2/hub@3:2.3.1
+                                                spectype=chr type=minor
+                                                dev_link=/dev/cfg/usb2/2.3.1
+                                            dev_path=/pci@400/pci@1/pci@0/pci@b/pci@0/usb@0,2/hub@2/hub@3:hubd
+                                                spectype=chr type=minor
+                                                dev_link=/dev/usb/hub5
+                                            dev_path=/pci@400/pci@1/pci@0/pci@b/pci@0/usb@0,2/hub@2/hub@3:2.3.3
+                                                spectype=chr type=minor
+                                                dev_link=/dev/cfg/usb2/2.3.3
+                                            dev_path=/pci@400/pci@1/pci@0/pci@b/pci@0/usb@0,2/hub@2/hub@3:2.3.2
+                                                spectype=chr type=minor
+                                                dev_link=/dev/cfg/usb2/2.3.2
+                                    storage, instance #1
+                                        Driver properties:
+                                            name='pm-components' type=string items=3 dev=none
+                                                value='NAME= scsa2usb1 Power' + '0=USB D3 State' + '3=USB D0 State'
+                                        Hardware properties:
+                                            name='initiator-interconnect-type' type=string items=1
+                                                value='SPI'
+                                            name='scsi-initiator-id' type=int items=1
+                                                value=00000007
+                                            name='scsi-tag-age-limit' type=int items=1
+                                                value=00000002
+                                            name='scsi-selection-timeout' type=int items=1
+                                                value=000000fa
+                                            name='scsi-watchdog-tick' type=int items=1
+                                                value=0000000a
+                                            name='scsi-reset-delay' type=int items=1
+                                                value=00000bb8
+                                            name='scsi-options' type=int items=1
+                                                value=00107ff8
+                                            name='scsi-enumeration' type=int items=1
+                                                value=00000000
+                                            name='driver-minor' type=int items=1
+                                                value=00000000
+                                            name='driver-major' type=int items=1
+                                                value=00000002
+                                            name='usb-product-name' type=string items=1
+                                                value='Virtual Cdrom Device'
+                                            name='usb-vendor-name' type=string items=1
+                                                value='American Megatrends Inc.'
+                                            name='usb-release' type=int items=1
+                                                value=00000200
+                                            name='usb-num-configs' type=int items=1
+                                                value=00000001
+                                            name='usb-revision-id' type=int items=1
+                                                value=00000100
+                                            name='usb-product-id' type=int items=1
+                                                value=0000ff20
+                                            name='usb-vendor-id' type=int items=1
+                                                value=0000046b
+                                            name='compatible' type=string items=9
+                                                value='usb46b,ff20.100' + 'usb46b,ff20' + 'usbif46b,class8.6.50' + 'usbif46b,class8.6' + 'usbif46b,class8' + 'usbif,class8.6.50' + 'usbif,class8.6' + 'usbif,class8' + 'usb,device'
+                                            name='reg' type=int items=1
+                                                value=00000002
+                                            name='assigned-address' type=int items=1
+                                                value=00000006
+                                        Device Minor Nodes:
+                                            dev=(67,256)
+                                                dev_path=/pci@400/pci@1/pci@0/pci@b/pci@0/usb@0,2/hub@2/hub@3/storage@2:scsa2usb
+                                                    spectype=chr type=minor
+                                                    dev_link=/dev/usb/mass-storage0
+                                            dev=(67,257)
+                                                dev_path=/pci@400/pci@1/pci@0/pci@b/pci@0/usb@0,2/hub@2/hub@3/storage@2:46b.ff20.devstat
+                                                    spectype=chr type=minor
+                                                    dev_link=/dev/usb/46b.ff20/0/devstat
+                                            dev=(67,258)
+                                                dev_path=/pci@400/pci@1/pci@0/pci@b/pci@0/usb@0,2/hub@2/hub@3/storage@2:46b.ff20.cntrl0
+                                                    spectype=chr type=minor
+                                                    dev_link=/dev/usb/46b.ff20/0/cntrl0
+                                            dev=(67,259)
+                                                dev_path=/pci@400/pci@1/pci@0/pci@b/pci@0/usb@0,2/hub@2/hub@3/storage@2:46b.ff20.cntrl0stat
+                                                    spectype=chr type=minor
+                                                    dev_link=/dev/usb/46b.ff20/0/cntrl0stat
+                                            dev=(67,260)
+                                                dev_path=/pci@400/pci@1/pci@0/pci@b/pci@0/usb@0,2/hub@2/hub@3/storage@2:46b.ff20.if0out3
+                                                    spectype=chr type=minor
+                                                    dev_link=/dev/usb/46b.ff20/0/if0out3
+                                            dev=(67,261)
+                                                dev_path=/pci@400/pci@1/pci@0/pci@b/pci@0/usb@0,2/hub@2/hub@3/storage@2:46b.ff20.if0out3stat
+                                                    spectype=chr type=minor
+                                                    dev_link=/dev/usb/46b.ff20/0/if0out3stat
+                                            dev=(67,262)
+                                                dev_path=/pci@400/pci@1/pci@0/pci@b/pci@0/usb@0,2/hub@2/hub@3/storage@2:46b.ff20.if0in4
+                                                    spectype=chr type=minor
+                                                    dev_link=/dev/usb/46b.ff20/0/if0in4
+                                            dev=(67,263)
+                                                dev_path=/pci@400/pci@1/pci@0/pci@b/pci@0/usb@0,2/hub@2/hub@3/storage@2:46b.ff20.if0in4stat
+                                                    spectype=chr type=minor
+                                                    dev_link=/dev/usb/46b.ff20/0/if0in4stat
+                                        disk, instance #3
+                                            Driver properties:
+                                                name='pm-components' type=string items=3 dev=none
+                                                    value='NAME=spindle-motor' + '0=off' + '1=on'
+                                                name='pm-hardware-state' type=string items=1 dev=none
+                                                    value='needs-suspend-resume'
+                                                name='ddi-failfast-supported' type=boolean dev=none
+                                                name='ddi-kernel-ioctl' type=boolean dev=none
+                                                name='removable-media' type=boolean dev=none
+                                            Hardware properties:
+                                                name='inquiry-revision-id' type=string items=1
+                                                    value='1.00'
+                                                name='inquiry-product-id' type=string items=1
+                                                    value='Virtual CDROM'
+                                                name='inquiry-vendor-id' type=string items=1
+                                                    value='AMI'
+                                                name='inquiry-device-type' type=int items=1
+                                                    value=00000005
+                                                name='class' type=string items=1
+                                                    value='scsi'
+                                                name='usb' type=boolean
+                                                name='compatible' type=string items=1
+                                                    value='sd'
+                                                name='lun' type=int items=1
+                                                    value=00000000
+                                                name='pm-capable' type=int items=1
+                                                    value=00000001
+                                                name='hotpluggable' type=boolean
+                                                name='target' type=int items=1
+                                                    value=00000000
+                                            Device Minor Nodes:
+                                                dev=(32,24)
+                                                    dev_path=/pci@400/pci@1/pci@0/pci@b/pci@0/usb@0,2/hub@2/hub@3/storage@2/disk@0,0:a
+                                                        spectype=blk type=minor
+                                                        dev_link=/dev/dsk/c1t0d0s0
+                                                    dev_path=/pci@400/pci@1/pci@0/pci@b/pci@0/usb@0,2/hub@2/hub@3/storage@2/disk@0,0:a,raw
+                                                        spectype=chr type=minor
+                                                        dev_link=/dev/rdsk/c1t0d0s0
+                                                dev=(32,25)
+                                                    dev_path=/pci@400/pci@1/pci@0/pci@b/pci@0/usb@0,2/hub@2/hub@3/storage@2/disk@0,0:b
+                                                        spectype=blk type=minor
+                                                        dev_link=/dev/dsk/c1t0d0s1
+                                                    dev_path=/pci@400/pci@1/pci@0/pci@b/pci@0/usb@0,2/hub@2/hub@3/storage@2/disk@0,0:b,raw
+                                                        spectype=chr type=minor
+                                                        dev_link=/dev/rdsk/c1t0d0s1
+                                                dev=(32,26)
+                                                    dev_path=/pci@400/pci@1/pci@0/pci@b/pci@0/usb@0,2/hub@2/hub@3/storage@2/disk@0,0:c
+                                                        spectype=blk type=minor
+                                                        dev_link=/dev/dsk/c1t0d0s2
+                                                        dev_link=/dev/sr0
+                                                    dev_path=/pci@400/pci@1/pci@0/pci@b/pci@0/usb@0,2/hub@2/hub@3/storage@2/disk@0,0:c,raw
+                                                        spectype=chr type=minor
+                                                        dev_link=/dev/rdsk/c1t0d0s2
+                                                        dev_link=/dev/rsr0
+                                                dev=(32,27)
+                                                    dev_path=/pci@400/pci@1/pci@0/pci@b/pci@0/usb@0,2/hub@2/hub@3/storage@2/disk@0,0:d
+                                                        spectype=blk type=minor
+                                                        dev_link=/dev/dsk/c1t0d0s3
+                                                    dev_path=/pci@400/pci@1/pci@0/pci@b/pci@0/usb@0,2/hub@2/hub@3/storage@2/disk@0,0:d,raw
+                                                        spectype=chr type=minor
+                                                        dev_link=/dev/rdsk/c1t0d0s3
+                                                dev=(32,28)
+                                                    dev_path=/pci@400/pci@1/pci@0/pci@b/pci@0/usb@0,2/hub@2/hub@3/storage@2/disk@0,0:e
+                                                        spectype=blk type=minor
+                                                        dev_link=/dev/dsk/c1t0d0s4
+                                                    dev_path=/pci@400/pci@1/pci@0/pci@b/pci@0/usb@0,2/hub@2/hub@3/storage@2/disk@0,0:e,raw
+                                                        spectype=chr type=minor
+                                                        dev_link=/dev/rdsk/c1t0d0s4
+                                                dev=(32,29)
+                                                    dev_path=/pci@400/pci@1/pci@0/pci@b/pci@0/usb@0,2/hub@2/hub@3/storage@2/disk@0,0:f
+                                                        spectype=blk type=minor
+                                                        dev_link=/dev/dsk/c1t0d0s5
+                                                    dev_path=/pci@400/pci@1/pci@0/pci@b/pci@0/usb@0,2/hub@2/hub@3/storage@2/disk@0,0:f,raw
+                                                        spectype=chr type=minor
+                                                        dev_link=/dev/rdsk/c1t0d0s5
+                                                dev=(32,30)
+                                                    dev_path=/pci@400/pci@1/pci@0/pci@b/pci@0/usb@0,2/hub@2/hub@3/storage@2/disk@0,0:g
+                                                        spectype=blk type=minor
+                                                        dev_link=/dev/dsk/c1t0d0s6
+                                                    dev_path=/pci@400/pci@1/pci@0/pci@b/pci@0/usb@0,2/hub@2/hub@3/storage@2/disk@0,0:g,raw
+                                                        spectype=chr type=minor
+                                                        dev_link=/dev/rdsk/c1t0d0s6
+                                                dev=(32,31)
+                                                    dev_path=/pci@400/pci@1/pci@0/pci@b/pci@0/usb@0,2/hub@2/hub@3/storage@2/disk@0,0:h
+                                                        spectype=blk type=minor
+                                                        dev_link=/dev/dsk/c1t0d0s7
+                                                    dev_path=/pci@400/pci@1/pci@0/pci@b/pci@0/usb@0,2/hub@2/hub@3/storage@2/disk@0,0:h,raw
+                                                        spectype=chr type=minor
+                                                        dev_link=/dev/rdsk/c1t0d0s7
+                                    communications, instance #0
+                                        Driver properties:
+                                            name='pm-components' type=string items=3 dev=none
+                                                value='NAME= usbecm0 Power' + '0=USB D3 State' + '3=USB D0 State'
+                                        Hardware properties:
+                                            name='driver-minor' type=int items=1
+                                                value=00000000
+                                            name='driver-major' type=int items=1
+                                                value=00000002
+                                            name='configuration#' type=int items=1
+                                                value=00000002
+                                            name='usb-product-name' type=string items=1
+                                                value='Virtual Eth Device'
+                                            name='usb-vendor-name' type=string items=1
+                                                value='SunMicro'
+                                            name='usb-release' type=int items=1
+                                                value=00000200
+                                            name='usb-num-configs' type=int items=1
+                                                value=00000002
+                                            name='usb-revision-id' type=int items=1
+                                                value=00000100
+                                            name='usb-product-id' type=int items=1
+                                                value=0000a4a2
+                                            name='usb-vendor-id' type=int items=1
+                                                value=00000430
+                                            name='compatible' type=string items=11
+                                                value='usb430,a4a2.100.config1' + 'usb430,a4a2.100' + 'usb430,a4a2.1' + 'usb430,a4a2' + 'usb430,class2.0.0' + 'usb430.class2.0' + 'usb430.class2' + 'usb,class2.0.0' + 'usb,class2.0' + 'usb,class2' + 'usb,device'
+                                            name='reg' type=int items=1
+                                                value=00000003
+                                            name='assigned-address' type=int items=1
+                                                value=00000007
+                                        Device Minor Nodes:
+                                            dev=(281,1)
+                                                dev_path=/pci@400/pci@1/pci@0/pci@b/pci@0/usb@0,2/hub@2/hub@3/communications@3:usbecm0
+                                                    spectype=chr type=minor
+                                                    dev_link=/dev/usbecm0
+                                                dev_path=/pci@400/pci@1/pci@0/pci@b/pci@0/usb@0,2/hub@2/hub@3/communications@3:usbecm0
+                                                    spectype=chr type=minor
+                                                    dev_link=/dev/usbecm0
+                            hub, instance #2
+                                Driver properties:
+                                    name='pm-components' type=string items=3 dev=none
+                                        value='NAME= hubd2 Power' + '0=USB D3 State' + '3=USB D0 State'
+                                Hardware properties:
+                                    name='pm-want-child-notification?' type=boolean
+                                    name='driver-minor' type=int items=1
+                                        value=00000000
+                                    name='driver-major' type=int items=1
+                                        value=00000002
+                                    name='usb-release' type=int items=1
+                                        value=00000200
+                                    name='usb-num-configs' type=int items=1
+                                        value=00000001
+                                    name='usb-revision-id' type=int items=1
+                                        value=0000000b
+                                    name='usb-product-id' type=int items=1
+                                        value=00006560
+                                    name='usb-vendor-id' type=int items=1
+                                        value=000004b4
+                                    name='compatible' type=string items=15
+                                        value='usb4b4,6560.b' + 'usb4b4,6560' + 'usb4b4,class9.0.2' + 'usb4b4,class9.0' + 'usb4b4,class9' + 'usb,class9.0.2' + 'usb,class9.0' + 'usb,class9' + 'usbif4b4,class9.0.1' + 'usbif4b4,class9.0' + 'usbif4b4,class9' + 'usbif,class9.0.1' + 'usbif,class9.0' + 'usbif,class9' + 'usb,device'
+                                    name='reg' type=int items=1
+                                        value=00000004
+                                    name='assigned-address' type=int items=1
+                                        value=00000004
+                                Device Minor Nodes:
+                                    dev=(66,2)
+                                        dev_path=/pci@400/pci@1/pci@0/pci@b/pci@0/usb@0,2/hub@4:4.1
+                                            spectype=chr type=minor
+                                            dev_link=/dev/cfg/usb2/4.1
+                                        dev_path=/pci@400/pci@1/pci@0/pci@b/pci@0/usb@0,2/hub@4:hubd
+                                            spectype=chr type=minor
+                                            dev_link=/dev/usb/hub4
+                                        dev_path=/pci@400/pci@1/pci@0/pci@b/pci@0/usb@0,2/hub@4:4.4
+                                            spectype=chr type=minor
+                                            dev_link=/dev/cfg/usb2/4.4
+                                        dev_path=/pci@400/pci@1/pci@0/pci@b/pci@0/usb@0,2/hub@4:4.3
+                                            spectype=chr type=minor
+                                            dev_link=/dev/cfg/usb2/4.3
+                                        dev_path=/pci@400/pci@1/pci@0/pci@b/pci@0/usb@0,2/hub@4:4.2
+                                            spectype=chr type=minor
+                                            dev_link=/dev/cfg/usb2/4.2
+                pci, instance #8
+                    System software properties:
+                        name='ddi-forceattach' type=int items=1
+                            value=00000001
+                    Driver properties:
+                        name='device_type' type=string items=1 dev=none
+                            value='pciex'
+                        name='pm-components' type=string items=3 dev=none
+                            value='NAME=PCIe switch/bridge PM' + '0=Power Off (D3)' + '3=Full Power D0'
+                        name='pm-want-child-notification?' type=boolean dev=none
+                        name='fm-ereport-capable' type=boolean dev=none
+                    Device Minor Nodes:
+                        dev=(242,2303)
+                            dev_path=/pci@400/pci@1/pci@0/pci@c:devctl
+                                spectype=chr type=minor
+        pci, instance #1
+            System software properties:
+                name='ddi-forceattach' type=int items=1
+                    value=00000001
+            Driver properties:
+                name='device_type' type=string items=1 dev=none
+                    value='pciex'
+                name='pm-components' type=string items=3 dev=none
+                    value='NAME=PCIe switch/bridge PM' + '0=Power Off (D3)' + '3=Full Power D0'
+                name='pm-want-child-notification?' type=boolean dev=none
+                name='fm-ereport-capable' type=boolean dev=none
+            Device Minor Nodes:
+                dev=(242,511)
+                    dev_path=/pci@400/pci@2:devctl
+                        spectype=chr type=minor
+            pci, instance #10
+                System software properties:
+                    name='ddi-forceattach' type=int items=1
+                        value=00000001
+                Driver properties:
+                    name='device_type' type=string items=1 dev=none
+                        value='pciex'
+                    name='pm-components' type=string items=3 dev=none
+                        value='NAME=PCIe switch/bridge PM' + '0=Power Off (D3)' + '3=Full Power D0'
+                    name='pm-want-child-notification?' type=boolean dev=none
+                    name='fm-ereport-capable' type=boolean dev=none
+                Device Minor Nodes:
+                    dev=(242,2815)
+                        dev_path=/pci@400/pci@2/pci@0:devctl
+                            spectype=chr type=minor
+                pci, instance #11
+                    System software properties:
+                        name='ddi-forceattach' type=int items=1
+                            value=00000001
+                    Driver properties:
+                        name='device_type' type=string items=1 dev=none
+                            value='pciex'
+                        name='pm-components' type=string items=3 dev=none
+                            value='NAME=PCIe switch/bridge PM' + '0=Power Off (D3)' + '3=Full Power D0'
+                        name='pm-want-child-notification?' type=boolean dev=none
+                        name='fm-ereport-capable' type=boolean dev=none
+                    Device Minor Nodes:
+                        dev=(242,3071)
+                            dev_path=/pci@400/pci@2/pci@0/pci@0:devctl
+                                spectype=chr type=minor
+                pci, instance #12
+                    System software properties:
+                        name='ddi-forceattach' type=int items=1
+                            value=00000001
+                    Driver properties:
+                        name='device_type' type=string items=1 dev=none
+                            value='pciex'
+                        name='pm-components' type=string items=3 dev=none
+                            value='NAME=PCIe switch/bridge PM' + '0=Power Off (D3)' + '3=Full Power D0'
+                        name='pm-want-child-notification?' type=boolean dev=none
+                        name='fm-ereport-capable' type=boolean dev=none
+                    Device Minor Nodes:
+                        dev=(242,3327)
+                            dev_path=/pci@400/pci@2/pci@0/pci@4:devctl
+                                spectype=chr type=minor
+                pci, instance #13
+                    System software properties:
+                        name='ddi-forceattach' type=int items=1
+                            value=00000001
+                    Driver properties:
+                        name='device_type' type=string items=1 dev=none
+                            value='pciex'
+                        name='pm-components' type=string items=3 dev=none
+                            value='NAME=PCIe switch/bridge PM' + '0=Power Off (D3)' + '3=Full Power D0'
+                        name='pm-want-child-notification?' type=boolean dev=none
+                        name='fm-ereport-capable' type=boolean dev=none
+                    Device Minor Nodes:
+                        dev=(242,3583)
+                            dev_path=/pci@400/pci@2/pci@0/pci@8:devctl
+                                spectype=chr type=minor
+                    SUNW,qlc, instance #0
+                        System software properties:
+                            name='max-frame-length' type=int items=1
+                                value=00000800
+                            name='execution-throttle' type=int items=1
+                                value=00000020
+                            name='login-timeout' type=int items=1
+                                value=00000003
+                            name='login-retry-count' type=int items=1
+                                value=00000004
+                            name='enable-adapter-hard-loop-ID' type=int items=1
+                                value=00000000
+                            name='adapter-hard-loop-ID' type=int items=1
+                                value=00000000
+                            name='enable-LIP-reset-on-bus-reset' type=int items=1
+                                value=00000000
+                            name='enable-LIP-full-login-on-bus-reset' type=int items=1
+                                value=00000001
+                            name='enable-target-reset-on-bus-reset' type=int items=1
+                                value=00000000
+                            name='reset-delay' type=int items=1
+                                value=00000005
+                            name='port-down-retry-count' type=int items=1
+                                value=00000008
+                            name='port-down-retry-delay' type=int items=1
+                                value=00000002
+                            name='queue-full-retry-count' type=int items=1
+                                value=00000010
+                            name='queue-full-retry-delay' type=int items=1
+                                value=00000002
+                            name='connection-options' type=int items=1
+                                value=00000002
+                            name='enable-FCP-2-error-recovery' type=int items=1
+                                value=00000001
+                            name='fc-data-rate' type=int items=1
+                                value=00000002
+                            name='link-down-timeout' type=int items=1
+                                value=00000000
+                            name='enable-link-down-error' type=int items=1
+                                value=00000001
+                            name='extended-logging' type=int items=1
+                                value=00000000
+                            name='firmware-dump-flags' type=int items=1
+                                value=00000000
+                            name='pci-max-read-request' type=int items=1
+                                value=00000800
+                            name='ddi-forceattach' type=int items=1
+                                value=00000001
+                            name='init-loop-sync-wait' type=int items=1
+                                value=0000000a
+                        Driver properties:
+                            name='fm-errcb-capable' type=boolean dev=none
+                            name='fm-ereport-capable' type=boolean dev=none
+                        Hardware properties:
+                            name='ddi-intr-weight' type=int items=1
+                                value=0000000a
+                        Device Minor Nodes:
+                            dev=(310,0)
+                                dev_path=/pci@400/pci@2/pci@0/pci@8/SUNW,qlc@0:devctl
+                                    spectype=chr type=minor
+                        fp (driver not attached)
+                            disk (driver not attached)
+                        fp, instance #2
+                            System properties:
+                                name='port' type=int items=1
+                                    value=00000000
+                                name='class' type=string items=1
+                                    value='fibre-channel'
+                                name='scsi-binding-set' type=string items=1
+                                    value='fcp'
+                                name='load-ulp-list' type=string items=2
+                                    value='1' + 'fcp'
+                                name='ddi-forceattach' type=int items=1
+                                    value=00000001
+                                name='mpxio-disable' type=string items=1
+                                    value='no'
+                            Driver properties:
+                                name='pm-components' type=string items=3 dev=none
+                                    value='NAME=FC Port' + '0=Port Down' + '1=Port Up'
+                                name='pm-hardware-state' type=string items=1 dev=none
+                                    value='needs-suspend-resume'
+                                name='initiator-port' type=string items=1 dev=none
+                                    value='21000024ff3ab14e'
+                            Hardware properties:
+                                name='initiator-interconnect-type' type=string items=1
+                                    value='FABRIC'
+                                name='scsi-initiator-id' type=int items=1
+                                    value=00000007
+                                name='scsi-tag-age-limit' type=int items=1
+                                    value=00000002
+                                name='scsi-selection-timeout' type=int items=1
+                                    value=000000fa
+                                name='scsi-watchdog-tick' type=int items=1
+                                    value=0000000a
+                                name='scsi-reset-delay' type=int items=1
+                                    value=00000bb8
+                                name='scsi-options' type=int items=1
+                                    value=00107ff8
+                                name='scsi-enumeration' type=int items=1
+                                    value=00000000
+                            Device Minor Nodes:
+                                dev=(30,2)
+                                    dev_path=/pci@400/pci@2/pci@0/pci@8/SUNW,qlc@0/fp@0,0:devctl
+                                        spectype=chr type=minor
+                                        dev_link=/dev/fc/fp0
+                                    dev_path=/pci@400/pci@2/pci@0/pci@8/SUNW,qlc@0/fp@0,0:fc
+                                        spectype=chr type=minor
+                                        dev_link=/dev/cfg/c3
+                    SUNW,qlc, instance #1
+                        System software properties:
+                            name='max-frame-length' type=int items=1
+                                value=00000800
+                            name='execution-throttle' type=int items=1
+                                value=00000020
+                            name='login-timeout' type=int items=1
+                                value=00000003
+                            name='login-retry-count' type=int items=1
+                                value=00000004
+                            name='enable-adapter-hard-loop-ID' type=int items=1
+                                value=00000000
+                            name='adapter-hard-loop-ID' type=int items=1
+                                value=00000000
+                            name='enable-LIP-reset-on-bus-reset' type=int items=1
+                                value=00000000
+                            name='enable-LIP-full-login-on-bus-reset' type=int items=1
+                                value=00000001
+                            name='enable-target-reset-on-bus-reset' type=int items=1
+                                value=00000000
+                            name='reset-delay' type=int items=1
+                                value=00000005
+                            name='port-down-retry-count' type=int items=1
+                                value=00000008
+                            name='port-down-retry-delay' type=int items=1
+                                value=00000002
+                            name='queue-full-retry-count' type=int items=1
+                                value=00000010
+                            name='queue-full-retry-delay' type=int items=1
+                                value=00000002
+                            name='connection-options' type=int items=1
+                                value=00000002
+                            name='enable-FCP-2-error-recovery' type=int items=1
+                                value=00000001
+                            name='fc-data-rate' type=int items=1
+                                value=00000002
+                            name='link-down-timeout' type=int items=1
+                                value=00000000
+                            name='enable-link-down-error' type=int items=1
+                                value=00000001
+                            name='extended-logging' type=int items=1
+                                value=00000000
+                            name='firmware-dump-flags' type=int items=1
+                                value=00000000
+                            name='pci-max-read-request' type=int items=1
+                                value=00000800
+                            name='ddi-forceattach' type=int items=1
+                                value=00000001
+                            name='init-loop-sync-wait' type=int items=1
+                                value=0000000a
+                        Driver properties:
+                            name='fm-errcb-capable' type=boolean dev=none
+                            name='fm-ereport-capable' type=boolean dev=none
+                        Hardware properties:
+                            name='ddi-intr-weight' type=int items=1
+                                value=0000000a
+                        Device Minor Nodes:
+                            dev=(310,1)
+                                dev_path=/pci@400/pci@2/pci@0/pci@8/SUNW,qlc@0,1:devctl
+                                    spectype=chr type=minor
+                        fp (driver not attached)
+                            disk (driver not attached)
+                        fp, instance #3
+                            System properties:
+                                name='port' type=int items=1
+                                    value=00000000
+                                name='class' type=string items=1
+                                    value='fibre-channel'
+                                name='scsi-binding-set' type=string items=1
+                                    value='fcp'
+                                name='load-ulp-list' type=string items=2
+                                    value='1' + 'fcp'
+                                name='ddi-forceattach' type=int items=1
+                                    value=00000001
+                                name='mpxio-disable' type=string items=1
+                                    value='no'
+                            Driver properties:
+                                name='pm-components' type=string items=3 dev=none
+                                    value='NAME=FC Port' + '0=Port Down' + '1=Port Up'
+                                name='pm-hardware-state' type=string items=1 dev=none
+                                    value='needs-suspend-resume'
+                                name='initiator-port' type=string items=1 dev=none
+                                    value='21000024ff3ab14f'
+                            Hardware properties:
+                                name='initiator-interconnect-type' type=string items=1
+                                    value='FABRIC'
+                                name='scsi-initiator-id' type=int items=1
+                                    value=00000007
+                                name='scsi-tag-age-limit' type=int items=1
+                                    value=00000002
+                                name='scsi-selection-timeout' type=int items=1
+                                    value=000000fa
+                                name='scsi-watchdog-tick' type=int items=1
+                                    value=0000000a
+                                name='scsi-reset-delay' type=int items=1
+                                    value=00000bb8
+                                name='scsi-options' type=int items=1
+                                    value=00107ff8
+                                name='scsi-enumeration' type=int items=1
+                                    value=00000000
+                            Device Minor Nodes:
+                                dev=(30,3)
+                                    dev_path=/pci@400/pci@2/pci@0/pci@8/SUNW,qlc@0,1/fp@0,0:devctl
+                                        spectype=chr type=minor
+                                        dev_link=/dev/fc/fp1
+                                    dev_path=/pci@400/pci@2/pci@0/pci@8/SUNW,qlc@0,1/fp@0,0:fc
+                                        spectype=chr type=minor
+                                        dev_link=/dev/cfg/c4
+                pci, instance #14
+                    System software properties:
+                        name='ddi-forceattach' type=int items=1
+                            value=00000001
+                    Driver properties:
+                        name='device_type' type=string items=1 dev=none
+                            value='pciex'
+                        name='pm-components' type=string items=3 dev=none
+                            value='NAME=PCIe switch/bridge PM' + '0=Power Off (D3)' + '3=Full Power D0'
+                        name='pm-want-child-notification?' type=boolean dev=none
+                        name='fm-ereport-capable' type=boolean dev=none
+                    Device Minor Nodes:
+                        dev=(242,3839)
+                            dev_path=/pci@400/pci@2/pci@0/pci@e:devctl
+                                spectype=chr type=minor
+                    scsi, instance #0
+                        System software properties:
+                            name='ddi-vhci-class' type=string items=1
+                                value='scsi_vhci'
+                            name='mpxio-disable' type=string items=1
+                                value='no'
+                        Driver properties:
+                            name='scsi-iports' type=string items=8 dev=none
+                                value='1' + '2' + '4' + '8' + '10' + '20' + '80' + 'v0'
+                            name='num-phys' type=int items=1 dev=none
+                                value=00000008
+                            name='base-wwid' type=int64 items=1 dev=none
+                                value=5080020001136188
+                            name='firmware-version' type=string items=1 dev=none
+                                value='9.0.0.0'
+                            name='pm-components' type=string items=3 dev=none
+                                value='NAME=mptsas0' + '0=Off (PCI D3 State)' + '3=On (PCI D0 State)'
+                            name='fm-accchk-capable' type=boolean dev=none
+                            name='fm-dmachk-capable' type=boolean dev=none
+                            name='fm-errcb-capable' type=boolean dev=none
+                            name='fm-ereport-capable' type=boolean dev=none
+                        Hardware properties:
+                            name='ddi-config-driver-node' type=boolean
+                            name='ddi-intr-weight' type=int items=1
+                                value=0000000a
+                        Device Minor Nodes:
+                            dev=(54,0)
+                                dev_path=/pci@400/pci@2/pci@0/pci@e/scsi@0:devctl
+                                    spectype=chr type=minor
+                        iport, instance #1
+                            System software properties:
+                                name='ddi-vhci-class' type=string items=1
+                                    value='scsi_vhci'
+                                name='mpxio-disable' type=string items=1
+                                    value='no'
+                            Driver properties:
+                                name='dynamic-port' type=int items=1 dev=none
+                                    value=00000001
+                                name='phymask' type=int items=1 dev=none
+                                    value=00000001
+                                name='initiator-port' type=string items=1 dev=none
+                                    value='5080020001136188'
+                                name='fm-ereport-capable' type=boolean dev=none
+                            Hardware properties:
+                                name='initiator-interconnect-type' type=string items=1
+                                    value='SAS'
+                                name='scsi-initiator-id' type=int items=1
+                                    value=00000007
+                                name='scsi-tag-age-limit' type=int items=1
+                                    value=00000002
+                                name='scsi-selection-timeout' type=int items=1
+                                    value=000000fa
+                                name='scsi-watchdog-tick' type=int items=1
+                                    value=0000000a
+                                name='scsi-reset-delay' type=int items=1
+                                    value=00000bb8
+                                name='scsi-options' type=int items=1
+                                    value=00107ff8
+                                name='scsi-enumeration' type=int items=1
+                                    value=00000000
+                                name='obp-path' type=string items=1
+                                    value='/pci@400/pci@2/pci@0/pci@e/scsi@0'
+                                name='compatible' type=string items=1
+                                    value='mpt_sas'
+                                name='scsi-iport' type=string items=1
+                                    value='1'
+                            Device Minor Nodes:
+                                dev=(54,64)
+                                    dev_path=/pci@400/pci@2/pci@0/pci@e/scsi@0/iport@1:devctl
+                                        spectype=chr type=minor
+                                dev=(54,65)
+                                    dev_path=/pci@400/pci@2/pci@0/pci@e/scsi@0/iport@1:scsi
+                                        spectype=chr type=minor
+                                        dev_link=/dev/cfg/c5
+                        iport, instance #2
+                            System software properties:
+                                name='ddi-vhci-class' type=string items=1
+                                    value='scsi_vhci'
+                                name='mpxio-disable' type=string items=1
+                                    value='no'
+                            Driver properties:
+                                name='dynamic-port' type=int items=1 dev=none
+                                    value=00000001
+                                name='phymask' type=int items=1 dev=none
+                                    value=00000002
+                                name='initiator-port' type=string items=1 dev=none
+                                    value='508002000113618a'
+                                name='fm-ereport-capable' type=boolean dev=none
+                            Hardware properties:
+                                name='initiator-interconnect-type' type=string items=1
+                                    value='SAS'
+                                name='scsi-initiator-id' type=int items=1
+                                    value=00000007
+                                name='scsi-tag-age-limit' type=int items=1
+                                    value=00000002
+                                name='scsi-selection-timeout' type=int items=1
+                                    value=000000fa
+                                name='scsi-watchdog-tick' type=int items=1
+                                    value=0000000a
+                                name='scsi-reset-delay' type=int items=1
+                                    value=00000bb8
+                                name='scsi-options' type=int items=1
+                                    value=00107ff8
+                                name='scsi-enumeration' type=int items=1
+                                    value=00000000
+                                name='obp-path' type=string items=1
+                                    value='/pci@400/pci@2/pci@0/pci@e/scsi@0'
+                                name='compatible' type=string items=1
+                                    value='mpt_sas'
+                                name='scsi-iport' type=string items=1
+                                    value='2'
+                            Device Minor Nodes:
+                                dev=(54,128)
+                                    dev_path=/pci@400/pci@2/pci@0/pci@e/scsi@0/iport@2:devctl
+                                        spectype=chr type=minor
+                                dev=(54,129)
+                                    dev_path=/pci@400/pci@2/pci@0/pci@e/scsi@0/iport@2:scsi
+                                        spectype=chr type=minor
+                                        dev_link=/dev/cfg/c6
+                        iport, instance #3
+                            System software properties:
+                                name='ddi-vhci-class' type=string items=1
+                                    value='scsi_vhci'
+                                name='mpxio-disable' type=string items=1
+                                    value='no'
+                            Driver properties:
+                                name='dynamic-port' type=int items=1 dev=none
+                                    value=00000001
+                                name='phymask' type=int items=1 dev=none
+                                    value=00000004
+                                name='initiator-port' type=string items=1 dev=none
+                                    value='508002000113618b'
+                                name='fm-ereport-capable' type=boolean dev=none
+                            Hardware properties:
+                                name='initiator-interconnect-type' type=string items=1
+                                    value='SAS'
+                                name='scsi-initiator-id' type=int items=1
+                                    value=00000007
+                                name='scsi-tag-age-limit' type=int items=1
+                                    value=00000002
+                                name='scsi-selection-timeout' type=int items=1
+                                    value=000000fa
+                                name='scsi-watchdog-tick' type=int items=1
+                                    value=0000000a
+                                name='scsi-reset-delay' type=int items=1
+                                    value=00000bb8
+                                name='scsi-options' type=int items=1
+                                    value=00107ff8
+                                name='scsi-enumeration' type=int items=1
+                                    value=00000000
+                                name='obp-path' type=string items=1
+                                    value='/pci@400/pci@2/pci@0/pci@e/scsi@0'
+                                name='compatible' type=string items=1
+                                    value='mpt_sas'
+                                name='scsi-iport' type=string items=1
+                                    value='4'
+                            Device Minor Nodes:
+                                dev=(54,192)
+                                    dev_path=/pci@400/pci@2/pci@0/pci@e/scsi@0/iport@4:devctl
+                                        spectype=chr type=minor
+                                dev=(54,193)
+                                    dev_path=/pci@400/pci@2/pci@0/pci@e/scsi@0/iport@4:scsi
+                                        spectype=chr type=minor
+                                        dev_link=/dev/cfg/c7
+                        iport, instance #4
+                            System software properties:
+                                name='ddi-vhci-class' type=string items=1
+                                    value='scsi_vhci'
+                                name='mpxio-disable' type=string items=1
+                                    value='no'
+                            Driver properties:
+                                name='dynamic-port' type=int items=1 dev=none
+                                    value=00000001
+                                name='phymask' type=int items=1 dev=none
+                                    value=00000008
+                                name='initiator-port' type=string items=1 dev=none
+                                    value='508002000113618c'
+                                name='fm-ereport-capable' type=boolean dev=none
+                            Hardware properties:
+                                name='initiator-interconnect-type' type=string items=1
+                                    value='SAS'
+                                name='scsi-initiator-id' type=int items=1
+                                    value=00000007
+                                name='scsi-tag-age-limit' type=int items=1
+                                    value=00000002
+                                name='scsi-selection-timeout' type=int items=1
+                                    value=000000fa
+                                name='scsi-watchdog-tick' type=int items=1
+                                    value=0000000a
+                                name='scsi-reset-delay' type=int items=1
+                                    value=00000bb8
+                                name='scsi-options' type=int items=1
+                                    value=00107ff8
+                                name='scsi-enumeration' type=int items=1
+                                    value=00000000
+                                name='obp-path' type=string items=1
+                                    value='/pci@400/pci@2/pci@0/pci@e/scsi@0'
+                                name='compatible' type=string items=1
+                                    value='mpt_sas'
+                                name='scsi-iport' type=string items=1
+                                    value='8'
+                            Device Minor Nodes:
+                                dev=(54,256)
+                                    dev_path=/pci@400/pci@2/pci@0/pci@e/scsi@0/iport@8:devctl
+                                        spectype=chr type=minor
+                                dev=(54,257)
+                                    dev_path=/pci@400/pci@2/pci@0/pci@e/scsi@0/iport@8:scsi
+                                        spectype=chr type=minor
+                                        dev_link=/dev/cfg/c8
+                        iport, instance #6
+                            System software properties:
+                                name='ddi-vhci-class' type=string items=1
+                                    value='scsi_vhci'
+                                name='mpxio-disable' type=string items=1
+                                    value='no'
+                            Driver properties:
+                                name='dynamic-port' type=int items=1 dev=none
+                                    value=00000001
+                                name='phymask' type=int items=1 dev=none
+                                    value=00000020
+                                name='initiator-port' type=string items=1 dev=none
+                                    value='508002000113618e'
+                                name='fm-ereport-capable' type=boolean dev=none
+                            Hardware properties:
+                                name='initiator-interconnect-type' type=string items=1
+                                    value='SAS'
+                                name='scsi-initiator-id' type=int items=1
+                                    value=00000007
+                                name='scsi-tag-age-limit' type=int items=1
+                                    value=00000002
+                                name='scsi-selection-timeout' type=int items=1
+                                    value=000000fa
+                                name='scsi-watchdog-tick' type=int items=1
+                                    value=0000000a
+                                name='scsi-reset-delay' type=int items=1
+                                    value=00000bb8
+                                name='scsi-options' type=int items=1
+                                    value=00107ff8
+                                name='scsi-enumeration' type=int items=1
+                                    value=00000000
+                                name='obp-path' type=string items=1
+                                    value='/pci@400/pci@2/pci@0/pci@e/scsi@0'
+                                name='compatible' type=string items=1
+                                    value='mpt_sas'
+                                name='scsi-iport' type=string items=1
+                                    value='20'
+                            Device Minor Nodes:
+                                dev=(54,384)
+                                    dev_path=/pci@400/pci@2/pci@0/pci@e/scsi@0/iport@20:devctl
+                                        spectype=chr type=minor
+                                dev=(54,385)
+                                    dev_path=/pci@400/pci@2/pci@0/pci@e/scsi@0/iport@20:scsi
+                                        spectype=chr type=minor
+                                        dev_link=/dev/cfg/c10
+                        iport, instance #5
+                            System software properties:
+                                name='ddi-vhci-class' type=string items=1
+                                    value='scsi_vhci'
+                                name='mpxio-disable' type=string items=1
+                                    value='no'
+                            Driver properties:
+                                name='dynamic-port' type=int items=1 dev=none
+                                    value=00000001
+                                name='phymask' type=int items=1 dev=none
+                                    value=00000010
+                                name='initiator-port' type=string items=1 dev=none
+                                    value='508002000113618d'
+                                name='fm-ereport-capable' type=boolean dev=none
+                            Hardware properties:
+                                name='initiator-interconnect-type' type=string items=1
+                                    value='SAS'
+                                name='scsi-initiator-id' type=int items=1
+                                    value=00000007
+                                name='scsi-tag-age-limit' type=int items=1
+                                    value=00000002
+                                name='scsi-selection-timeout' type=int items=1
+                                    value=000000fa
+                                name='scsi-watchdog-tick' type=int items=1
+                                    value=0000000a
+                                name='scsi-reset-delay' type=int items=1
+                                    value=00000bb8
+                                name='scsi-options' type=int items=1
+                                    value=00107ff8
+                                name='scsi-enumeration' type=int items=1
+                                    value=00000000
+                                name='obp-path' type=string items=1
+                                    value='/pci@400/pci@2/pci@0/pci@e/scsi@0'
+                                name='compatible' type=string items=1
+                                    value='mpt_sas'
+                                name='scsi-iport' type=string items=1
+                                    value='10'
+                            Device Minor Nodes:
+                                dev=(54,320)
+                                    dev_path=/pci@400/pci@2/pci@0/pci@e/scsi@0/iport@10:devctl
+                                        spectype=chr type=minor
+                                dev=(54,321)
+                                    dev_path=/pci@400/pci@2/pci@0/pci@e/scsi@0/iport@10:scsi
+                                        spectype=chr type=minor
+                                        dev_link=/dev/cfg/c9
+                        iport, instance #7
+                            System software properties:
+                                name='ddi-vhci-class' type=string items=1
+                                    value='scsi_vhci'
+                                name='mpxio-disable' type=string items=1
+                                    value='no'
+                            Driver properties:
+                                name='dynamic-port' type=int items=1 dev=none
+                                    value=00000001
+                                name='phymask' type=int items=1 dev=none
+                                    value=00000080
+                                name='initiator-port' type=string items=1 dev=none
+                                    value='5080020001136189'
+                                name='fm-ereport-capable' type=boolean dev=none
+                            Hardware properties:
+                                name='initiator-interconnect-type' type=string items=1
+                                    value='SAS'
+                                name='scsi-initiator-id' type=int items=1
+                                    value=00000007
+                                name='scsi-tag-age-limit' type=int items=1
+                                    value=00000002
+                                name='scsi-selection-timeout' type=int items=1
+                                    value=000000fa
+                                name='scsi-watchdog-tick' type=int items=1
+                                    value=0000000a
+                                name='scsi-reset-delay' type=int items=1
+                                    value=00000bb8
+                                name='scsi-options' type=int items=1
+                                    value=00107ff8
+                                name='scsi-enumeration' type=int items=1
+                                    value=00000000
+                                name='obp-path' type=string items=1
+                                    value='/pci@400/pci@2/pci@0/pci@e/scsi@0'
+                                name='compatible' type=string items=1
+                                    value='mpt_sas'
+                                name='scsi-iport' type=string items=1
+                                    value='80'
+                            Device Minor Nodes:
+                                dev=(54,448)
+                                    dev_path=/pci@400/pci@2/pci@0/pci@e/scsi@0/iport@80:devctl
+                                        spectype=chr type=minor
+                                dev=(54,449)
+                                    dev_path=/pci@400/pci@2/pci@0/pci@e/scsi@0/iport@80:scsi
+                                        spectype=chr type=minor
+                                        dev_link=/dev/cfg/c2
+                            cdrom, instance #10
+                                Driver properties:
+                                    name='pm-components' type=string items=3 dev=none
+                                        value='NAME=spindle-motor' + '0=off' + '1=on'
+                                    name='pm-hardware-state' type=string items=1 dev=none
+                                        value='needs-suspend-resume'
+                                    name='ddi-failfast-supported' type=boolean dev=none
+                                    name='ddi-kernel-ioctl' type=boolean dev=none
+                                    name='removable-media' type=boolean dev=none
+                                Hardware properties:
+                                    name='inquiry-revision-id' type=string items=1
+                                        value='1.0C'
+                                    name='inquiry-product-id' type=string items=1
+                                        value='DV-W28SS-R'
+                                    name='inquiry-vendor-id' type=string items=1
+                                        value='TEAC'
+                                    name='inquiry-device-type' type=int items=1
+                                        value=00000005
+                                    name='class' type=string items=1
+                                        value='scsi'
+                                    name='phy-num' type=int items=1
+                                        value=00000007
+                                    name='obp-path' type=string items=1
+                                        value='/pci@400/pci@2/pci@0/pci@e/scsi@0/disk@p7,0'
+                                    name='variant' type=string items=1
+                                        value='atapi'
+                                    name='pm-capable' type=int items=1
+                                        value=00000001
+                                    name='sas-mpt' type=boolean
+                                    name='sata-phy' type=int items=1
+                                        value=00000007
+                                    name='compatible' type=string items=7
+                                        value='scsiclass,05R.vTEAC.pDV-W28SS-R.r1_0C' + 'scsiclass,05.vTEAC.pDV-W28SS-R.r1_0C' + 'scsiclass,05R.vTEAC.pDV-W28SS-R' + 'scsiclass,05.vTEAC.pDV-W28SS-R' + 'scsiclass,05R' + 'scsiclass,05' + 'scsiclass'
+                                    name='lun' type=int items=1
+                                        value=00000000
+                                Device Minor Nodes:
+                                    dev=(32,80)
+                                        dev_path=/pci@400/pci@2/pci@0/pci@e/scsi@0/iport@80/cdrom@p7,0:a
+                                            spectype=blk type=minor
+                                            dev_link=/dev/dsk/c2t7d0s0
+                                            dev_link=/dev/sd10a
+                                        dev_path=/pci@400/pci@2/pci@0/pci@e/scsi@0/iport@80/cdrom@p7,0:a,raw
+                                            spectype=chr type=minor
+                                            dev_link=/dev/rdsk/c2t7d0s0
+                                            dev_link=/dev/rsd10a
+                                    dev=(32,81)
+                                        dev_path=/pci@400/pci@2/pci@0/pci@e/scsi@0/iport@80/cdrom@p7,0:b
+                                            spectype=blk type=minor
+                                            dev_link=/dev/dsk/c2t7d0s1
+                                            dev_link=/dev/sd10b
+                                        dev_path=/pci@400/pci@2/pci@0/pci@e/scsi@0/iport@80/cdrom@p7,0:b,raw
+                                            spectype=chr type=minor
+                                            dev_link=/dev/rdsk/c2t7d0s1
+                                            dev_link=/dev/rsd10b
+                                    dev=(32,82)
+                                        dev_path=/pci@400/pci@2/pci@0/pci@e/scsi@0/iport@80/cdrom@p7,0:c
+                                            spectype=blk type=minor
+                                            dev_link=/dev/dsk/c2t7d0s2
+                                            dev_link=/dev/sd10c
+                                        dev_path=/pci@400/pci@2/pci@0/pci@e/scsi@0/iport@80/cdrom@p7,0:c,raw
+                                            spectype=chr type=minor
+                                            dev_link=/dev/rdsk/c2t7d0s2
+                                            dev_link=/dev/rsd10c
+                                    dev=(32,83)
+                                        dev_path=/pci@400/pci@2/pci@0/pci@e/scsi@0/iport@80/cdrom@p7,0:d
+                                            spectype=blk type=minor
+                                            dev_link=/dev/dsk/c2t7d0s3
+                                            dev_link=/dev/sd10d
+                                        dev_path=/pci@400/pci@2/pci@0/pci@e/scsi@0/iport@80/cdrom@p7,0:d,raw
+                                            spectype=chr type=minor
+                                            dev_link=/dev/rdsk/c2t7d0s3
+                                            dev_link=/dev/rsd10d
+                                    dev=(32,84)
+                                        dev_path=/pci@400/pci@2/pci@0/pci@e/scsi@0/iport@80/cdrom@p7,0:e
+                                            spectype=blk type=minor
+                                            dev_link=/dev/dsk/c2t7d0s4
+                                            dev_link=/dev/sd10e
+                                        dev_path=/pci@400/pci@2/pci@0/pci@e/scsi@0/iport@80/cdrom@p7,0:e,raw
+                                            spectype=chr type=minor
+                                            dev_link=/dev/rdsk/c2t7d0s4
+                                            dev_link=/dev/rsd10e
+                                    dev=(32,85)
+                                        dev_path=/pci@400/pci@2/pci@0/pci@e/scsi@0/iport@80/cdrom@p7,0:f
+                                            spectype=blk type=minor
+                                            dev_link=/dev/dsk/c2t7d0s5
+                                            dev_link=/dev/sd10f
+                                        dev_path=/pci@400/pci@2/pci@0/pci@e/scsi@0/iport@80/cdrom@p7,0:f,raw
+                                            spectype=chr type=minor
+                                            dev_link=/dev/rdsk/c2t7d0s5
+                                            dev_link=/dev/rsd10f
+                                    dev=(32,86)
+                                        dev_path=/pci@400/pci@2/pci@0/pci@e/scsi@0/iport@80/cdrom@p7,0:g
+                                            spectype=blk type=minor
+                                            dev_link=/dev/dsk/c2t7d0s6
+                                            dev_link=/dev/sd10g
+                                        dev_path=/pci@400/pci@2/pci@0/pci@e/scsi@0/iport@80/cdrom@p7,0:g,raw
+                                            spectype=chr type=minor
+                                            dev_link=/dev/rdsk/c2t7d0s6
+                                            dev_link=/dev/rsd10g
+                                    dev=(32,87)
+                                        dev_path=/pci@400/pci@2/pci@0/pci@e/scsi@0/iport@80/cdrom@p7,0:h
+                                            spectype=blk type=minor
+                                            dev_link=/dev/dsk/c2t7d0s7
+                                            dev_link=/dev/sd10h
+                                        dev_path=/pci@400/pci@2/pci@0/pci@e/scsi@0/iport@80/cdrom@p7,0:h,raw
+                                            spectype=chr type=minor
+                                            dev_link=/dev/rdsk/c2t7d0s7
+                                            dev_link=/dev/rsd10h
+                        iport, instance #8
+                            System software properties:
+                                name='ddi-vhci-class' type=string items=1
+                                    value='scsi_vhci'
+                                name='mpxio-disable' type=string items=1
+                                    value='no'
+                            Driver properties:
+                                name='fm-ereport-capable' type=boolean dev=none
+                            Hardware properties:
+                                name='initiator-interconnect-type' type=string items=1
+                                    value='SAS'
+                                name='scsi-initiator-id' type=int items=1
+                                    value=00000007
+                                name='scsi-tag-age-limit' type=int items=1
+                                    value=00000002
+                                name='scsi-selection-timeout' type=int items=1
+                                    value=000000fa
+                                name='scsi-watchdog-tick' type=int items=1
+                                    value=0000000a
+                                name='scsi-reset-delay' type=int items=1
+                                    value=00000bb8
+                                name='scsi-options' type=int items=1
+                                    value=00107ff8
+                                name='scsi-enumeration' type=int items=1
+                                    value=00000000
+                                name='obp-path' type=string items=1
+                                    value='/pci@400/pci@2/pci@0/pci@e/scsi@0'
+                                name='compatible' type=string items=1
+                                    value='mpt_sas'
+                                name='scsi-iport' type=string items=1
+                                    value='v0'
+                            Device Minor Nodes:
+                                dev=(54,512)
+                                    dev_path=/pci@400/pci@2/pci@0/pci@e/scsi@0/iport@v0:devctl
+                                        spectype=chr type=minor
+                                dev=(54,513)
+                                    dev_path=/pci@400/pci@2/pci@0/pci@e/scsi@0/iport@v0:scsi
+                                        spectype=chr type=minor
+                                        dev_link=/dev/cfg/c11
+    niu, instance #0
+        Driver properties:
+            name='fm-ereport-capable' type=boolean dev=none
+        Register Specifications:
+            Bus Type=0xc0000480, Address=0x0, Size=0x0
+        Device Minor Nodes:
+            dev=(319,252)
+                dev_path=/niu@480:intr
+                    spectype=chr type=minor
+    pci-performance-counters, instance #0
+        System software properties:
+            name='ddi-forceattach' type=int items=1
+                value=00000001
+        Register Specifications:
+            Bus Type=0xc0000400, Address=0x0, Size=0x0
+    ramdisk-root, instance #0 (driver not attached)
+    os-io (driver not attached)
+    iscsi, instance #0
+        System properties:
+            name='instance' type=int items=1
+                value=00000000
+            name='ddi-forceattach' type=int items=1
+                value=00000001
+            name='mpxio-disable' type=string items=1
+                value='no'
+        Driver properties:
+            name='initiator-port' type=string items=1 dev=none
+                value='iqn.1986-03.com.sun:01:002128f51f3e.508afda7,4000002a00ff'
+            name='fm-ereport-capable' type=boolean dev=none
+            name='config-storm-delay' type=int items=1 dev=none
+                value=00000005
+            name='tcp-abort-threshold' type=int items=1 dev=none
+                value=00007530
+            name='tcp-conn-abort-threshold' type=int items=1 dev=none
+                value=00002710
+            name='tcp-conn-notify-threshold' type=int items=1 dev=none
+                value=000007d0
+            name='tcp-nodelay' type=int items=1 dev=none
+                value=00000000
+            name='so-sndbuf' type=int items=1 dev=none
+                value=00040000
+            name='so-rcvbuf' type=int items=1 dev=none
+                value=00040000
+        Hardware properties:
+            name='initiator-interconnect-type' type=string items=1
+                value='iSCSI'
+            name='scsi-initiator-id' type=int items=1
+                value=00000007
+            name='scsi-tag-age-limit' type=int items=1
+                value=00000002
+            name='scsi-selection-timeout' type=int items=1
+                value=000000fa
+            name='scsi-watchdog-tick' type=int items=1
+                value=0000000a
+            name='scsi-reset-delay' type=int items=1
+                value=00000bb8
+            name='scsi-options' type=int items=1
+                value=00107ff8
+            name='scsi-enumeration' type=int items=1
+                value=00000000
+        Device Minor Nodes:
+            dev=(286,0)
+                dev_path=/iscsi:devctl
+                    spectype=chr type=minor
+    pseudo, instance #0
+        System properties:
+            name='instance' type=int items=1
+                value=00000000
+            name='class' type=string items=1
+                value='root'
+        Device Minor Nodes:
+            dev=(2,0)
+                dev_path=/pseudo:devctl
+                    spectype=chr type=minor
