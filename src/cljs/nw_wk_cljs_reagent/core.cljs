@@ -195,7 +195,7 @@
 ;; TODO move to mac-defs as fn
 #_(defn cid->chip [cid] (int (/ cid 16)))
 
-;; * NODE-WEBKIT SPECIFIC
+;; * NODE-WEBKIT/JAVASCRIPT SPECIFIC
 ;; TODO if fs not available, get config from jetty server
 (def fs (js/require "fs"))
 
@@ -213,9 +213,11 @@
 
 (def nw-gui (js/require "nw.gui"))
 
-;; (def nw-win (.get (.-Window nw-gui)))
-;; (.-height nw-win)
+(defn str->int [s]
+  (js/parseInt s))
 
+(def nw-win (.get (.-Window nw-gui)))
+;; (.-height nw-win)
 
 ;; * LDOM CONFIG PARSING
 (defn parse-entry [cid]
@@ -368,12 +370,19 @@
      ^{:key item} [:div {:style {:background-color "Aquamarine"}}
                    item])])
 
+;; TODO get # of cores from config
 (defn lister-domains [items config]
   [:div
    (for [item items
-         :let [color ((:colors config) item)]]
+         :let [color ((:colors config) item)
+               cores (count (:cids (item (:domains config))))
+               memory (reduce + (map #(str->int (:size (val %))) (:mem (item (:domains config)))))]]
      ^{:key item} [:div {:style {:background-color color}}
-                   (name item)])])
+                   [:div {:style {:font-weight "bold"}} (name item)]
+                   [:div {:style {:text-align "right"}}
+                    (str "cores: " cores " vcpu: " (* cores 8))]
+                   [:div {:style {:text-align "right"}}
+                    (str "memory: " (/ memory 1073741824) " GB")]])])
 
 
 ;; TODO move to cond or case matching
@@ -387,7 +396,7 @@
                 alias)))))
 
 (defn lister-cid [cids config]
-  [:div {:class "somelist"}
+  [:div 
    (for [cid cids
          :let [color ((:colors config) (:domain ((:cids config) (str cid))))]]
      ^{:key cid} [:div {:style {:background-color color}}
@@ -457,11 +466,11 @@
     [:div.container
      [:div.row
       [:div.col-xs-12
-       [:h3 "Site: " "Somebank test" " System: " (:name t5-8-full)]]]
+       [:h3 "Site: " "Somebank test" " | System: " (:name t5-8-full)]]]
      [:div.row
       [:div.col-xs-10
        (map #(vector :div.row %) (partition 4 (mapv #(chip-comp % config) chip-ids)))]
-      [:div.col-xs-2 [:h3 "Domains"]
+      [:div.col-xs-2 (:style {:padding-top 0 :margin-top 0}) [:h3 "Domains"]
        (lister-domains (sort (keys ldom-config)) config)]]]))
 
 ;; * ROUTES
@@ -475,6 +484,7 @@
 
 ;; * INITIALIZE APP
 (defn init! []
+  (set! (. js/document -title) "sun4v vis")
   (reagent/render-component [main-page] (.getElementById js/document "app")))
 
 ;; * HISTORY

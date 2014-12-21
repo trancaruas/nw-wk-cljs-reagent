@@ -1,8 +1,9 @@
 {
   "name": "Node-Webkit Clojurescript App",
+	"title": "sun4v vis",
   "main": "public/index.local.html",
   "window": {
-	  "toolbar": true,
+	  "toolbar": false,
 	  "width": 800,
 	  "height": 600,
 	  "min_width": 800,
