@@ -81,7 +81,8 @@
 ;; ** ARCH DEFS
 (def mach-defs
   {:t5-8-half
-   {:chips {:chip0 {:id 0 :slot1 "pci@300" :slot3 "pci@340"}
+   {:name "T5-8 Half Populated"
+    :chips {:chip0 {:id 0 :slot1 "pci@300" :slot3 "pci@340"}
             :chip1 {:id 1 :slot9 "pci@380" :slot11 "pci@3c0"}
             :chip6 {:id 6 :slot6 "pci@600" :slot8 "pci@640"}
             :chip7 {:id 7 :slot14 "pci@680" :slot16 "pci@680"}}
@@ -111,7 +112,8 @@
           {:start "0x380000000000" :end "0x3FFFFFFFFFFF"} {:chip 7} }}
 
    :t5-8-full
-   {:chips {:chip0 {:id 0 :slot1 "pci@300" :slot3 "pci@340"}
+   {:name "T5-8 Fully Populated"
+    :chips {:chip0 {:id 0 :slot1 "pci@300" :slot3 "pci@340"}
             :chip1 {:id 1 :slot9 "pci@380" :slot11 "pci@3c0"}
             :chip2 {:id 2 :slot2 "pci@400" :slot4 "pci@440"}
             :chip3 {:id 3 :slot10 "pci@480" :slot12 "pci@4c0"}
@@ -376,19 +378,19 @@
             (if external? (str external?)
                 alias)))))
 
-(defn lister-mem [items config]
-  [:div
-   (for [item items
-         :let [color ((:colors config) (:domain (val item)))]]
-     ^{:key item} [:div {:style {:background-color color}}
-                   (/ (:size (val item)) 1073741824) " GB"])])
-
 (defn lister-cid [cids config]
   [:div {:class "somelist"}
    (for [cid cids
          :let [color ((:colors config) (:domain ((:cids config) (str cid))))]]
      ^{:key cid} [:div {:style {:background-color color}}
                    "cid " cid])])
+
+(defn lister-mem [items config]
+  [:div
+   (for [item items
+         :let [color ((:colors config) (:domain (val item)))]]
+     ^{:key item} [:div {:style {:background-color color}}
+                   (/ (:size (val item)) 1073741824) " GB"])])
 
 ;; TODO device path in popup hint
 (defn lister-io [items config]
@@ -398,22 +400,27 @@
      ^{:key item} [:div {:style {:background-color color}}
                    (clean-dev-alias (:alias ((:devs config) item)))])])
 
-(defn memory-comp [chip-num config]
-   [:div "Memory"
-    [lister-mem
-     (filter #(= (keyword (str chip-num)) (:cid (val %))) (:mem config))
-     config]])
-
 ;; TODO get number of cids per chip
 (defn cid-comp [chip-num config]
   (let [core-per-chip 16]
-    [:div "Cores:"
+    [:div
+     ;;{:class "col-xs-6"}
+     "Cores:"
      [lister-cid
       (range (* chip-num core-per-chip) (* (inc chip-num) core-per-chip))
       config]]))
 
+(defn memory-comp [chip-num config]
+  [:div {:style {:padding-bottom "10px"}}
+   "Memory"
+    [lister-mem
+     (filter #(= (keyword (str chip-num)) (:cid (val %))) (:mem config))
+     config]])
+
 (defn io-comp [chip-num config]
-  [:div "I/O:"
+  [:div
+   {:style {:position "relative" :bottom "0px"}}
+   "I/O:"
    [lister-io
     (sort
      (keys
@@ -422,25 +429,15 @@
     config]])
 
 (defn chip-comp [chip-num config]
-  [:div {:class "col-md-2"
-         ;;:style {:border "2px" :border-style "solid" :border-color "black"}
-         }
-   [:p "Chip " chip-num]
-   ;; [:p.class1
-   ;;  "this is " [:strong "bold"]
-   ;;  [:span {:style {:color "red"}} " and red "] "text."]
-   [cid-comp chip-num config]
-   [memory-comp chip-num config]
-   [io-comp chip-num config]])
-
+  [:div.col-xs-3
+   {:style {:padding-bottom "25px"}}
+   [:h5 (str "Chip " chip-num)]
+    [:div.row
+     [:div.col-xs-4 {:style {:padding-right "5px"}} [cid-comp chip-num config]]
+     [:div.col-xs-8 {:style {:padding-left "5px" :min-height "100%"}} [memory-comp chip-num config]
+      [io-comp chip-num config]]]])
 
 ;; * MAIN
-;;   [page (get-state :current-page)]
-
-;; (let [ldom-config (read-ldom-config "site0")]
-;; 			   (:mem (:t58-12023-o3 ldom-config)))
-;; {"0x60000000" {:ra "0x60000000", :pa "0x16e0000000", :size "137438953472"}}
-
 (defn main-page []
   (let [ldom-config (read-ldom-config "site0")
         dev-config (read-dev-config "site0")
@@ -449,21 +446,14 @@
         colors (color-domain ldom-config color-table)
         config {:domains ldom-config :cids cid-config :devs dev-config :mem mem-config :colors colors}
         chip-ids (map #(:id %) (vals (:chips t5-8-full)))]
-    [:div {:class "container"}
-      [:div {:class "row"}
-       [:div {:class "col-md-12"}
-;;              :style {:border "2px" :border-style "solid" :border-color "black"}}
-        [:p "header"]]]
+    [:div.container
      [:div.row
-      (map #(chip-comp % config) chip-ids)]]
-
-;;     (mapv #(vector :div %) (partition 4 (mapv #(chip-comp % config) chip-ids)))]
-    
-    ))
-
-;; (take 10 (cycle ["a" "b"]))
-;; ("a" "b" "a" "b" "a" "b" "a" "b" "a" "b")
-
+      [:div.col-xs-12
+       [:h3 "Site: " "Gazprombank test" " System: " (:name t5-8-full)]]]
+     [:div.row
+      [:div.col-xs-10
+       (map #(vector :div.row %) (partition 4 (mapv #(chip-comp % config) chip-ids)))]
+      [:div.col-xs-2 "domain config here "]]]))
 
 ;; * ROUTES
 (secretary/set-config! :prefix "#")
