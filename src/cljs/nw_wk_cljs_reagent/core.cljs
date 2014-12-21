@@ -5,7 +5,7 @@
               [goog.history.EventType :as EventType])
     (:import goog.History))
 
-;; * MISC UTIlS
+;; * UTIlS
 (def not-nil? (complement nil?))
 
 ;; * STATE
@@ -17,22 +17,34 @@
 (defn put! [k v]
   (swap! app-state assoc k v))
 
-;; * VIEWS
-(defmulti page identity)
+;; * TESTS
+;; (defrecord test-record [dev path chip])
+;; nw_wk_cljs_test2.server.test-record
+;; nw-wk-cljs-test2.server> (def record1 (apply ->test-record ["pci_5" "/pci@500" 1]))
+;; #'nw-wk-cljs-test2.server/record1
+;; nw-wk-cljs-test2.server> record1
+;; #nw_wk_cljs_test2.server.test-record{:dev "pci_5", :path "/pci@500", :chip 1}
+;; nw-wk-cljs-test2.server> (:dev record1)
+;; "pci_5"
 
-(defmethod page :page1 [_]
-  [:div [:h2 (get-state :text) "Page 1"]
-   [:div [:a {:href "#/page2"} "go to page 2"]]])
+;; (def m {:first "Bob"
+;;         :middle "J"
+;;         :last "Smith"})
 
-(defmethod page :page2 [_]
-  [:div [:h2 (get-state :text) "Page 2!!!"]
-   [:div [:a {:href "#/"} "go to page 1"]]])
+;; (let [{:keys [first last]} m]
+;;   (println first)
+;;   (println last))
 
-(defmethod page :default [_]
-  [:div "Invalid/Unknown route"])
+;; (extend-type js/RegExp
+;;   IFn
+;;   (-invoke
+;;    ([this s]
+;;      (re-matches this s))))
+
+;; (filter #"foo.*" ["foo" "bar" "foobar"])
 
 ;; * ARCH SPECIFIC DEFS
-;; ** T5-8 data
+;; ** T5-8 DATA
 ;; 2 or 4 PM
 ;; each PM have 2 chips
 ;; each chip have 16 cores
@@ -64,6 +76,7 @@
             "pci@640/pci@1/pci@0/pci@6" {:id "pci@640/pci@1/pci@0/pci@6" :slot 14 :chip 3 :sw 3}
             "pci@680/pci@1/pci@0/pci@6" {:id "pci@680/pci@1/pci@0/pci@6" :slot 15 :chip 3 :sw 4}
             "pci@6c0/pci@1/pci@0/pci@6" {:id "pci@6c0/pci@1/pci@0/pci@6" :slot 16 :chip 3 :sw 4}}
+    ;; TODO memory config for t5-8 half is wrong
     :mem {:0 {:start            "0x0" :end  "0x7FFFFFFFFFF"}
           :1 {:start  "0x80000000000" :end  "0xFFFFFFFFFFF"}
           :2 {:start "0x100000000000" :end "0x17FFFFFFFFFF"}
@@ -130,6 +143,21 @@
     (if (not-empty cid)
       (key (first cid))
       nil)))
+
+(defn color-domain [ldom-config color-table]
+  (let [domain-count (count (keys ldom-config))
+        domain-colors (take domain-count (shuffle color-table))]
+    (zipmap (keys ldom-config) domain-colors)))
+
+;; TODO HORRIBLE move to cond or case matching
+(defn clean-dev-alias [alias]
+  (let [rio? (second (re-matches #"/SYS/(RIO.+)" alias))
+        internal? (second (re-matches #"/SYS/(MB/.+)" alias))
+        external? (second (re-matches #"/SYS/RCSA/(.+)" alias))]
+    (if rio? (str rio?)
+        (if internal? (str internal?)
+            (if external? (str external?)
+                alias)))))
 
 ;; * NODE-WEBKIT/JAVASCRIPT SPECIFIC
 ;; TODO if fs not available, get config from jetty server
@@ -223,78 +251,8 @@
 ;; {"0xc30000000" {:pa "0xc30000000", :cid :0, :size "45902462976",:domain :t58-12023-o2},
 ;;  "0x103300000000" {:pa "0x103300000000", :cid :2, :size "55834574848", :domain :unassigned},
 
-(defn color-domain [ldom-config color-table]
-  (let [domain-count (count (keys ldom-config))
-        domain-colors (take domain-count (shuffle color-table))]
-    (zipmap (keys ldom-config) domain-colors)))
-
-;; TODO HORRIBLE move to cond or case matching
-(defn clean-dev-alias [alias]
-  (let [rio? (second (re-matches #"/SYS/(RIO.+)" alias))
-        internal? (second (re-matches #"/SYS/(MB/.+)" alias))
-        external? (second (re-matches #"/SYS/RCSA/(.+)" alias))]
-    (if rio? (str rio?)
-        (if internal? (str internal?)
-            (if external? (str external?)
-                alias)))))
-
-;; ** TESTS
-;; TODO CURRENT ALG FOR ASSIGNING GUARANTEED DIFFERENT COLORS DOES NOT WORK:
-#_(distinct (for [config (take 1000 (repeatedly #(ldom-config "site0")))]
-            (let [color-domains (map #(:color %) (vals config))]
-              (if (= (sort color-domains) (distinct (sort color-domains)))
-                "works"
-                "failed"))))
-;; ("works" "failed")
-
-;; DONE this alg works
-;; (defn uniq-color-set []
-;;   (loop [domain 5
-;;          dom-set nil
-;;          color-set (shuffle color-table)]
-;;     (if-not  (> domain 0)
-;;       dom-set
-;;       (recur (dec domain)
-;;              (conj dom-set (first color-set))
-;;              (rest color-set)))))
-
-;; (distinct (for [config (take 1000 (repeatedly #(uniq-color-set)))]
-;; 			   (if (= (sort config) (distinct (sort config)))
-;; 			     "works"
-;; 			     "failed")))
-;; ("works")
-
-;; (parser-section string-blob "CORE")
-;; return [{:cid 60} {:free 100} :cpuset [480 .. 487]] or nil
-;;(defn parser-section [blob section] )
-
-
-;; (defrecord test-record [dev path chip])
-;; nw_wk_cljs_test2.server.test-record
-;; nw-wk-cljs-test2.server> (def record1 (apply ->test-record ["pci_5" "/pci@500" 1]))
-;; #'nw-wk-cljs-test2.server/record1
-;; nw-wk-cljs-test2.server> record1
-;; #nw_wk_cljs_test2.server.test-record{:dev "pci_5", :path "/pci@500", :chip 1}
-;; nw-wk-cljs-test2.server> (:dev record1)
-;; "pci_5"
-
-;; (def m {:first "Bob"
-;;         :middle "J"
-;;         :last "Smith"})
-
-;; (let [{:keys [first last]} m]
-;;   (println first)
-;;   (println last))
-
-;; (extend-type js/RegExp
-;;   IFn
-;;   (-invoke
-;;    ([this s]
-;;      (re-matches this s))))
-
-;; (filter #"foo.*" ["foo" "bar" "foobar"])
-
 ;; * INTERFACE
+;; ** LISTERS
 (defn lister [items]
   [:div
    (for [item items]
@@ -337,6 +295,7 @@
      ^{:key item} [:div {:style {:background-color color}}
                    (clean-dev-alias (:alias ((:devs config) item)))])])
 
+;; ** COMPONENTS
 ;; TODO get number of cids per chip
 (defn cid-comp [chip config]
   (let [core-per-chip 16]
@@ -373,7 +332,7 @@
      [:div.col-xs-8 {:style {:padding-left "5px" :min-height "100%"}} [memory-comp chip-num config]
       [io-comp chip-num config]]]])
 
-;; * MAIN
+;; ** MAIN
 (defn main-page []
   (let [ldom-config (read-ldom-config "site0")
         dev-config (read-dev-config "site0")
@@ -392,7 +351,7 @@
       [:div.col-xs-2 (:style {:padding-top 0 :margin-top 0}) [:h3 "Domains"]
        (lister-domains (sort (keys ldom-config)) config)]]]))
 
-;; * ROUTES
+;; * ROUTES (not used - CHECK!!!)
 (secretary/set-config! :prefix "#")
 
 (secretary/defroute "/" []
@@ -405,14 +364,3 @@
 (defn init! []
   (set! (. js/document -title) "sun4v vis")
   (reagent/render-component [main-page] (.getElementById js/document "app")))
-
-;; * HISTORY
-(defn hook-browser-navigation! []
-  (doto (History.)
-    (events/listen
-     EventType/NAVIGATE
-     (fn [event]
-       (secretary/dispatch! (.-token event))))
-    (.setEnabled true)))
-;; need to run this after routes have been defined
-(hook-browser-navigation!)
