@@ -40,44 +40,6 @@
 ;; each chip have 128 threads
 ;;  == 1024 vcpu, 8 vcpu per cid
 
-;; half-poulated
-;; PM CPU Switch I/O Slot Root Complex Path
-;; 0 0 0 1 /pci@300/pci@1/pci@0/pci@6
-;; 0 0 0 2 /pci@300/pci@1/pci@0/pci@c
-;; 0 0 1 3 /pci@340/pci@1/pci@0/pci@6
-;; 0 0 1 4 /pci@340/pci@1/pci@0/pci@c
-;; 3 2 1 5 /pci@600/pci@1/pci@0/pci@e
-;; 3 2 1 6 /pci@600/pci@1/pci@0/pci@8
-;; 3 2 2 7 /pci@640/pci@1/pci@0/pci@e
-;; 3 2 2 8 /pci@640/pci@1/pci@0/pci@8
-;; 0 1 2 9 /pci@380/pci@1/pci@0/pci@a
-;; 0 1 2 10 /pci@380/pci@1/pci@0/pci@4
-;; 0 1 3 11 /pci@3c0/pci@1/pci@0/pci@e
-;; 0 1 3 12 /pci@3c0/pci@1/pci@0/pci@8
-;; 3 3 3 13 /pci@680/pci@1/pci@0/pci@a
-;; 3 3 3 14 /pci@680/pci@1/pci@0/pci@4
-;; 3 3 4 15 /pci@6c0/pci@1/pci@0/pci@8
-;; 3 3 4 16 /pci@6c0/pci@1/pci@0/pci@4
-
-;; full populated
-;; PM CPU Switch I/O Slot Root Complex Path
-;;  0   0      0  1 /pci@300/pci@1/pci@0/pci@6
-;;  0   0      1  3 /pci@340/pci@1/pci@0/pci@6
-;;  0   1      2  9 /pci@380/pci@1/pci@0/pci@a
-;;  0   1      3 11 /pci@3c0/pci@1/pci@0/pci@e
-;;  1   2      0  2 /pci@400/pci@1/pci@0/pci@c
-;;  1   2      1  4 /pci@440/pci@1/pci@0/pci@c
-;;  1   3      2 10 /pci@480/pci@1/pci@0/pci@4
-;;  1   3      3 12 /pci@4c0/pci@1/pci@0/pci@8
-;;  2   4      1  5 /pci@500/pci@1/pci@0/pci@e
-;;  2   4      2  7 /pci@540/pci@1/pci@0/pci@e
-;;  2   5      3 13 /pci@580/pci@1/pci@0/pci@a
-;;  2   5      4 15 /pci@5c0/pci@1/pci@0/pci@8
-;;  3   6      1  6 /pci@600/pci@1/pci@0/pci@8
-;;  3   6      2  8 /pci@640/pci@1/pci@0/pci@8
-;;  3   7      3 14 /pci@680/pci@1/pci@0/pci@4
-;;  3   7      4 16 /pci@6c0/pci@1/pci@0/pci@4
-
 ;; ** ARCH DEFS
 (def mach-defs
   {:t5-8-half
@@ -102,14 +64,14 @@
             "pci@640/pci@1/pci@0/pci@6" {:id "pci@640/pci@1/pci@0/pci@6" :slot 14 :chip 3 :sw 3}
             "pci@680/pci@1/pci@0/pci@6" {:id "pci@680/pci@1/pci@0/pci@6" :slot 15 :chip 3 :sw 4}
             "pci@6c0/pci@1/pci@0/pci@6" {:id "pci@6c0/pci@1/pci@0/pci@6" :slot 16 :chip 3 :sw 4}}
-    :mem {{:start            "0x0" :end  "0x7FFFFFFFFFF"} {:chip 0}
-          {:start  "0x80000000000" :end  "0xFFFFFFFFFFF"} {:chip 1}
-          {:start "0x100000000000" :end "0x17FFFFFFFFFF"} {:chip 2}
-          {:start "0x180000000000" :end "0x1FFFFFFFFFFF"} {:chip 3}
-          {:start "0x200000000000" :end "0x27FFFFFFFFFF"} {:chip 4}
-          {:start "0x280000000000" :end "0x2FFFFFFFFFFF"} {:chip 5}
-          {:start "0x300000000000" :end "0x37FFFFFFFFFF"} {:chip 6}
-          {:start "0x380000000000" :end "0x3FFFFFFFFFFF"} {:chip 7} }}
+    :mem {:0 {:start            "0x0" :end  "0x7FFFFFFFFFF"}
+          :1 {:start  "0x80000000000" :end  "0xFFFFFFFFFFF"}
+          :2 {:start "0x100000000000" :end "0x17FFFFFFFFFF"}
+          :3 {:start "0x180000000000" :end "0x1FFFFFFFFFFF"}
+          :4 {:start "0x200000000000" :end "0x27FFFFFFFFFF"}
+          :5 {:start "0x280000000000" :end "0x2FFFFFFFFFFF"}
+          :6 {:start "0x300000000000" :end "0x37FFFFFFFFFF"}
+          :7 {:start "0x380000000000" :end "0x3FFFFFFFFFFF"}}}
 
    :t5-8-full
    {:name "T5-8 Fully Populated"
@@ -121,6 +83,7 @@
             :chip5 {:id 5 :slot13 "pci@580" :slot15 "pci@580"}
             :chip6 {:id 6 :slot6 "pci@600" :slot8 "pci@640"}
             :chip7 {:id 7 :slot14 "pci@680" :slot16 "pci@680"}}
+
     :devs { "pci@300" {:id "pci@300" :slot  1 :chip 0 :sw 0}
             "pci@340" {:id "pci@340" :slot  3 :chip 0 :sw 1}
             "pci@380" {:id "pci@380" :slot  9 :chip 1 :sw 2}
@@ -137,63 +100,36 @@
             "pci@640" {:id "pci@640" :slot  8 :chip 6 :sw 2}
             "pci@680" {:id "pci@680" :slot 14 :chip 7 :sw 3}
             "pci@6c0" {:id "pci@6c0" :slot 16 :chip 7 :sw 4}}
-    :mem {{:start            "0x0" :end  "0x7FFFFFFFFFF"} {:chip 0}
-          {:start  "0x80000000000" :end  "0xFFFFFFFFFFF"} {:chip 1}
-          {:start "0x100000000000" :end "0x17FFFFFFFFFF"} {:chip 2}
-          {:start "0x180000000000" :end "0x1FFFFFFFFFFF"} {:chip 3}
-          {:start "0x200000000000" :end "0x27FFFFFFFFFF"} {:chip 4}
-          {:start "0x280000000000" :end "0x2FFFFFFFFFFF"} {:chip 5}
-          {:start "0x300000000000" :end "0x37FFFFFFFFFF"} {:chip 6}
-          {:start "0x380000000000" :end "0x3FFFFFFFFFFF"} {:chip 7} }
     
-    :mem1 {:0 {:start            0x0 :end 0x7FFFFFFFFFF}
-           :1 {:start  0x80000000000 :end 0xFFFFFFFFFFF}
-           :2 {:start 0x100000000000 :end 0x17FFFFFFFFFF}
-           :3 {:start 0x180000000000 :end 0x1FFFFFFFFFFF}
-           :4 {:start 0x200000000000 :end 0x27FFFFFFFFFF}
-           :5 {:start 0x280000000000 :end 0x2FFFFFFFFFFF}
-           :6 {:start 0x300000000000 :end 0x37FFFFFFFFFF}
-           :7 {:start 0x380000000000 :end 0x3FFFFFFFFFFF} }
-
-    }})
+    :mem {:0 {:start            0x0 :end 0x7FFFFFFFFFF}
+          :1 {:start  0x80000000000 :end 0xFFFFFFFFFFF}
+          :2 {:start 0x100000000000 :end 0x17FFFFFFFFFF}
+          :3 {:start 0x180000000000 :end 0x1FFFFFFFFFFF}
+          :4 {:start 0x200000000000 :end 0x27FFFFFFFFFF}
+          :5 {:start 0x280000000000 :end 0x2FFFFFFFFFFF}
+          :6 {:start 0x300000000000 :end 0x37FFFFFFFFFF}
+          :7 {:start 0x380000000000 :end 0x3FFFFFFFFFFF}}}})
 
 (def t5-8-full (:t5-8-full mach-defs))
 
 ;; ** ARCH FUNCS
-;; not used anymore
-#_(defn cid-to-domain [cid domain-set]
-  (first (remove nil?
-           (for [[domain config] domain-set]
-             (if (contains? (:cids config) (str cid))
-               domain)))))
-
 (defn dev-on-chip? [chip dev-struct]
   (let [[dev-name _] dev-struct
         dev-root (subs dev-name 0 7)]
     (if (contains? (:devs t5-8-full) dev-root)
       (if (= chip (:chip ((:devs t5-8-full) dev-root)))
         true))))
-;; (keys (filter #(belong-to-chip 1 %) dev-config))
-;; ("pci@3c0/pci@1/pci@0/pci@e/network@0,2" "pci@3c0/pci@1/pci@0/pci@e/network@0" "pci@3c0/pci@1/pci@0/pci@e/network@0,1" "pci@380/pci@1/pci@0/pci@a" "pci@380/pci@1/pci@0/pci@a/SUNW,qlc@0,1" "pci@380" "pci@380/pci@1/pci@0/pci@a/SUNW,qlc@0" "pci@3c0" "pci@3c0/pci@1/pci@0/pci@e/network@0,3" "pci@3c0/pci@1/pci@0/pci@e")
+;; (keys (filter #(dev-on-chip? 1 %) dev-config))
+;; ("pci@3c0/pci@1/pci@0/pci@e/network@0,2" "pci@3c0/pci@1/pci@0/pci@e/network@0" ...
 
-;;(js/parseInt "0xFFF")
-;; (map #(<= (js/parseInt (:start (first %))) 1243143 (js/parseInt (:end (first %)))) (:mem t5-8-full))
-;; (true false false false false false false false)
-(defn mem-on-chip? [chip mem-struct])
+(defn mem-on-chip? [chip mem-config-entry]
+  (= (keyword (str chip)) (:cid (val mem-config-entry))))
 
-;;(filter #(mem-on-chip 1 %) domains)
-
-(defn mem->chip [pa]
-  (let [mem-ranges (:mem1 t5-8-full)]
-    (first (filter not-nil? (for [cid (keys mem-ranges)
-                                  :let [start (:start (cid mem-ranges))
-                                        end (:end (cid mem-ranges))]]
-                              (if (< start pa end) cid))))))
-;; (mem->chip 0x36e0000000)
-;; :0
-
-;; TODO move to mac-defs as fn
-#_(defn cid->chip [cid] (int (/ cid 16)))
+(defn pa->cid [pa]
+  (let [cid (filter #(<= (:start (val %)) pa (:end (val %))) (:mem t5-8-full))]
+    (if (not-empty cid)
+      (key (first cid))
+      nil)))
 
 ;; * NODE-WEBKIT/JAVASCRIPT SPECIFIC
 ;; TODO if fs not available, get config from jetty server
@@ -220,6 +156,7 @@
 ;; (.-height nw-win)
 
 ;; * LDOM CONFIG PARSING
+;; TODO move all the state to atom
 (defn parse-entry [cid]
   (apply merge
     (for [entry cid]
@@ -263,25 +200,10 @@
 ;; (:cids (ldom-config "t58-12023-o6"))
 ;; {"41" {:cid "41", :cpuset "328,329,330,331,332,333,334,335"}, "40" {:cid "40", :cpuset "320,321,322,323,324,325,326,327"}}
 
+;; TODO this is unbound resources. move to other readings
 (defn read-dev-config [site]
   (let [dev-content (read-site-file-content site "_usr_sbin_ldm_ls-io_-p")]
     (parse-token "dev" dev-content)))
-
-;; (count (keys (dev-config 'site0)))
-;; 72
-;; $ grep -c dev _usr_sbin_ldm_ls-io_-p
-;; 72
-
-;; append :color "some-color" from color-table to value of domains
-#_(defn color-domain [dom-config colors]
-  (let [taken-colors (take (count dom-config) colors)]
-    (zipmap (keys dom-config)
-            (map merge (vals dom-config) (mapv #(hash-map :color %) taken-colors)))))
-
-(defn color-domain [ldom-config color-table]
-  (let [domain-count (count (keys ldom-config))
-        domain-colors (take domain-count (shuffle color-table))]
-  (zipmap (keys ldom-config) domain-colors)))
 
 (defn get-cid-config [config]
   (apply merge
@@ -289,12 +211,6 @@
      (for [[domain-name domain-config] config]
        (for [[cid-id cid-value] (:cids domain-config)]
          {cid-id (assoc cid-value :domain domain-name)})))))
-
-(defn pa->cid [pa]
-  (let [cid (filter #(<= (:start (val %)) pa (:end (val %))) (:mem1 t5-8-full))]
-    (if (not-empty cid)
-      (key (first cid))
-      nil)))
 
 (defn get-mem-config [config]
   (apply merge
@@ -306,6 +222,21 @@
 ;; (get-mem-config ldom-config)
 ;; {"0xc30000000" {:pa "0xc30000000", :cid :0, :size "45902462976",:domain :t58-12023-o2},
 ;;  "0x103300000000" {:pa "0x103300000000", :cid :2, :size "55834574848", :domain :unassigned},
+
+(defn color-domain [ldom-config color-table]
+  (let [domain-count (count (keys ldom-config))
+        domain-colors (take domain-count (shuffle color-table))]
+    (zipmap (keys ldom-config) domain-colors)))
+
+;; TODO HORRIBLE move to cond or case matching
+(defn clean-dev-alias [alias]
+  (let [rio? (second (re-matches #"/SYS/(RIO.+)" alias))
+        internal? (second (re-matches #"/SYS/(MB/.+)" alias))
+        external? (second (re-matches #"/SYS/RCSA/(.+)" alias))]
+    (if rio? (str rio?)
+        (if internal? (str internal?)
+            (if external? (str external?)
+                alias)))))
 
 ;; ** TESTS
 ;; TODO CURRENT ALG FOR ASSIGNING GUARANTEED DIFFERENT COLORS DOES NOT WORK:
@@ -377,30 +308,19 @@
          :let [color ((:colors config) item)
                cores (count (:cids (item (:domains config))))
                memory (reduce + (map #(str->int (:size (val %))) (:mem (item (:domains config)))))]]
-     ^{:key item} [:div {:style {:background-color color}}
+     ^{:key item} [:div {:style {:background-color color :margin-bottom "5px"}}
                    [:div {:style {:font-weight "bold"}} (name item)]
                    [:div {:style {:text-align "right"}}
                     (str "cores: " cores " vcpu: " (* cores 8))]
                    [:div {:style {:text-align "right"}}
                     (str "memory: " (/ memory 1073741824) " GB")]])])
 
-
-;; TODO move to cond or case matching
-(defn clean-dev-alias [alias]
-  (let [rio? (second (re-matches #"/SYS/(RIO.+)" alias))
-        internal? (second (re-matches #"/SYS/(MB/.+)" alias))
-        external? (second (re-matches #"/SYS/RCSA/(.+)" alias))]
-    (if rio? (str rio?)
-        (if internal? (str internal?)
-            (if external? (str external?)
-                alias)))))
-
 (defn lister-cid [cids config]
   [:div 
    (for [cid cids
          :let [color ((:colors config) (:domain ((:cids config) (str cid))))]]
      ^{:key cid} [:div {:style {:background-color color}}
-                   "cid " cid])])
+                  "cid " cid])])
 
 (defn lister-mem [items config]
   [:div
@@ -418,31 +338,30 @@
                    (clean-dev-alias (:alias ((:devs config) item)))])])
 
 ;; TODO get number of cids per chip
-(defn cid-comp [chip-num config]
+(defn cid-comp [chip config]
   (let [core-per-chip 16]
     [:div
-     ;;{:class "col-xs-6"}
-     "Cores:"
+     [:span {:style {:font-weight "bold"}} "Cores:"]
      [lister-cid
-      (range (* chip-num core-per-chip) (* (inc chip-num) core-per-chip))
+      (range (* chip core-per-chip) (* (inc chip) core-per-chip))
       config]]))
 
-(defn memory-comp [chip-num config]
+(defn memory-comp [chip config]
   [:div {:style {:padding-bottom "10px"}}
-   "Memory"
+   [:span {:style {:font-weight "bold"}} "Memory"]
     [lister-mem
-     (filter #(= (keyword (str chip-num)) (:cid (val %))) (:mem config))
+     (filter #(mem-on-chip? chip %) (:mem config))
      config]])
 
-(defn io-comp [chip-num config]
+(defn io-comp [chip config]
   [:div
    {:style {:position "relative" :bottom "0px"}}
-   "I/O:"
+   [:span {:style {:font-weight "bold"}} "I/O:"]
    [lister-io
     (sort
      (keys
       (remove #(re-matches #"pci@..." (first %))
-        (filter #(dev-on-chip? chip-num %) (:devs config)))))
+        (filter #(dev-on-chip? chip %) (:devs config)))))
     config]])
 
 (defn chip-comp [chip-num config]
