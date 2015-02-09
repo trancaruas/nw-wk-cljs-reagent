@@ -1,0 +1,855 @@
+NAME             STATE      FLAGS   CONS    VCPU  MEMORY   UTIL  NORM  UPTIME
+primary          active     -n-cv-  UART    64    32G      0.8%  0.8%  2d 23h 42m
+
+SOFTSTATE
+Solaris running
+
+UUID
+    3610090f-247a-e92e-805a-bc1a2d2d6bda
+
+MAC
+    00:10:e0:56:db:00
+
+HOSTID
+    0x8656db00
+
+CONTROL
+    failure-policy=ignore
+    extended-mapin-space=on
+    cpu-arch=native
+    rc-add-policy=
+    shutdown-group=0
+
+DEPENDENCY
+    master= 
+
+CORE
+    CID    CPUSET
+    0      (0, 1, 2, 3, 4, 5, 6, 7)
+    1      (8, 9, 10, 11, 12, 13, 14, 15)
+    2      (16, 17, 18, 19, 20, 21, 22, 23)
+    3      (24, 25, 26, 27, 28, 29, 30, 31)
+    4      (32, 33, 34, 35, 36, 37, 38, 39)
+    5      (40, 41, 42, 43, 44, 45, 46, 47)
+    6      (48, 49, 50, 51, 52, 53, 54, 55)
+    7      (56, 57, 58, 59, 60, 61, 62, 63)
+
+VCPU
+    VID    PID    CID    UTIL NORM STRAND
+    0      0      0      0.3% 0.2%   100%
+    1      1      0      1.2% 1.1%   100%
+    2      2      0      0.3% 0.3%   100%
+    3      3      0      0.0% 0.0%   100%
+    4      4      0      0.1% 0.1%   100%
+    5      5      0      0.4% 0.3%   100%
+    6      6      0      0.2% 0.2%   100%
+    7      7      0      0.0% 0.0%   100%
+    8      8      1      0.1% 0.0%   100%
+    9      9      1      1.1% 1.0%   100%
+    10     10     1      1.1% 0.9%   100%
+    11     11     1      0.1% 0.0%   100%
+    12     12     1      0.1% 0.1%   100%
+    13     13     1      1.3% 1.2%   100%
+    14     14     1      0.1% 0.1%   100%
+    15     15     1      0.4% 0.4%   100%
+    16     16     2      0.1% 0.1%   100%
+    17     17     2      0.4% 0.3%   100%
+    18     18     2      0.9% 0.8%   100%
+    19     19     2      0.2% 0.2%   100%
+    20     20     2      0.1% 0.1%   100%
+    21     21     2      0.1% 0.1%   100%
+    22     22     2      0.4% 0.3%   100%
+    23     23     2      0.4% 0.4%   100%
+    24     24     3      0.1% 0.1%   100%
+    25     25     3      0.8% 0.8%   100%
+    26     26     3      1.4% 1.3%   100%
+    27     27     3      0.1% 0.1%   100%
+    28     28     3      0.1% 0.1%   100%
+    29     29     3      0.1% 0.1%   100%
+    30     30     3      0.4% 0.4%   100%
+    31     31     3      5.3% 5.2%   100%
+    32     32     4      0.1% 0.1%   100%
+    33     33     4      0.1% 0.1%   100%
+    34     34     4      0.1% 0.1%   100%
+    35     35     4      0.9% 0.9%   100%
+    36     36     4      0.1% 0.1%   100%
+    37     37     4      0.0% 0.0%   100%
+    38     38     4      0.1% 0.1%   100%
+    39     39     4      0.7% 0.7%   100%
+    40     40     5      0.3% 0.3%   100%
+    41     41     5      0.1% 0.1%   100%
+    42     42     5      0.5% 0.5%   100%
+    43     43     5      1.2% 1.2%   100%
+    44     44     5      0.4% 0.4%   100%
+    45     45     5      0.1% 0.1%   100%
+    46     46     5      0.1% 0.1%   100%
+    47     47     5      0.6% 0.6%   100%
+    48     48     6      1.6% 1.5%   100%
+    49     49     6      0.2% 0.2%   100%
+    50     50     6      0.1% 0.1%   100%
+    51     51     6      0.3% 0.3%   100%
+    52     52     6      0.6% 0.5%   100%
+    53     53     6      0.5% 0.5%   100%
+    54     54     6      0.1% 0.1%   100%
+    55     55     6      0.3% 0.3%   100%
+    56     56     7      0.5% 0.5%   100%
+    57     57     7      0.5% 0.5%   100%
+    58     58     7      0.1% 0.0%   100%
+    59     59     7      0.2% 0.2%   100%
+    60     60     7      1.8% 1.8%   100%
+    61     61     7      0.1% 0.1%   100%
+    62     62     7      0.0% 0.0%   100%
+    63     63     7      0.1% 0.1%   100%
+
+MEMORY
+    RA               PA               SIZE            
+    0x30000000       0x30000000       32G
+
+CONSTRAINT
+    cpu=whole-core
+    max-cores=unlimited
+    threading=max-throughput
+
+VARIABLES
+    boot-device=/pci@300/pci@1/pci@0/pci@4/pci@0/pci@c/scsi@0/disk@w5000cca05622c23d,0:a disk net
+    network-boot-arguments=host-ip=192.168.176.163,router-ip=192.168.176.3,subnet-mask=255.255.255.0,hostname=dr-ldm004-cdom1,file=http://192.168.181.160:5555/cgi-bin/wanboot-cgi
+    nvramrc=." ChassisSerialNumber AK00210452 " cr
+    pm_boot_policy=disabled=0;ttfc=2000;ttmr=0;
+
+IO
+    DEVICE                           PSEUDONYM        OPTIONS
+    pci@300                          pci_0           
+    pci@3c0                          pci_3           
+    pci@400                          pci_4           
+    pci@440                          pci_5           
+    pci@480                          pci_6           
+    pci@4c0                          pci_7           
+    pci@540                          pci_9           
+    pci@680                          pci_14          
+    pci@300/pci@1/pci@0/pci@6        /SYS/RCSA/PCIE1 
+    pci@300/pci@1/pci@0/pci@4/pci@0/pci@c /SYS/MB/SASHBA0 
+    pci@300/pci@1/pci@0/pci@4/pci@0/pci@8 /SYS/RIO/NET0   
+    pci@3c0/pci@1/pci@0/pci@e        /SYS/RCSA/PCIE11
+    pci@400/pci@1/pci@0/pci@c        /SYS/RCSA/PCIE2 
+    pci@440/pci@1/pci@0/pci@c        /SYS/RCSA/PCIE4 
+    pci@480/pci@1/pci@0/pci@4        /SYS/RCSA/PCIE10
+    pci@4c0/pci@1/pci@0/pci@8        /SYS/RCSA/PCIE12
+    pci@540/pci@1/pci@0/pci@e        /SYS/RCSA/PCIE7 
+    pci@680/pci@1/pci@0/pci@4        /SYS/RCSA/PCIE14
+VCC
+    NAME             PORT-RANGE
+    primary-vcc0     5000-5100
+
+VSW
+    NAME             MAC               NET-DEV   ID   DEVICE     LINKPROP   DEFAULT-VLAN-ID PVID VID                  MTU   MODE   INTER-VNET-LINK
+    primary-vsw0     00:14:4f:fa:44:00 net0      0    switch@0              1               1                         1500         on         
+
+VDS
+    NAME             VOLUME         OPTIONS          MPGROUP        DEVICE
+    primary-vds0     ldom04-tst02                                   /net/mn-ldomnfs01/ldoms/ldom04-tst02.vds0
+                     ldom04-tst03                                   /net/mn-ldomnfs01/ldoms/ldom04-tst03.vds0
+                     ldom04-tst01                                   /net/mn-ldomnfs01/ldoms/ldom04-tst01.vds0
+    primary-vds1     ldom04-tst01-c15t50060E80101DD7D0d0s2                                 /dev/rdsk/c15t50060E80101DD7D0d0s2
+                     ldom04-tst01-c15t50060E80101DD7D0d1s2                                 /dev/rdsk/c15t50060E80101DD7D0d1s2
+                     ldom04-tst01-c15t50060E80101DD7D0d2s2                                 /dev/rdsk/c15t50060E80101DD7D0d2s2
+                     ldom04-tst01-c15t50060E80101DD7D0d3s2                                 /dev/rdsk/c15t50060E80101DD7D0d3s2
+                     ldom04-tst01-c15t50060E80101DD7D8d0s2                                 /dev/rdsk/c15t50060E80101DD7D8d0s2
+                     ldom04-tst01-c15t50060E80101DD7D8d1s2                                 /dev/rdsk/c15t50060E80101DD7D8d1s2
+                     ldom04-tst01-c15t50060E80101DD7D8d2s2                                 /dev/rdsk/c15t50060E80101DD7D8d2s2
+                     ldom04-tst01-c15t50060E80101DD7D8d3s2                                 /dev/rdsk/c15t50060E80101DD7D8d3s2
+                     ldom04-tst02-c4t50060E80101DD7D0d0s2                                 /dev/dsk/c4t50060E80101DD7D0d0s2
+                     ldom04-tst02-c4t50060E80101DD7D0d1s2                                 /dev/dsk/c4t50060E80101DD7D0d1s2
+                     ldom04-tst02-c4t50060E80101DD7D0d2s2                                 /dev/dsk/c4t50060E80101DD7D0d2s2
+                     ldom04-tst02-c4t50060E80101DD7D0d3s2                                 /dev/dsk/c4t50060E80101DD7D0d3s2
+                     ldom04-tst02-c4t50060E80101DD7D8d0s2                                 /dev/dsk/c4t50060E80101DD7D8d0s2
+                     ldom04-tst02-c4t50060E80101DD7D8d1s2                                 /dev/dsk/c4t50060E80101DD7D8d1s2
+                     ldom04-tst02-c4t50060E80101DD7D8d2s2                                 /dev/dsk/c4t50060E80101DD7D8d2s2
+                     ldom04-tst02-c4t50060E80101DD7D8d3s2                                 /dev/dsk/c4t50060E80101DD7D8d3s2
+    primary-vds3     ldom04-tst03-c5t50060E80101DD7D0d131s2                                 /dev/rdsk/c5t50060E80101DD7D0d131s2
+                     ldom04-tst03-c5t50060E80101DD7D0d132s2                                 /dev/rdsk/c5t50060E80101DD7D0d132s2
+                     ldom04-tst03-c5t50060E80101DD7D0d133s2                                 /dev/rdsk/c5t50060E80101DD7D0d133s2
+                     ldom04-tst03-c5t50060E80101DD7D0d134s2                                 /dev/rdsk/c5t50060E80101DD7D0d134s2
+                     ldom04-tst03-c5t50060E80101DD7D8d131s2                                 /dev/rdsk/c5t50060E80101DD7D8d131s2
+                     ldom04-tst03-c5t50060E80101DD7D8d132s2                                 /dev/rdsk/c5t50060E80101DD7D8d132s2
+                     ldom04-tst03-c5t50060E80101DD7D8d133s2                                 /dev/rdsk/c5t50060E80101DD7D8d133s2
+                     ldom04-tst03-c5t50060E80101DD7D8d134s2                                 /dev/rdsk/c5t50060E80101DD7D8d134s2
+
+VCONS
+    NAME             SERVICE                     PORT   LOGGING
+                     UART
+
+------------------------------------------------------------------------------
+NAME             STATE      FLAGS   CONS    VCPU  MEMORY   UTIL  NORM  UPTIME
+ldom04-tst01     bound      ------  5001    256   32G                  
+
+UUID
+    e0ee7857-2a25-64ab-f6c7-ed2ff12f4de9
+
+MAC
+    00:14:4f:fb:23:db
+
+HOSTID
+    0x84fb23db
+
+CONTROL
+    failure-policy=ignore
+    extended-mapin-space=on
+    cpu-arch=native
+    rc-add-policy=
+    shutdown-group=15
+
+DEPENDENCY
+    master= 
+
+CORE
+    CID    CPUSET
+    16     (128, 129, 130, 131, 132, 133, 134, 135)
+    17     (136, 137, 138, 139, 140, 141, 142, 143)
+    22     (176, 177, 178, 179, 180, 181, 182, 183)
+    23     (184, 185, 186, 187, 188, 189, 190, 191)
+    24     (192, 193, 194, 195, 196, 197, 198, 199)
+    25     (200, 201, 202, 203, 204, 205, 206, 207)
+    26     (208, 209, 210, 211, 212, 213, 214, 215)
+    27     (216, 217, 218, 219, 220, 221, 222, 223)
+    28     (224, 225, 226, 227, 228, 229, 230, 231)
+    29     (232, 233, 234, 235, 236, 237, 238, 239)
+    30     (240, 241, 242, 243, 244, 245, 246, 247)
+    31     (248, 249, 250, 251, 252, 253, 254, 255)
+    32     (256, 257, 258, 259, 260, 261, 262, 263)
+    33     (264, 265, 266, 267, 268, 269, 270, 271)
+    34     (272, 273, 274, 275, 276, 277, 278, 279)
+    35     (280, 281, 282, 283, 284, 285, 286, 287)
+    36     (288, 289, 290, 291, 292, 293, 294, 295)
+    37     (296, 297, 298, 299, 300, 301, 302, 303)
+    38     (304, 305, 306, 307, 308, 309, 310, 311)
+    39     (312, 313, 314, 315, 316, 317, 318, 319)
+    40     (320, 321, 322, 323, 324, 325, 326, 327)
+    41     (328, 329, 330, 331, 332, 333, 334, 335)
+    42     (336, 337, 338, 339, 340, 341, 342, 343)
+    43     (344, 345, 346, 347, 348, 349, 350, 351)
+    44     (352, 353, 354, 355, 356, 357, 358, 359)
+    45     (360, 361, 362, 363, 364, 365, 366, 367)
+    46     (368, 369, 370, 371, 372, 373, 374, 375)
+    48     (384, 385, 386, 387, 388, 389, 390, 391)
+    64     (512, 513, 514, 515, 516, 517, 518, 519)
+    80     (640, 641, 642, 643, 644, 645, 646, 647)
+    96     (768, 769, 770, 771, 772, 773, 774, 775)
+    112    (896, 897, 898, 899, 900, 901, 902, 903)
+
+VCPU
+    VID    PID    CID    UTIL NORM STRAND
+    0      128    16                 100%
+    1      129    16                 100%
+    2      130    16                 100%
+    3      131    16                 100%
+    4      132    16                 100%
+    5      133    16                 100%
+    6      134    16                 100%
+    7      135    16                 100%
+    8      136    17                 100%
+    9      137    17                 100%
+    10     138    17                 100%
+    11     139    17                 100%
+    12     140    17                 100%
+    13     141    17                 100%
+    14     142    17                 100%
+    15     143    17                 100%
+    16     176    22                 100%
+    17     177    22                 100%
+    18     178    22                 100%
+    19     179    22                 100%
+    20     180    22                 100%
+    21     181    22                 100%
+    22     182    22                 100%
+    23     183    22                 100%
+    24     184    23                 100%
+    25     185    23                 100%
+    26     186    23                 100%
+    27     187    23                 100%
+    28     188    23                 100%
+    29     189    23                 100%
+    30     190    23                 100%
+    31     191    23                 100%
+    32     192    24                 100%
+    33     193    24                 100%
+    34     194    24                 100%
+    35     195    24                 100%
+    36     196    24                 100%
+    37     197    24                 100%
+    38     198    24                 100%
+    39     199    24                 100%
+    40     200    25                 100%
+    41     201    25                 100%
+    42     202    25                 100%
+    43     203    25                 100%
+    44     204    25                 100%
+    45     205    25                 100%
+    46     206    25                 100%
+    47     207    25                 100%
+    48     208    26                 100%
+    49     209    26                 100%
+    50     210    26                 100%
+    51     211    26                 100%
+    52     212    26                 100%
+    53     213    26                 100%
+    54     214    26                 100%
+    55     215    26                 100%
+    56     216    27                 100%
+    57     217    27                 100%
+    58     218    27                 100%
+    59     219    27                 100%
+    60     220    27                 100%
+    61     221    27                 100%
+    62     222    27                 100%
+    63     223    27                 100%
+    64     224    28                 100%
+    65     225    28                 100%
+    66     226    28                 100%
+    67     227    28                 100%
+    68     228    28                 100%
+    69     229    28                 100%
+    70     230    28                 100%
+    71     231    28                 100%
+    72     232    29                 100%
+    73     233    29                 100%
+    74     234    29                 100%
+    75     235    29                 100%
+    76     236    29                 100%
+    77     237    29                 100%
+    78     238    29                 100%
+    79     239    29                 100%
+    80     240    30                 100%
+    81     241    30                 100%
+    82     242    30                 100%
+    83     243    30                 100%
+    84     244    30                 100%
+    85     245    30                 100%
+    86     246    30                 100%
+    87     247    30                 100%
+    88     248    31                 100%
+    89     249    31                 100%
+    90     250    31                 100%
+    91     251    31                 100%
+    92     252    31                 100%
+    93     253    31                 100%
+    94     254    31                 100%
+    95     255    31                 100%
+    96     256    32                 100%
+    97     257    32                 100%
+    98     258    32                 100%
+    99     259    32                 100%
+    100    260    32                 100%
+    101    261    32                 100%
+    102    262    32                 100%
+    103    263    32                 100%
+    104    264    33                 100%
+    105    265    33                 100%
+    106    266    33                 100%
+    107    267    33                 100%
+    108    268    33                 100%
+    109    269    33                 100%
+    110    270    33                 100%
+    111    271    33                 100%
+    112    272    34                 100%
+    113    273    34                 100%
+    114    274    34                 100%
+    115    275    34                 100%
+    116    276    34                 100%
+    117    277    34                 100%
+    118    278    34                 100%
+    119    279    34                 100%
+    120    280    35                 100%
+    121    281    35                 100%
+    122    282    35                 100%
+    123    283    35                 100%
+    124    284    35                 100%
+    125    285    35                 100%
+    126    286    35                 100%
+    127    287    35                 100%
+    128    288    36                 100%
+    129    289    36                 100%
+    130    290    36                 100%
+    131    291    36                 100%
+    132    292    36                 100%
+    133    293    36                 100%
+    134    294    36                 100%
+    135    295    36                 100%
+    136    296    37                 100%
+    137    297    37                 100%
+    138    298    37                 100%
+    139    299    37                 100%
+    140    300    37                 100%
+    141    301    37                 100%
+    142    302    37                 100%
+    143    303    37                 100%
+    144    304    38                 100%
+    145    305    38                 100%
+    146    306    38                 100%
+    147    307    38                 100%
+    148    308    38                 100%
+    149    309    38                 100%
+    150    310    38                 100%
+    151    311    38                 100%
+    152    312    39                 100%
+    153    313    39                 100%
+    154    314    39                 100%
+    155    315    39                 100%
+    156    316    39                 100%
+    157    317    39                 100%
+    158    318    39                 100%
+    159    319    39                 100%
+    160    320    40                 100%
+    161    321    40                 100%
+    162    322    40                 100%
+    163    323    40                 100%
+    164    324    40                 100%
+    165    325    40                 100%
+    166    326    40                 100%
+    167    327    40                 100%
+    168    328    41                 100%
+    169    329    41                 100%
+    170    330    41                 100%
+    171    331    41                 100%
+    172    332    41                 100%
+    173    333    41                 100%
+    174    334    41                 100%
+    175    335    41                 100%
+    176    336    42                 100%
+    177    337    42                 100%
+    178    338    42                 100%
+    179    339    42                 100%
+    180    340    42                 100%
+    181    341    42                 100%
+    182    342    42                 100%
+    183    343    42                 100%
+    184    344    43                 100%
+    185    345    43                 100%
+    186    346    43                 100%
+    187    347    43                 100%
+    188    348    43                 100%
+    189    349    43                 100%
+    190    350    43                 100%
+    191    351    43                 100%
+    192    352    44                 100%
+    193    353    44                 100%
+    194    354    44                 100%
+    195    355    44                 100%
+    196    356    44                 100%
+    197    357    44                 100%
+    198    358    44                 100%
+    199    359    44                 100%
+    200    360    45                 100%
+    201    361    45                 100%
+    202    362    45                 100%
+    203    363    45                 100%
+    204    364    45                 100%
+    205    365    45                 100%
+    206    366    45                 100%
+    207    367    45                 100%
+    208    368    46                 100%
+    209    369    46                 100%
+    210    370    46                 100%
+    211    371    46                 100%
+    212    372    46                 100%
+    213    373    46                 100%
+    214    374    46                 100%
+    215    375    46                 100%
+    216    384    48                 100%
+    217    385    48                 100%
+    218    386    48                 100%
+    219    387    48                 100%
+    220    388    48                 100%
+    221    389    48                 100%
+    222    390    48                 100%
+    223    391    48                 100%
+    224    512    64                 100%
+    225    513    64                 100%
+    226    514    64                 100%
+    227    515    64                 100%
+    228    516    64                 100%
+    229    517    64                 100%
+    230    518    64                 100%
+    231    519    64                 100%
+    232    640    80                 100%
+    233    641    80                 100%
+    234    642    80                 100%
+    235    643    80                 100%
+    236    644    80                 100%
+    237    645    80                 100%
+    238    646    80                 100%
+    239    647    80                 100%
+    240    768    96                 100%
+    241    769    96                 100%
+    242    770    96                 100%
+    243    771    96                 100%
+    244    772    96                 100%
+    245    773    96                 100%
+    246    774    96                 100%
+    247    775    96                 100%
+    248    896    112                100%
+    249    897    112                100%
+    250    898    112                100%
+    251    899    112                100%
+    252    900    112                100%
+    253    901    112                100%
+    254    902    112                100%
+    255    903    112                100%
+
+MEMORY
+    RA               PA               SIZE            
+    0x80000000       0x80000000000    32G
+
+CONSTRAINT
+    cpu=whole-core
+    max-cores=unlimited
+    threading=max-throughput
+
+VARIABLES
+    auto-boot?=false
+    boot-device=disk ldom04-tst01-s net
+    keyboard-layout=US-English
+    network-boot-arguments=host-ip=192.168.176.165,router-ip=192.168.176.3,subnet-mask=255.255.255.0,hostname=ldom04-tst01,client-id=84FB23DB,file=http://192.168.180.34/cgi-bin/wanboot-cgi
+    nvramrc=devalias disk1 /virtual-devices@100/channel-devices@200/disk@1
+
+    pm_boot_policy=disabled=0;ttfc=2000;ttmr=0;
+    use-nvramrc?=true
+
+IO
+    DEVICE                           PSEUDONYM        OPTIONS
+    pci@380                          pci_2           
+    pci@380/pci@1/pci@0/pci@a        /SYS/RCSA/PCIE9 
+NETWORK
+    NAME             SERVICE                     ID   DEVICE     MAC               MODE   PVID VID                  MTU   MAXBW      LINKPROP  
+    vnet176-p        primary-vsw0@primary        0    network@0  00:14:4f:fa:16:ec        1                         1500             phys-state
+    vnet176-s        secondary-vsw0@secondary    1    network@1  00:14:4f:fa:4b:e8        1                         1500                       
+
+DISK
+    NAME             VOLUME                      TOUT ID   DEVICE  SERVER         MPGROUP       
+    ldom04-tst01-s   ldom04-tst01@secondary-vds0 5    1    disk@1  secondary                    
+    c9t5D3d0         ldom04-tst01-c9t50060E80101DD7D3d0s2@secondary-vds1 1    2    disk@2  secondary                    
+    c9t5D3d1         ldom04-tst01-c9t50060E80101DD7D3d1s2@secondary-vds1 1    3    disk@3  secondary                    
+    c9t5D3d2         ldom04-tst01-c9t50060E80101DD7D3d2s2@secondary-vds1 1    4    disk@4  secondary                    
+    c9t5D3d3         ldom04-tst01-c9t50060E80101DD7D3d3s2@secondary-vds1 1    5    disk@5  secondary                    
+    c15t5D0d0        ldom04-tst01-c15t50060E80101DD7D0d0s2@primary-vds1 1    6    disk@6  primary                      
+    c15t5D0d1        ldom04-tst01-c15t50060E80101DD7D0d1s2@primary-vds1 1    7    disk@7  primary                      
+    c15t5D0d2        ldom04-tst01-c15t50060E80101DD7D0d2s2@primary-vds1 1    8    disk@8  primary                      
+    c15t5D0d3        ldom04-tst01-c15t50060E80101DD7D0d3s2@primary-vds1 1    9    disk@9  primary                      
+    c15t5D8d1        ldom04-tst01-c15t50060E80101DD7D8d1s2@primary-vds1 1    11   disk@11 primary                      
+    c15t5D8d0        ldom04-tst01-c15t50060E80101DD7D8d0s2@primary-vds1 1    10   disk@10 primary                      
+    c15t5D8d2        ldom04-tst01-c15t50060E80101DD7D8d2s2@primary-vds1 1    12   disk@12 primary                      
+    c15t5D8d3        ldom04-tst01-c15t50060E80101DD7D8d3s2@primary-vds1 1    13   disk@13 primary                      
+    c9t5DBd1         ldom04-tst01-c9t50060E80101DD7DBd1s2@secondary-vds1 1    15   disk@15 secondary                    
+    c9t5DBd0         ldom04-tst01-c9t50060E80101DD7DBd0s2@secondary-vds1 1    14   disk@14 secondary                    
+    c9t5DBd2         ldom04-tst01-c9t50060E80101DD7DBd2s2@secondary-vds1 1    16   disk@16 secondary                    
+    c9t5DBd3         ldom04-tst01-c9t50060E80101DD7DBd3s2@secondary-vds1 1    17   disk@17 secondary                    
+
+VCONS
+    NAME             SERVICE                     PORT   LOGGING
+    ldom04-tst01     primary-vcc0@primary        5001   on      
+
+------------------------------------------------------------------------------
+NAME             STATE      FLAGS   CONS    VCPU  MEMORY   UTIL  NORM  UPTIME
+ldom04-tst02     bound      ------  5002    16    32G                  
+
+UUID
+    e435b2b1-11b6-6f76-e52f-e6d03882c533
+
+MAC
+    00:14:4f:fb:91:e5
+
+HOSTID
+    0x84fb91e5
+
+CONTROL
+    failure-policy=ignore
+    extended-mapin-space=on
+    cpu-arch=native
+    rc-add-policy=
+    shutdown-group=15
+
+DEPENDENCY
+    master= 
+
+CORE
+    CID    CPUSET
+    18     (144, 145, 146, 147, 148, 149, 150, 151)
+    19     (152, 153, 154, 155, 156, 157, 158, 159)
+
+VCPU
+    VID    PID    CID    UTIL NORM STRAND
+    0      144    18                 100%
+    1      145    18                 100%
+    2      146    18                 100%
+    3      147    18                 100%
+    4      148    18                 100%
+    5      149    18                 100%
+    6      150    18                 100%
+    7      151    18                 100%
+    8      152    19                 100%
+    9      153    19                 100%
+    10     154    19                 100%
+    11     155    19                 100%
+    12     156    19                 100%
+    13     157    19                 100%
+    14     158    19                 100%
+    15     159    19                 100%
+
+MEMORY
+    RA               PA               SIZE            
+    0x80000000       0x80800000000    32G
+
+CONSTRAINT
+    cpu=whole-core
+    max-cores=unlimited
+    threading=max-throughput
+
+VARIABLES
+    auto-boot?=false
+    boot-device=ldom04-tst02-p ldom04-tst02-s
+    network-boot-arguments=host-ip=192.168.176.166,router-ip=192.168.176.3,subnet-mask=255.255.255.0,hostname=ldom04-tst02,file=http://192.168.181.160:5555/cgi-bin/wanboot-cgi
+    pm_boot_policy=disabled=0;ttfc=2000;ttmr=0;
+
+NETWORK
+    NAME             SERVICE                     ID   DEVICE     MAC               MODE   PVID VID                  MTU   MAXBW      LINKPROP  
+    vnet176-p        primary-vsw0@primary        0    network@0  00:14:4f:fa:c6:68        1                         1500                       
+    vnet176-s        secondary-vsw0@secondary    1    network@1  00:14:4f:f9:0e:36        1                         1500                       
+
+DISK
+    NAME             VOLUME                      TOUT ID   DEVICE  SERVER         MPGROUP       
+    ldom04-tst02-p   ldom04-tst02@primary-vds0   5    0    disk@0  primary                      
+    ldom04-tst02-s   ldom04-tst02@secondary-vds0 5    1    disk@1  secondary                    
+    c8t5D3d0         ldom04-tst02-c8t50060E80101DD7D3d0s2@secondary-vds1 1    2    disk@2  secondary                    
+    c8t5D3d1         ldom04-tst02-c8t50060E80101DD7D3d1s2@secondary-vds1 1    3    disk@3  secondary                    
+    c8t5D3d2         ldom04-tst02-c8t50060E80101DD7D3d2s2@secondary-vds1 1    4    disk@4  secondary                    
+    c8t5D3d3         ldom04-tst02-c8t50060E80101DD7D3d3s2@secondary-vds1 1    5    disk@5  secondary                    
+    c8t5DBd0         ldom04-tst02-c8t50060E80101DD7DBd0s2@secondary-vds1 1    6    disk@6  secondary                    
+    c8t5DBd1         ldom04-tst02-c8t50060E80101DD7DBd1s2@secondary-vds1 1    7    disk@7  secondary                    
+    c8t5DBd2         ldom04-tst02-c8t50060E80101DD7DBd2s2@secondary-vds1 1    8    disk@8  secondary                    
+    c8t5DBd3         ldom04-tst02-c8t50060E80101DD7DBd3s2@secondary-vds1 1    9    disk@9  secondary                    
+
+VCONS
+    NAME             SERVICE                     PORT   LOGGING
+    ldom04-tst02     primary-vcc0@primary        5002   on      
+
+------------------------------------------------------------------------------
+NAME             STATE      FLAGS   CONS    VCPU  MEMORY   UTIL  NORM  UPTIME
+ldom04-tst03     active     -n----  5003    16    32G      0.0%  0.0%  3h 19m
+
+SOFTSTATE
+Solaris running
+
+UUID
+    5fea9cc0-9cbf-c941-96a5-b68188919a41
+
+MAC
+    00:14:4f:f8:b1:a9
+
+HOSTID
+    0x84f8b1a9
+
+CONTROL
+    failure-policy=ignore
+    extended-mapin-space=on
+    cpu-arch=native
+    rc-add-policy=
+    shutdown-group=15
+
+DEPENDENCY
+    master= 
+
+CORE
+    CID    CPUSET
+    20     (160, 161, 162, 163, 164, 165, 166, 167)
+    21     (168, 169, 170, 171, 172, 173, 174, 175)
+
+VCPU
+    VID    PID    CID    UTIL NORM STRAND
+    0      160    20     0.1% 0.1%   100%
+    1      161    20     0.0% 0.0%   100%
+    2      162    20     0.2% 0.2%   100%
+    3      163    20     0.0% 0.0%   100%
+    4      164    20     0.1% 0.1%   100%
+    5      165    20     0.0% 0.0%   100%
+    6      166    20     0.0% 0.0%   100%
+    7      167    20     0.0% 0.0%   100%
+    8      168    21     0.0% 0.0%   100%
+    9      169    21     0.0% 0.0%   100%
+    10     170    21     0.0% 0.0%   100%
+    11     171    21     0.0% 0.0%   100%
+    12     172    21     0.0% 0.0%   100%
+    13     173    21     0.0% 0.0%   100%
+    14     174    21     0.1% 0.1%   100%
+    15     175    21     0.0% 0.0%   100%
+
+MEMORY
+    RA               PA               SIZE            
+    0x80000000       0x81000000000    32G
+
+CONSTRAINT
+    cpu=whole-core
+    max-cores=unlimited
+    threading=max-throughput
+
+VARIABLES
+    auto-boot?=false
+    boot-device=ldom04-tst03-p ldom04-tst03-s
+    nvramrc=." ChassisSerialNumber AK00210452 " cr
+    pm_boot_policy=disabled=0;ttfc=2000;ttmr=0;
+
+NETWORK
+    NAME             SERVICE                     ID   DEVICE     MAC               MODE   PVID VID                  MTU   MAXBW      LINKPROP  
+    vnet176-p        primary-vsw0@primary        0    network@0  00:14:4f:fb:87:8c        1                         1500                       
+    vnet176-s        secondary-vsw0@secondary    1    network@1  00:14:4f:fa:d0:ff        1                         1500                       
+
+DISK
+    NAME             VOLUME                      TOUT ID   DEVICE  SERVER         MPGROUP       
+    ldom04-tst03-s   ldom04-tst03@secondary-vds0 1    1    disk@1  secondary                    
+    c6D3d131         ldom04-tst03-c6t50060E80101DD7D3d131s2@secondary-vds3      2    disk@2  secondary                    
+    c6D3d132         ldom04-tst03-c6t50060E80101DD7D3d132s2@secondary-vds3      3    disk@3  secondary                    
+    c6D3d133         ldom04-tst03-c6t50060E80101DD7D3d133s2@secondary-vds3      4    disk@4  secondary                    
+    c6D3d134         ldom04-tst03-c6t50060E80101DD7D3d134s2@secondary-vds3      5    disk@5  secondary                    
+    c6DBd131         ldom04-tst03-c6t50060E80101DD7DBd131s2@secondary-vds3      6    disk@6  secondary                    
+    c6DBd132         ldom04-tst03-c6t50060E80101DD7DBd132s2@secondary-vds3      7    disk@7  secondary                    
+    c6DBd133         ldom04-tst03-c6t50060E80101DD7DBd133s2@secondary-vds3      8    disk@8  secondary                    
+    c6DBd134         ldom04-tst03-c6t50060E80101DD7DBd134s2@secondary-vds3      9    disk@9  secondary                    
+    c6D3d0           ldom04-tst03-c6t50060E80101DD7D3d0s2@secondary-vds3      10   disk@10 secondary                    
+    c6D3d1           ldom04-tst03-c6t50060E80101DD7D3d1s2@secondary-vds3      11   disk@11 secondary                    
+    c6D3d2           ldom04-tst03-c6t50060E80101DD7D3d2s2@secondary-vds3      12   disk@12 secondary                    
+    c6D3d3           ldom04-tst03-c6t50060E80101DD7D3d3s2@secondary-vds3      13   disk@13 secondary                    
+    c6DBd0           ldom04-tst03-c6t50060E80101DD7DBd0s2@secondary-vds3      14   disk@14 secondary                    
+    c6DBd1           ldom04-tst03-c6t50060E80101DD7DBd1s2@secondary-vds3      15   disk@15 secondary                    
+    c6DBd2           ldom04-tst03-c6t50060E80101DD7DBd2s2@secondary-vds3      16   disk@16 secondary                    
+    c6DBd3           ldom04-tst03-c6t50060E80101DD7DBd3s2@secondary-vds3      17   disk@17 secondary                    
+
+VCONS
+    NAME             SERVICE                     PORT   LOGGING
+    ldom04-tst03     primary-vcc0@primary        5003   on      
+
+------------------------------------------------------------------------------
+NAME             STATE      FLAGS   CONS    VCPU  MEMORY   UTIL  NORM  UPTIME
+secondary        active     -n--v-  5000    16    32G      0.1%  0.1%  7d 1h 55m
+
+SOFTSTATE
+Solaris running
+
+UUID
+    a191659a-6fb5-6484-ba11-bf0bee3ce08a
+
+MAC
+    00:14:4f:f8:50:cf
+
+HOSTID
+    0x84f850cf
+
+CONTROL
+    failure-policy=ignore
+    extended-mapin-space=on
+    cpu-arch=native
+    rc-add-policy=
+    shutdown-group=15
+
+DEPENDENCY
+    master= 
+
+CORE
+    CID    CPUSET
+    8      (64, 65, 66, 67, 68, 69, 70, 71)
+    9      (72, 73, 74, 75, 76, 77, 78, 79)
+
+VCPU
+    VID    PID    CID    UTIL NORM STRAND
+    0      64     8      0.2% 0.2%   100%
+    1      65     8      0.0% 0.0%   100%
+    2      66     8      0.0% 0.0%   100%
+    3      67     8      0.1% 0.1%   100%
+    4      68     8      0.1% 0.1%   100%
+    5      69     8      0.1% 0.1%   100%
+    6      70     8      0.1% 0.1%   100%
+    7      71     8      0.0% 0.0%   100%
+    8      72     9      0.2% 0.2%   100%
+    9      73     9      0.1% 0.1%   100%
+    10     74     9      0.1% 0.1%   100%
+    11     75     9      0.2% 0.2%   100%
+    12     76     9      0.2% 0.2%   100%
+    13     77     9      0.1% 0.1%   100%
+    14     78     9      0.1% 0.1%   100%
+    15     79     9      0.0% 0.0%   100%
+
+MEMORY
+    RA               PA               SIZE            
+    0x30000000       0x830000000      32G
+
+CONSTRAINT
+    cpu=whole-core
+    max-cores=unlimited
+    threading=max-throughput
+
+VARIABLES
+    boot-device=/pci@6c0/pci@1/pci@0/pci@c/pci@0/pci@c/scsi@0/disk@w5000cca056228885,0:a disk net
+    network-boot-arguments=host-ip=192.168.176.164,router-ip=192.168.176.3,subnet-mask=255.255.255.0,hostname=dr-ldm004-cdom2,file=http://192.168.181.160:5555/cgi-bin/wanboot-cgi
+    pm_boot_policy=disabled=0;ttfc=2000;ttmr=0;
+
+IO
+    DEVICE                           PSEUDONYM        OPTIONS
+    pci@340                          pci_1           
+    pci@500                          pci_8           
+    pci@580                          pci_10          
+    pci@5c0                          pci_11          
+    pci@600                          pci_12          
+    pci@640                          pci_13          
+    pci@6c0                          pci_15          
+    pci@340/pci@1/pci@0/pci@6        /SYS/RCSA/PCIE3 
+    pci@500/pci@1/pci@0/pci@e        /SYS/RCSA/PCIE5 
+    pci@580/pci@1/pci@0/pci@a        /SYS/RCSA/PCIE13
+    pci@5c0/pci@1/pci@0/pci@8        /SYS/RCSA/PCIE15
+    pci@600/pci@1/pci@0/pci@8        /SYS/RCSA/PCIE6 
+    pci@640/pci@1/pci@0/pci@8        /SYS/RCSA/PCIE8 
+    pci@6c0/pci@1/pci@0/pci@4        /SYS/RCSA/PCIE16
+    pci@6c0/pci@1/pci@0/pci@c/pci@0/pci@c /SYS/MB/SASHBA1 
+    pci@6c0/pci@1/pci@0/pci@c/pci@0/pci@4 /SYS/RIO/NET2   
+VSW
+    NAME             MAC               NET-DEV   ID   DEVICE     LINKPROP   DEFAULT-VLAN-ID PVID VID                  MTU   MODE   INTER-VNET-LINK
+    secondary-vsw0   00:14:4f:fb:9f:7d net5      0    switch@0              1               1                         1500         on         
+
+VDS
+    NAME             VOLUME         OPTIONS          MPGROUP        DEVICE
+    secondary-vds0   ldom04-tst01                                   /net/dr-ldomnfs01/ldoms/ldom04-tst01.vds0
+                     ldom04-tst02                                   /net/dr-ldomnfs01/ldoms/ldom04-tst02.vds0
+                     ldom04-tst03                                   /net/dr-ldomnfs01/ldoms/ldom04-tst03.vds0
+    secondary-vds1   ldom04-tst01-c9t50060E80101DD7D3d0s2                                 /dev/dsk/c9t50060E80101DD7D3d0s2
+                     ldom04-tst01-c9t50060E80101DD7D3d1s2                                 /dev/dsk/c9t50060E80101DD7D3d1s2
+                     ldom04-tst01-c9t50060E80101DD7D3d2s2                                 /dev/dsk/c9t50060E80101DD7D3d2s2
+                     ldom04-tst01-c9t50060E80101DD7D3d3s2                                 /dev/dsk/c9t50060E80101DD7D3d3s2
+                     ldom04-tst01-c9t50060E80101DD7DBd0s2                                 /dev/dsk/c9t50060E80101DD7DBd0s2
+                     ldom04-tst01-c9t50060E80101DD7DBd1s2                                 /dev/dsk/c9t50060E80101DD7DBd1s2
+                     ldom04-tst01-c9t50060E80101DD7DBd2s2                                 /dev/dsk/c9t50060E80101DD7DBd2s2
+                     ldom04-tst01-c9t50060E80101DD7DBd3s2                                 /dev/dsk/c9t50060E80101DD7DBd3s2
+                     ldom04-tst02-c8t50060E80101DD7D3d0s2                                 /dev/dsk/c8t50060E80101DD7D3d0s2
+                     ldom04-tst02-c8t50060E80101DD7D3d1s2                                 /dev/dsk/c8t50060E80101DD7D3d1s2
+                     ldom04-tst02-c8t50060E80101DD7D3d2s2                                 /dev/dsk/c8t50060E80101DD7D3d2s2
+                     ldom04-tst02-c8t50060E80101DD7D3d3s2                                 /dev/dsk/c8t50060E80101DD7D3d3s2
+                     ldom04-tst02-c8t50060E80101DD7DBd0s2                                 /dev/dsk/c8t50060E80101DD7DBd0s2
+                     ldom04-tst02-c8t50060E80101DD7DBd1s2                                 /dev/dsk/c8t50060E80101DD7DBd1s2
+                     ldom04-tst02-c8t50060E80101DD7DBd2s2                                 /dev/dsk/c8t50060E80101DD7DBd2s2
+                     ldom04-tst02-c8t50060E80101DD7DBd3s2                                 /dev/dsk/c8t50060E80101DD7DBd3s2
+    secondary-vds3   ldom04-tst03-c6t50060E80101DD7D3d131s2                                 /dev/rdsk/c6t50060E80101DD7D3d131s2
+                     ldom04-tst03-c6t50060E80101DD7D3d132s2                                 /dev/rdsk/c6t50060E80101DD7D3d132s2
+                     ldom04-tst03-c6t50060E80101DD7D3d133s2                                 /dev/rdsk/c6t50060E80101DD7D3d133s2
+                     ldom04-tst03-c6t50060E80101DD7D3d134s2                                 /dev/rdsk/c6t50060E80101DD7D3d134s2
+                     ldom04-tst03-c6t50060E80101DD7DBd131s2                                 /dev/rdsk/c6t50060E80101DD7DBd131s2
+                     ldom04-tst03-c6t50060E80101DD7DBd132s2                                 /dev/rdsk/c6t50060E80101DD7DBd132s2
+                     ldom04-tst03-c6t50060E80101DD7DBd133s2                                 /dev/rdsk/c6t50060E80101DD7DBd133s2
+                     ldom04-tst03-c6t50060E80101DD7DBd134s2                                 /dev/rdsk/c6t50060E80101DD7DBd134s2
+                     ldom04-tst03-c6t50060E80101DD7D3d0s2                                 /dev/rdsk/c6t50060E80101DD7D3d0s2
+                     ldom04-tst03-c6t50060E80101DD7D3d1s2                                 /dev/rdsk/c6t50060E80101DD7D3d1s2
+                     ldom04-tst03-c6t50060E80101DD7D3d2s2                                 /dev/rdsk/c6t50060E80101DD7D3d2s2
+                     ldom04-tst03-c6t50060E80101DD7D3d3s2                                 /dev/rdsk/c6t50060E80101DD7D3d3s2
+                     ldom04-tst03-c6t50060E80101DD7DBd0s2                                 /dev/rdsk/c6t50060E80101DD7DBd0s2
+                     ldom04-tst03-c6t50060E80101DD7DBd1s2                                 /dev/rdsk/c6t50060E80101DD7DBd1s2
+                     ldom04-tst03-c6t50060E80101DD7DBd2s2                                 /dev/rdsk/c6t50060E80101DD7DBd2s2
+                     ldom04-tst03-c6t50060E80101DD7DBd3s2                                 /dev/rdsk/c6t50060E80101DD7DBd3s2
+
+VCONS
+    NAME             SERVICE                     PORT   LOGGING
+    secondary        primary-vcc0@primary        5000   on      
+

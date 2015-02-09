@@ -185,6 +185,7 @@
 
 ;; * LDOM CONFIG PARSING
 ;; TODO move all the state to atom
+;; TODO profile parsing, it's too slow
 (defn parse-entry [cid]
   (apply merge
     (for [entry cid]
@@ -228,6 +229,43 @@
 ;; (:cids (ldom-config "t58-12023-o6"))
 ;; {"41" {:cid "41", :cpuset "328,329,330,331,332,333,334,335"}, ...
 
+;; (quick-bench (read-ldom-config site))
+;; Evaluation count : 48 in 6 samples of 8 calls.
+;;              Execution time mean : 14.723262 ms
+;;     Execution time std-deviation : 1.278626 ms
+;;    Execution time lower quantile : 13.477049 ms ( 2.5%)
+;;    Execution time upper quantile : 16.630336 ms (97.5%)
+;; Overhead used : 9.905376 ns
+
+;; with instaparse:
+;; (def parse
+;;      (inst/parser
+;;         "<config> = <'VERSION'> version nl section+
+;;          <ws> = <#'\\s+'>
+;;          <nl> = <#'[\\s*\n]+'>
+;;          version = #'[0-9\\.]+'
+;;          section = keyword <delim> (param delim?)+
+;;          <keyword> = #'[A-Z]+'
+;;          <param> = var <'='> value?
+;;          var = #'[a-z0-9\\-\\_]+'
+;;          value = #'[a-z0-9\\.\\-\\:\\,]+'
+;;          <delim> = <'|'>"
+;; 	:auto-whitespace :standard))
+
+;; Evaluation count : 6 in 6 samples of 1 calls.
+;;       Execution time sample mean : 1.328034 sec
+;;              Execution time mean : 1.328233 sec
+;; Execution time sample std-deviation : 21.225902 ms
+;;     Execution time std-deviation : 21.572560 ms
+;;    Execution time lower quantile : 1.304001 sec ( 2.5%)
+;;    Execution time upper quantile : 1.362312 sec (97.5%)
+;;                    Overhead used : 9.830718 ns
+
+;; Found 2 outliers in 6 samples (33.3333 %)
+;; 	low-severe	 1 (16.6667 %)
+;; 	low-mild	 1 (16.6667 %)
+;;  Variance from outliers : 13.8889 % Variance is moderately inflated by outliers
+
 ;; TODO this is unbound resources. move to other readings
 (defn read-dev-config [site]
   (let [dev-content (read-site-file-content site "_usr_sbin_ldm_ls-io_-p")]
@@ -261,12 +299,12 @@
 
 ;; TODO get # of cores from config
 (defn lister-domains [items config]
-  [:div
+  [:div 
    (for [item items
          :let [color ((:colors config) item)
                cores (count (:cids (item (:domains config))))
                memory (reduce + (map #(str->int (:size (val %))) (:mem (item (:domains config)))))]]
-     ^{:key item} [:div {:style {:background-color color :margin-bottom "5px"}}
+     ^{:key item} [:div {:style {:background-color color :margin-bottom "3px"}}
                    [:div {:style {:font-weight "bold"}} (name item)]
                    [:div {:style {:text-align "right"}}
                     (str "cores: " cores " vcpu: " (* cores 8))]
@@ -296,18 +334,19 @@
                    (clean-dev-alias (:alias ((:devs config) item)))])])
 
 ;; ** COMPONENTS
-;; TODO get number of cids per chip
+;; TODO get number of cids per chip from, well, somewhere
 (defn cid-comp [chip config]
   (let [core-per-chip 16]
     [:div
-     [:span {:style {:font-weight "bold"}} "Cores:"]
+     [:span {:style {:font-weight "bold"}} "Cores"]
      [lister-cid
       (range (* chip core-per-chip) (* (inc chip) core-per-chip))
       config]]))
 
 (defn memory-comp [chip config]
   [:div {:style {:padding-bottom "10px"}}
-   [:span {:style {:font-weight "bold"}} "Memory"]
+   ;;[:span {:style {:font-weight "bold"}} "Memory"]
+   [:span.mem "Memory"]
     [lister-mem
      (filter #(mem-on-chip? chip %) (:mem config))
      config]])
@@ -315,7 +354,7 @@
 (defn io-comp [chip config]
   [:div
    {:style {:position "relative" :bottom "0px"}}
-   [:span {:style {:font-weight "bold"}} "I/O:"]
+   [:span {:style {:font-weight "bold"}} "I/O"]
    [lister-io
     (sort
      (keys
@@ -325,11 +364,10 @@
 
 (defn chip-comp [chip-num config]
   [:div.col-xs-3
-   {:style {:padding-bottom "25px"}}
    [:h5 (str "Chip " chip-num)]
     [:div.row
      [:div.col-xs-4 {:style {:padding-right "5px"}} [cid-comp chip-num config]]
-     [:div.col-xs-8 {:style {:padding-left "5px" :min-height "100%"}} [memory-comp chip-num config]
+     [:div.col-xs-8 {:style {:padding-left "5px"}} [memory-comp chip-num config]
       [io-comp chip-num config]]]])
 
 ;; ** MAIN
@@ -347,11 +385,12 @@
        [:h3 "Site: " "Somebank test" " | System: " (:name t5-8-full)]]]
      [:div.row
       [:div.col-xs-10
-       (map #(vector :div.row %) (partition 4 (mapv #(chip-comp % config) chip-ids)))]
-      [:div.col-xs-2 (:style {:padding-top 0 :margin-top 0}) [:h3 "Domains"]
+       (map #(vector :div.row {:style {:padding-bottom "25px"}} %)
+         (partition 4 (mapv #(chip-comp % config) chip-ids)))]
+      [:div.list-domain.col-xs-2 [:h3 "Domains"]
        (lister-domains (sort (keys ldom-config)) config)]]]))
 
-;; * ROUTES (not used - CHECK!!!)
+;; * ROUTES (not used - TODO)
 (secretary/set-config! :prefix "#")
 
 (secretary/defroute "/" []
@@ -362,5 +401,5 @@
 
 ;; * INITIALIZE APP
 (defn init! []
-  (set! (. js/document -title) "sun4v vis")
+  (set! (. js/document -title) "LDOM visualizer")
   (reagent/render-component [main-page] (.getElementById js/document "app")))

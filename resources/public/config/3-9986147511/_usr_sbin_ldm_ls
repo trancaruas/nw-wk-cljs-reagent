@@ -1,0 +1,6 @@
+NAME             STATE      FLAGS   CONS    VCPU  MEMORY   UTIL  NORM  UPTIME
+primary          active     -n-cv-  UART    64    32G      0.5%  0.5%  2d 23h 42m
+ldom04-tst01     bound      ------  5001    256   32G                  
+ldom04-tst02     bound      ------  5002    16    32G                  
+ldom04-tst03     active     -n----  5003    16    32G      0.0%  0.0%  3h 19m
+secondary        active     -n--v-  5000    16    32G      0.1%  0.1%  7d 1h 55m
