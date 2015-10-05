@@ -382,7 +382,7 @@
     [:div.container
      [:div.row
       [:div.col-xs-12
-       [:h3 "Site: " "Somebank test" " | System: " (:name t5-8-full)]]]
+       [:h3 "Site: " "Some bank test" " | System: " (:name t5-8-full)]]]
      [:div.row
       [:div.col-xs-10
        (map #(vector :div.row {:style {:padding-bottom "25px"}} %)
@@ -403,3 +403,5 @@
 (defn init! []
   (set! (. js/document -title) "LDOM visualizer")
   (reagent/render-component [main-page] (.getElementById js/document "app")))
+
+;; https://github.com/ejlo/reagent-games/tree/master/tic-tac-toe/src
