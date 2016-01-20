@@ -12,3 +12,4 @@ pom.xml.asc
 /.repl
 *~
 figwheel_server.log
+CpuMemViz-2.2.tar.gz
