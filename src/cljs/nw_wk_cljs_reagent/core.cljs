@@ -88,13 +88,13 @@
 
    :t5-8-full
    {:name "T5-8 Fully Populated"
-    :chips {:chip0 {:id 0 :slot1 "pci@300" :slot3 "pci@340"}
-            :chip1 {:id 1 :slot9 "pci@380" :slot11 "pci@3c0"}
-            :chip2 {:id 2 :slot2 "pci@400" :slot4 "pci@440"}
+    :chips {:chip0 {:id 0 :slot1  "pci@300"  :slot3 "pci@340"}
+            :chip1 {:id 1 :slot9  "pci@380" :slot11 "pci@3c0"}
+            :chip2 {:id 2 :slot2  "pci@400"  :slot4 "pci@440"}
             :chip3 {:id 3 :slot10 "pci@480" :slot12 "pci@4c0"}
-            :chip4 {:id 4 :slot5 "pci@500" :slot7 "pci@540"}
+            :chip4 {:id 4 :slot5  "pci@500" :slot7  "pci@540"}
             :chip5 {:id 5 :slot13 "pci@580" :slot15 "pci@580"}
-            :chip6 {:id 6 :slot6 "pci@600" :slot8 "pci@640"}
+            :chip6 {:id 6 :slot6  "pci@600" :slot8  "pci@640"}
             :chip7 {:id 7 :slot14 "pci@680" :slot16 "pci@680"}}
 
     :devs { "pci@300" {:id "pci@300" :slot  1 :chip 0 :sw 0}
@@ -114,8 +114,8 @@
             "pci@680" {:id "pci@680" :slot 14 :chip 7 :sw 3}
             "pci@6c0" {:id "pci@6c0" :slot 16 :chip 7 :sw 4}}
     
-    :mem {:0 {:start            0x0 :end 0x7FFFFFFFFFF}
-          :1 {:start  0x80000000000 :end 0xFFFFFFFFFFF}
+    :mem {:0 {:start            0x0 :end  0x7FFFFFFFFFF}
+          :1 {:start  0x80000000000 :end  0xFFFFFFFFFFF}
           :2 {:start 0x100000000000 :end 0x17FFFFFFFFFF}
           :3 {:start 0x180000000000 :end 0x1FFFFFFFFFFF}
           :4 {:start 0x200000000000 :end 0x27FFFFFFFFFF}
